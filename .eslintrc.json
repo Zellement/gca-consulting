@@ -1,0 +1,54 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:vue/vue3-recommended",
+        "prettier"
+    ],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+        "parser": {
+            // Script parser for `<script>`
+            "js": "espree",
+
+            // Script parser for `<script lang="ts">`
+            "ts": "@typescript-eslint/parser",
+
+            // Script parser for vue directives (e.g. `v-if=` or `:attribute=`)
+            // and vue interpolations (e.g. `{{variable}}`).
+            // If not specified, the parser determined by `<script lang ="...">` is used.
+            "<template>": "espree"
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["prettier", "vue", "@typescript-eslint"],
+    "overrides": [
+        {
+            "files": ["pages/**/*.vue", "layouts/**/*.vue"],
+            "rules": {
+                "vue/multi-word-component-names": 0
+            }
+        }
+    ],
+    "rules": {
+        "prettier/prettier": ["error"],
+        "no-undef": "off",
+        "vue/custom-event-name-casing": [
+            "error",
+            "camelCase",
+            {
+                "ignores": []
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            { "argsIgnorePattern": "^_" }
+        ]
+    },
+    "ignorePatterns": ["node_modules/"]
+}

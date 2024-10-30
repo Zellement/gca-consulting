@@ -1,0 +1,18 @@
+@layer utilities {
+    .btn {
+        @apply relative bg-black px-3 py-1 text-white transition-colors;
+
+        &:hover {
+            @apply bg-white text-black;
+        }
+
+        &:disabled {
+            @apply opacity-50 grayscale;
+        }
+
+        &--bg-gray-300,
+        &--disabled {
+            @apply bg-gray-300 text-black;
+        }
+    }
+}

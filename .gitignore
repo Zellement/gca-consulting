@@ -1,0 +1,17 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+.npmrc
+!netlify/.npmrc
+.idea
+dist
+.contentful.json
+**/.DS_Store
+
+assets/icons/cache
+
+assets/svg-transformer-list.ts

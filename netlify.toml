@@ -1,0 +1,5 @@
+[build]
+    publish = 'dist'
+    base = '/'
+[build.environment]
+  NPM_CONFIG_USERCONFIG = "./netlify/.npmrc"

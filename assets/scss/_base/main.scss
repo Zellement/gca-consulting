@@ -1,0 +1,78 @@
+/**
+ * ----------------------
+ * Base - Main
+ * ----------------------
+ */
+
+html {
+    @apply scroll-smooth;
+}
+
+body {
+    @apply font-sans text-base subpixel-antialiased;
+
+    @media (resolution >= 2dppx) {
+        @apply antialiased;
+    }
+}
+
+picture img {
+    @apply h-full w-full object-cover;
+}
+
+.page {
+    // ::before to push content down to overwrite fixed header
+    &::before {
+        content: '';
+
+        @apply block h-[72px] w-full lg:h-24;
+    }
+}
+
+.container {
+    @apply mx-auto max-w-screen-max;
+
+    &--sm {
+        @apply max-w-screen-sm;
+    }
+
+    &--md {
+        @apply max-w-screen-md;
+    }
+
+    &--lg {
+        @apply max-w-screen-lg;
+    }
+
+    &--xl {
+        @apply max-w-screen-xl;
+    }
+
+    &--2xl {
+        @apply max-w-screen-2xl;
+    }
+}
+
+@layer utilities {
+    .container-px {
+        @apply px-4 lg:px-6;
+    }
+}
+
+.modular-content {
+    @apply flex flex-col space-y-16 lg:space-y-32;
+}
+
+.grid-layout {
+    @apply grid w-full grid-cols-12 gap-2 md:gap-6 xl:gap-12;
+}
+
+@layer utilities {
+    .breakout {
+        @apply relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen;
+
+        &--reset {
+            @apply left-auto right-auto mx-0 w-auto;
+        }
+    }
+}

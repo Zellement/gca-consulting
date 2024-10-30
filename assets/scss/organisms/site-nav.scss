@@ -1,0 +1,5 @@
+.site-nav {
+    .router-link-active {
+        @apply mb-5 border-b px-4 pb-5 hover:underline md:border-b-0 md:px-0;
+    }
+}

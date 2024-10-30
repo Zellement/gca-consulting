@@ -1,0 +1,29 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "plugins": ["stylelint-prettier"],
+    "rules": {
+        "selector-class-pattern": null,
+        "scss/at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "tailwind",
+                    "apply",
+                    "variants",
+                    "responsive",
+                    "screen",
+                    "include",
+                    "for",
+                    "mixin",
+                    "use",
+                    "extend"
+                ]
+            }
+        ],
+        "no-descending-specificity": null,
+        "prettier/prettier": true,
+        "selector-id-pattern": null,
+        "scss/at-extend-no-missing-placeholder": null
+    },
+    "ignoreFiles": ["vendor/**/*"]
+}

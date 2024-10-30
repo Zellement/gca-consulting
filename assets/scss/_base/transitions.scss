@@ -1,0 +1,29 @@
+/* --------------------------------------------
+VARS AND RE-USABLE CLASSES
+-------------------------------------------- */
+
+$easing: cubic-bezier(0.4, 0, 0.16, 1);
+
+@mixin animate-movement {
+    transition:
+            scale 700ms $easing,
+            opacity 700ms $easing,
+            transform 700ms $easing;
+}
+
+/* --------------------------------------------
+PAGE
+-------------------------------------------- */
+
+// Page transitions
+
+.page.page-leave-active,
+.page.page-enter-active {
+    @apply opacity-0;
+    @include animate-movement;
+}
+
+.page.page-enter-to {
+    @apply opacity-100;
+    @include animate-movement;
+}

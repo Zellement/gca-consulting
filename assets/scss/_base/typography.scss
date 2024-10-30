@@ -1,0 +1,112 @@
+/**
+ * ----------------------
+ * Base - Typography
+ * ----------------------
+ */
+
+.h1 {
+    @apply text-3xl;
+}
+
+.h2 {
+    @apply text-2xl;
+}
+
+.h3 {
+    @apply text-xl;
+}
+
+.h4 {
+    @apply text-lg;
+}
+
+.h5 {
+    @apply text-base;
+}
+
+em {
+    @apply italic;
+}
+
+strong {
+    @apply font-bold;
+}
+
+/**
+ * Outline styles
+ */
+a,
+button,
+[tabindex='0'] {
+    &:focus {
+        @apply outline-dashed outline-2 outline-current;
+    }
+
+    &:not(:focus-visible) {
+        @apply outline-none;
+    }
+}
+
+/**
+ * Rich Text / Body Copy
+ */
+.content {
+    @apply flex flex-col space-y-4;
+
+    @for $i from 1 through 6 {
+        h#{$i} {
+            @apply font-bold;
+        }
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    h4 {
+        @apply text-lg;
+    }
+
+    h5 {
+        @apply text-base;
+    }
+
+    p strong {
+        @apply font-bold;
+    }
+
+    ul,
+    ol,
+    dl {
+        @apply mb-4 flex flex-col gap-2 pl-4;
+
+        li,
+        dd {
+            @apply ml-4 list-disc leading-none;
+
+            > ul,
+            > dl,
+            > ol {
+                @apply my-4;
+            }
+        }
+    }
+
+    ol {
+        li {
+            @apply list-decimal;
+        }
+    }
+
+    a {
+        @apply underline;
+    }
+}

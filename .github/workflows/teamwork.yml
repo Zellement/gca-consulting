@@ -1,0 +1,13 @@
+name: Teamwork synchronisation
+
+on:
+  pull_request:
+    types: [opened, closed]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  teamwork-sync:
+    name: Teamwork Sync
+    uses: effect-digital/organisation/.github/workflows/teamwork-sync.yml@main
+    secrets: inherit
