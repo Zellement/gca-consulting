@@ -17,7 +17,8 @@
         "format:check": "npx prettier --check \"**/*.{js,vue,ts,scss,md,json,html}\"",
         "format:write": "npx prettier --write \"**/*.{js,vue,ts,scss,md,json,html}\"",
         "pull-sb-components": "storyblok pull-components --path storyblok/ --space 311400",
-        "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths storyblok/components.311400.json --destinationFilePath types/storyblok-component-types.d.ts"
+        "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths storyblok/components.311400.json --destinationFilePath types/storyblok-component-types.d.ts",
+        "update-storyblok": "npm run pull-sb-components && npm run generate-sb-types"
     },
     "devDependencies": {
         "@nuxt/fonts": "^0.8.0",
