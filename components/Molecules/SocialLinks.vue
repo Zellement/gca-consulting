@@ -3,7 +3,7 @@
         <nuxt-link
             v-for="link in socialLinks"
             :key="link.id"
-            :to="link.url"
+            :to="link.content.url"
             :title="`Go to ${link.name}`"
             target="_blank"
         >
