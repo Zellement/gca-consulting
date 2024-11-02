@@ -5,6 +5,7 @@
             :key="link.id"
             :to="link.url"
             :title="`Go to ${link.name}`"
+            target="_blank"
         >
             <Icon :name="iconSlug(link?.content.icon)" class="size-8" />
         </nuxt-link>
