@@ -1,6 +1,6 @@
 <template>
     <div
-        class="panel-base !fixed left-0 !z-[9999] grid place-items-center bg-ceramic-50 text-black"
+        class="panel-base bg-ceramic-50 !fixed left-0 !z-[9999] grid place-items-center text-black"
         :class="uiStore.pageIsLoading ? 'top-0' : 'top-full delay-200'"
     >
         <div

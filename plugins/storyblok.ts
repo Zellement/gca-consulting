@@ -5,7 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const config: RuntimeConfig = useRuntimeConfig()
 
     const { storyblokApi } = storyblokInit({
-        accessToken: config.public.STORYBLOK_ACCESS_TOKEN,
+        accessToken: config.public.STORYBLOK_ACCESS_TOKEN as string,
         use: [apiPlugin]
     })
 

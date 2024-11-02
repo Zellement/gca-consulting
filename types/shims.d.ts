@@ -1,4 +1,11 @@
+import type {
+    TemplateNewsStoryblok,
+    TemplatePageStoryblok
+} from './storyblok-component-types'
+
 declare global {
+    type AllTypes = TemplatePageStoryblok | TemplateNewsStoryblok | null
+
     type ImageTypes = {
         url: string
         alt?: string

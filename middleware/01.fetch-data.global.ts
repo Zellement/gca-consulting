@@ -1,23 +1,6 @@
 import { useStoryblokStore } from '@/stores/storyblok'
 
-import type {
-    CategoryJournalStoryblok,
-    MetaGlobalOptionsStoryblok,
-    TemplateJournalStoryblok,
-    TemplatePropertyStoryblok,
-    TemplateRoomStoryblok,
-    TemplateUniversityStoryblok
-} from '~/types/storyblok-component-types'
-
 import type { RouteLocationNormalized } from 'vue-router'
-
-type AllTypes =
-    | TemplatePropertyStoryblok
-    | TemplateUniversityStoryblok
-    | TemplateRoomStoryblok
-    | TemplateJournalStoryblok
-    | CategoryJournalStoryblok
-    | MetaGlobalOptionsStoryblok
 
 export default defineNuxtRouteMiddleware(
     async (

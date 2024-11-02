@@ -62,6 +62,7 @@ export const useStoryblokStore = defineStore('storyblok', {
                 }
                 return response
             } catch (error: any) {
+                console.log(error)
                 throw new Error('Story not found')
             }
         },
@@ -86,6 +87,7 @@ export const useStoryblokStore = defineStore('storyblok', {
                 this.dataIsLoading = false
                 this.firstLoad = false
             } catch (error) {
+                console.log(error)
                 throw new Error('Story not found')
             }
         },
@@ -112,8 +114,5 @@ export const useStoryblokStore = defineStore('storyblok', {
         async fetchRequired(): Promise<void> {
             await this.fetchGlobalOptions()
         }
-    },
-    persist: {
-        paths: ['recentlyViewedRoomsIdArray']
     }
 })

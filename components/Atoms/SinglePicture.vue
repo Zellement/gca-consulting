@@ -116,11 +116,13 @@ const parallaxEffect = (
         const container = picture.parentElement
 
         // Maxes translation so the image does not go out of bounds
-        const maxTranslateY =
-            (picture.offsetHeight - container.offsetHeight) / 2
+        const maxTranslateY = container
+            ? (picture.offsetHeight - container.offsetHeight) / 2
+            : 0
 
         const distanceFromBottom =
-            container.getBoundingClientRect().bottom - window.innerHeight
+            (container?.getBoundingClientRect().bottom ?? 0) -
+            window.innerHeight
 
         const scrollY = distanceFromBottom * -1
 

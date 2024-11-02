@@ -7,12 +7,16 @@ type BooleanKeys<T> = {
 interface State {
     showMobileNav: boolean
     animationsDisabled: boolean
+    pageIsLoading: boolean
+    pageHasLoaded: boolean
 }
 
 export const useUiStore = defineStore('ui', {
     state: (): State => ({
         showMobileNav: false,
-        animationsDisabled: false
+        animationsDisabled: false,
+        pageIsLoading: true,
+        pageHasLoaded: false
     }),
     actions: {
         toggleBoolean(

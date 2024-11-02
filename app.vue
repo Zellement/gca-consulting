@@ -7,13 +7,14 @@
 
 <script setup lang="ts">
 const uiStore = useUiStore()
+const storyblokStore = useStoryblokStore()
 
 /* --------------------------
 // Computed
 -------------------------- */
 
-const animationDisabled: ComputedRef<boolean> = computed(() => {
-    return uiStore.animationDisabled
+const animationsDisabled: ComputedRef<boolean> = computed(() => {
+    return uiStore.animationsDisabled
 })
 
 const isAnyModalActive: ComputedRef<boolean> = computed(() => {
@@ -21,7 +22,7 @@ const isAnyModalActive: ComputedRef<boolean> = computed(() => {
 })
 
 const pageTransitionClasses: ComputedRef<string> = computed(() => {
-    return animationDisabled.value
+    return animationsDisabled.value
         ? 'opacity-0 pointer-events-none'
         : 'opacity-100'
 })

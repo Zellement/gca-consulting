@@ -35,10 +35,7 @@ export default defineNuxtConfig({
     },
 
     image: {
-        domains: [
-            'https://a.storyblok.com',
-            'localhost',
-        ],
+        domains: ['https://a.storyblok.com', 'localhost'],
         screens: {
             '3xs': 21 * 16,
             '2xs': 23 * 16,
@@ -56,11 +53,11 @@ export default defineNuxtConfig({
 
     css: ['@/assets/scss/app.scss'],
 
-site: {
+    site: {
         trailingSlash: false,
         url: import.meta.env.WEBSITE_URL,
-        name: 'Student by Way of Life',
-        description: 'Find your home away from home',
+        name: 'GCA (UK) Ltd',
+        description: 'Consulting civil and structural engineers',
         defaultLocale: 'en' // not needed if you have @nuxtjs/i18n installed,
     },
 
@@ -97,7 +94,7 @@ site: {
 
     alias: {
         '@blocks': fileURLToPath(
-            new URL('./components/Organisms/NestedBlocks/', import.meta.url)
+            new URL('./components/Sections/', import.meta.url)
         )
     },
     app: {
@@ -162,10 +159,11 @@ site: {
     runtimeConfig: {
         public: {
             WEBSITE_URL: import.meta.env.WEBSITE_URL,
-            MARKER_ID: import.meta.env.MARKER_ID,
-            MARKER_ENABLED: import.meta.env.MARKER_ENABLED,
-            COOKIE_YES_ID: import.meta.env.COOKIE_YES_ID,
-            GTM_ID: import.meta.env.GTM_ID
+            STORYBLOK_ACCESS_TOKEN: import.meta.env.STORYBLOK_ACCESS_TOKEN,
+            STORYBLOK_SPACE_ID: import.meta.env.STORYBLOK_SPACE_ID,
+            STORYBLOK_GLOBAL_OPTIONS_ID: import.meta.env
+                .STORYBLOK_GLOBAL_OPTIONS_ID,
+            STORYBLOK_ENV: import.meta.env.STORYBLOK_ENV
         }
     },
 
@@ -175,7 +173,14 @@ site: {
                 fix: true,
                 include: ['./**/*.vue', './**/*.ts', './**/*.js']
             })
-        ]
+        ],
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: 'modern'
+                }
+            }
+        }
     },
 
     typescript: {
