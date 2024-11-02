@@ -1,10 +1,15 @@
 import type {
+    DataSocialLinkStoryblok,
     TemplateNewsStoryblok,
     TemplatePageStoryblok
 } from './storyblok-component-types'
 
 declare global {
-    type AllTypes = TemplatePageStoryblok | TemplateNewsStoryblok | null
+    type AllTypes =
+        | TemplatePageStoryblok
+        | TemplateNewsStoryblok
+        | DataSocialLinkStoryblok
+        | null
 
     type ImageTypes = {
         url: string

@@ -14,16 +14,7 @@ export default defineNuxtConfig({
         minify: true
     },
 
-    modules: [
-        '@nuxt/image',
-        '@pinia/nuxt',
-        '@nuxtjs/tailwindcss',
-        '@nuxtjs/svg-sprite',
-        'nuxt-viewport',
-        '@nuxtjs/seo',
-        '@nuxt/fonts',
-        'nuxt-aos'
-    ],
+    modules: ['@nuxt/image', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/svg-sprite', 'nuxt-viewport', '@nuxtjs/seo', '@nuxt/fonts', 'nuxt-aos', '@nuxt/icon'],
 
     svgSprite: {
         input: '~/assets/icons/svg',

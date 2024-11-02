@@ -40,8 +40,8 @@ export const useStoryblokStore = defineStore('storyblok', {
         getCurrentStoryContent(state): AllTypes | null {
             return state.currentStory?.content
         },
-        getGlobalOptions(state): MetaGlobalOptionsStoryblok | null {
-            return state.globalOptions
+        getGlobalOptionsContent(state): MetaGlobalOptionsStoryblok | null {
+            return state.globalOptions?.content
         }
     },
     actions: {
@@ -98,10 +98,7 @@ export const useStoryblokStore = defineStore('storyblok', {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${config.public.STORYBLOK_GLOBAL_OPTIONS_ID}`,
                     {
-                        resolve_relations: [
-                            'metaGlobalOptions.notificationCentreLink',
-                            'metaGlobalOptions.pagesNavigation'
-                        ]
+                        resolve_relations: ['metaGlobalOptions.socialLinks']
                     }
                 )
                 this.globalOptions = response.data?.story
