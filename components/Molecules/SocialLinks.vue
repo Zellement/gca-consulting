@@ -7,14 +7,14 @@
             :title="`Go to ${link.name}`"
             target="_blank"
         >
-            <Icon :name="iconSlug(link?.content.icon)" class="size-8" />
+            <Icon :name="iconFinder(link?.content.icon)" class="size-8" />
         </nuxt-link>
     </div>
 </template>
 
 <script lang="ts" setup>
 import type { DataSocialLinkStoryblok } from '@/types/storyblok-component-types'
-const { iconSlug } = useIconUtils()
+const { iconFinder } = useIconUtils()
 const storyblokStore = useStoryblokStore()
 
 const socialLinks: ComputedRef<DataSocialLinkStoryblok[] | null> = computed(

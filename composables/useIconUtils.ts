@@ -4,7 +4,7 @@ export const useIconUtils = () => {
      * @param str - The input string.
      * @returns - The string converted to a slug.
      */
-    const iconSlug = (str: string | null | number | undefined): string => {
+    const iconFinder = (str: string | null | number | undefined): string => {
         if (!str) return 'check'
         switch (str) {
             case 'X':
@@ -26,6 +26,6 @@ export const useIconUtils = () => {
     }
 
     return {
-        iconSlug
+        iconFinder
     }
 }
