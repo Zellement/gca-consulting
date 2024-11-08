@@ -1,16 +1,16 @@
 <template>
     <div
-        class="panel-base !fixed left-0 !z-[9999] grid place-items-center bg-blue-50 text-black"
+        class="panel-base !fixed left-0 !z-[9999] grid place-items-center bg-blue-300 text-black"
         :class="uiStore.pageIsLoading ? 'top-0' : 'top-full delay-200'"
     >
         <div
-            class="panel-base bg-blue-100"
+            class="panel-base bg-green-500"
             :class="
                 uiStore.pageIsLoading ? 'top-0 delay-100' : 'top-full delay-200'
             "
         />
         <div
-            class="panel-base bg-dry-blue-200"
+            class="panel-base bg-blue-500"
             :class="uiStore.pageIsLoading ? 'top-0 delay-200' : 'top-full'"
         />
         <div
@@ -22,7 +22,6 @@
             "
         >
             GCA Consulting
-            <svg-icon name="logo-wol" class="h-[54px] w-[181px]" />
         </div>
     </div>
 </template>

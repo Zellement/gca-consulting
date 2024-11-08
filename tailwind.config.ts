@@ -92,8 +92,34 @@ export default {
             colors: {
                 transparent: 'transparent',
                 current: 'currentColor',
-                inherit: 'inherit'
+                inherit: 'inherit',
                 // Generate shades from a base colour: https://www.tailwindshades.com/
+                blue: {
+                    DEFAULT: '#0053A0',
+                    50: '#F2F6FA',
+                    100: '#E6EEF6',
+                    200: '#BFD4E7',
+                    300: '#99BAD9',
+                    400: '#4D87BD',
+                    500: '#0053A0',
+                    600: '#004B90',
+                    700: '#003260',
+                    800: '#002548',
+                    900: '#001930'
+                },
+                green: {
+                    DEFAULT: '#67BD4A',
+                    50: '#F7FCF6',
+                    100: '#F0F8ED',
+                    200: '#D9EFD2',
+                    300: '#C2E5B7',
+                    400: '#95D180',
+                    500: '#67BD4A',
+                    600: '#5DAA43',
+                    700: '#3E712C',
+                    800: '#2E5521',
+                    900: '#1F3916'
+                }
             },
             aspectRatio: {
                 landscape: '383 / 235',
