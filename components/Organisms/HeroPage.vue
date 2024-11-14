@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-green pl-6">
+    <section class="border-l-[20px] border-green bg-gray-50">
         <embla-carousel
             :key="`embla-carousel-hero-${heroSlides.length}`"
             ref="carouselRef"
@@ -72,7 +72,7 @@ const isCarousel: ComputedRef<boolean> = computed(() => {
 const slideClasses: ComputedRef<string> = computed(() => {
     return props.fullScreen
         ? 'h-dvh'
-        : 'aspect-square md:aspect-video xl:aspect-16/9'
+        : 'aspect-square md:aspect-video max-h-[70vh]'
 })
 
 /**

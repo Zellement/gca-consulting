@@ -1,19 +1,33 @@
 <template>
-    <nuxt-picture
-        ref="image"
-        :key="pictureKey"
-        class="block transition-all duration-300"
-        :src="imgData.url"
-        :alt="imgData.alt"
-        :class="pictureClasses"
-        :sizes="sizes"
-        :densities="densities"
-        format="webp"
-        :loading="loading"
-        quality="60"
-        :preload="preload"
-        @load="mediaLoaded"
-    />
+    <figure class="relative flex h-full w-full overflow-clip">
+        <div
+            v-if="!state.mediaLoaded"
+            class="absolute inset-0 flex"
+            aria-hidden="true"
+        >
+            <Icon
+                name="svg-spinners:3-dots-scale"
+                class="m-auto size-10 text-blue opacity-50"
+            />
+        </div>
+
+        <nuxt-picture
+            v-bind="$attrs"
+            ref="image"
+            :key="pictureKey"
+            class="relative block transition-all duration-200"
+            :src="imgData.url"
+            :alt="imgData.alt"
+            :sizes="sizes"
+            :densities="densities"
+            :class="pictureClasses"
+            format="webp"
+            :loading="loading"
+            quality="60"
+            :preload="preload"
+            @load="mediaLoaded"
+        />
+    </figure>
 </template>
 
 <script lang="ts" setup>
@@ -26,11 +40,10 @@ import type { NuxtPicture } from '#components'
 interface Props {
     imgData: ImageTypes
     sizes?: string
-    parallax?: boolean
-    parallaxSpeed?: number
     densities?: string
     loading?: 'lazy' | 'eager'
     preload?: boolean
+    noBg?: boolean
 }
 
 interface State {
@@ -40,6 +53,10 @@ interface State {
 /* --------------------------
 // Consts, Props, Refs & State
 -------------------------- */
+
+const emit = defineEmits<{
+    (e: 'loaded'): void
+}>()
 
 const route = useRoute()
 const uiStore = useUiStore()
@@ -80,11 +97,6 @@ const pictureClasses: ComputedRef<string> = computed(() => {
 
     if (state.mediaLoaded) {
         classes.push('opacity-100')
-
-        // Add parallax classes
-        if (props.parallax) {
-            classes.push('!h-[120%] !min-w-full !object-none !object-center')
-        }
     } else {
         classes.push('opacity-0')
     }
@@ -96,67 +108,14 @@ const pictureClasses: ComputedRef<string> = computed(() => {
 // Methods
 -------------------------- */
 
-const parallaxTransitionClasses = (
-    element: InstanceType<typeof NuxtPicture> | null | undefined
-): void => {
-    if (element && element.$el) {
-        const picture = element.$el
-
-        picture.classList.remove('duration-300')
-
-        picture.classList.add('!transition-transform', '!duration-[0.05s]')
-    }
-}
-
-const parallaxEffect = (
-    element: InstanceType<typeof NuxtPicture> | null | undefined
-): void => {
-    if (element && element.$el) {
-        const picture = element.$el
-        const container = picture.parentElement
-
-        // Maxes translation so the image does not go out of bounds
-        const maxTranslateY = container
-            ? (picture.offsetHeight - container.offsetHeight) / 2
-            : 0
-
-        const distanceFromBottom =
-            (container?.getBoundingClientRect().bottom ?? 0) -
-            window.innerHeight
-
-        const scrollY = distanceFromBottom * -1
-
-        let translateY = scrollY * (props.parallaxSpeed / 10)
-
-        // Ensure the actual translation does not exceed the maximum
-        translateY = Math.min(translateY, maxTranslateY)
-
-        if (picture) picture.style.transform = `translateY(-${translateY}px)`
-    }
-}
-
 const mediaLoaded = (): void => {
     state.mediaLoaded = true
+    emit('loaded')
 }
-
-const handleScroll = () => parallaxEffect(image.value)
 
 /* --------------------------
 // Lifecyle
 -------------------------- */
-
-// Watch for changes in state.mediaLoaded and add parallax effect
-watch(
-    () => state.mediaLoaded,
-    () => {
-        if (props.parallax && !animationsDisabled.value) {
-            if (state.mediaLoaded) {
-                setTimeout(() => parallaxTransitionClasses(image.value), 300)
-            }
-            window.addEventListener('scroll', handleScroll)
-        }
-    }
-)
 
 onMounted(() => {
     // This is a fallback to mediaLoaded not running for whatever reason
@@ -168,6 +127,5 @@ onMounted(() => {
 
 onUnmounted(() => {
     state.mediaLoaded = false
-    window.removeEventListener('scroll', handleScroll)
 })
 </script>

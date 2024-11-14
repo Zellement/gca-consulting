@@ -50,9 +50,9 @@ const navigation: NavItem[] = [
         url: '/'
     },
     {
-        key: 'about',
+        key: 'about-us',
         label: 'About',
-        url: '/about'
+        url: '/about-us'
     },
     {
         key: 'services',
