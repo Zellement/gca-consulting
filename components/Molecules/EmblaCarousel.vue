@@ -1,12 +1,8 @@
 <template>
-    <div class="relative flex flex-col" :class="containerWrapperClasses">
+    <div class="relative flex flex-col">
         <div class="relative h-full xl:flex-grow">
             <!-- Slides -->
-            <div
-                ref="emblaRef"
-                class="embla relative"
-                :class="{ 'embla--overflow': overflow }"
-            >
+            <div ref="emblaRef" class="embla relative">
                 <div class="embla__container" :class="wrapperClasses">
                     <slot name="carousel-items"></slot>
                 </div>
@@ -15,18 +11,18 @@
             <!-- Buttons / nav -->
             <div
                 v-if="showButtons"
-                class="absolute bottom-10 left-1/2 flex -translate-x-1/2"
+                class="absolute bottom-16 left-1/2 z-10 flex -translate-x-1/2 gap-1"
             >
                 <button
                     v-for="button in buttonActions"
                     :key="button.ariaLabel"
                     :aria-label="button.ariaLabel"
-                    class="embla-nav-button"
+                    class="size-10 bg-blue-500 text-white transition-colors hover:bg-green-500"
                     @click="button.onClick"
                 >
-                    <svg-icon
-                        name="chevron-right"
-                        class="embla-nav-button-svg"
+                    <Icon
+                        name="ic:baseline-chevron-right"
+                        class="size-10"
                         :class="button.iconClass"
                     />
                 </button>
@@ -40,23 +36,34 @@
                     <div ref="emblaRefThumbs" class="embla-thumbs__viewport">
                         <div class="embla-thumbs__container">
                             <div
-                                v-for="(slide, i) in thumbs"
+                                v-for="(slide, i) in media"
                                 :key="`thumb-${slide.id}`"
                                 class="embla-thumbs__slide cursor-pointer"
                                 @click="scrollTo(i)"
                             >
-                                <single-picture
-                                    v-if="slide.filename"
-                                    class="h-full w-full object-cover"
-                                    sizes="150px"
+                                <div
+                                    class="size-10 bg-red-500"
                                     :class="isThumbActiveClass(i)"
-                                    :img-data="{
-                                        url: slide?.filename,
-                                        alt: slide?.alt ?? ''
-                                    }"
                                 />
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots -->
+        <div v-if="displayDots">
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+                <div ref="emblaRefDots">
+                    <div class="flex gap-2">
+                        <div
+                            v-for="(slide, i) in media"
+                            :key="`dot-${slide.id}`"
+                            class="size-3 cursor-pointer rounded-full border border-white"
+                            :class="isDotActiveClass(i)"
+                            @click="scrollTo(i)"
+                        ></div>
                     </div>
                 </div>
             </div>
@@ -73,30 +80,28 @@ import type { EmblaOptionsType } from 'embla-carousel'
  */
 interface Props {
     // Booleans
-    autoHeight?: boolean
-    overflow?: boolean
     showThumbs?: boolean
+    showButtons?: boolean
+    showDots?: boolean
     // Strings
     wrapperClasses?: string
     thumbsWrapperClasses?: string
     // Embla & Storyblok specific
     options?: EmblaOptionsType
-    showButtons?: boolean
-    thumbs?: MultiassetStoryblok | null
+    media?: MultiassetStoryblok | AtomHeroSlideStoryblok | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
     // Booleans
-    autoHeight: false,
-    overflow: false,
     showThumbs: false,
+    showButtons: false,
+    showDots: false,
     // Strings
     wrapperClasses: '',
     thumbsWrapperClasses: 'grid-layout mt-6 flex-shrink-0 pl-4 xl:pl-0',
     // Embla & Storyblok specific
     options: undefined,
-    showButtons: false,
-    thumbs: null
+    media: null
 })
 
 interface State {
@@ -120,7 +125,10 @@ const emit = defineEmits<{
  * Embla Options & API
  */
 const displayThumbs: ComputedRef<boolean> = computed(() => {
-    return !!props.thumbs && props.thumbs.length > 0 && props.showThumbs
+    return !!props.media && props.media.length > 0 && props.showThumbs
+})
+const displayDots: ComputedRef<boolean> = computed(() => {
+    return !!props.media && props.media.length > 0 && props.showDots
 })
 
 const options_thumbs: EmblaOptionsType = {
@@ -135,16 +143,16 @@ defineExpose({ emblaApi })
  * Computed
  */
 
-const containerWrapperClasses: ComputedRef<string[]> = computed(() => {
-    return [props.overflow ? 'overflow-clip' : '']
-})
-
 /**
  * Methods
  */
 
 const isThumbActiveClass = (index: number): string => {
     return index === state.activeIndex ? 'grayscale-0' : 'grayscale'
+}
+
+const isDotActiveClass = (index: number): string => {
+    return index === state.activeIndex ? 'bg-white' : 'grayscale'
 }
 
 const handleSlideChangeEvent = (activeIndex: number) => {
@@ -197,12 +205,12 @@ const buttonActions = [
     {
         ariaLabel: 'Previous Image',
         onClick: scrollPrev,
-        iconClass: 'w-3 h-5 -rotate-180'
+        iconClass: ' -rotate-180'
     },
     {
         ariaLabel: 'Next Image',
         onClick: scrollNext,
-        iconClass: 'w-3 h-5'
+        iconClass: ''
     }
 ]
 
