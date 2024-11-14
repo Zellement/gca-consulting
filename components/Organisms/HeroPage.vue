@@ -1,10 +1,9 @@
 <template>
-    <section class="">
+    <section class="bg-green pl-6">
         <embla-carousel
             :key="`embla-carousel-hero-${heroSlides.length}`"
             ref="carouselRef"
             :options="{ loop: true, active: isCarousel }"
-            class="col-span-full col-start-1 row-span-full row-start-1"
             show-dots
             :media="heroSlides"
         >
@@ -14,22 +13,23 @@
                     :key="slide._uid"
                     :class="['embla__slide relative', 'w-full', slideClasses]"
                 >
-                    <div class="absolute inset-0">
-                        <single-picture
-                            class="h-full w-full object-cover"
-                            :img-data="{
-                                url: slide.media.filename,
-                                alt: slide.media.alt ?? ''
-                            }"
-                            sizes="336px md:700px xl:1200px 2xl:1600px"
-                        />
-                    </div>
-                    <p
-                        v-if="slide.title"
-                        class="text-sm absolute left-0 right-0 top-full z-20 w-full px-10 py-4 text-center uppercase text-black"
+                    <single-picture
+                        class="h-full w-full object-cover"
+                        :img-data="{
+                            url: slide.media.filename,
+                            alt: slide.media.alt ?? ''
+                        }"
+                        sizes="336px md:700px xl:1200px 2xl:1600px"
+                    />
+
+                    <component
+                        :is="slide.link ? NuxtLink : 'div'"
+                        v-if="slide.displayText"
+                        :to="slide.link.cached_url ?? slide.link.url"
+                        class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-md text-white"
                     >
-                        {{ slide.title }}
-                    </p>
+                        {{ slide.displayText }}
+                    </component>
                 </div>
             </template>
         </embla-carousel>
@@ -37,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import { NuxtLink } from '#components'
 import type { EmblaCarouselType } from 'embla-carousel'
 
 interface Props {
