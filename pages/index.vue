@@ -1,6 +1,6 @@
 <template>
-    <div class="page">
-        <social-links />
+    <div class="page pt-40">
+        <hero-page />
         <modular-content />
     </div>
 </template>

@@ -16,8 +16,8 @@
         "format": "npm-run-all --serial format:check format:write",
         "format:check": "npx prettier --check \"**/*.{js,vue,ts,scss,md,json,html}\"",
         "format:write": "npx prettier --write \"**/*.{js,vue,ts,scss,md,json,html}\"",
-        "pull-sb-components": "storyblok pull-components --path storyblok/ --space 311400",
-        "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths storyblok/components.311400.json --destinationFilePath types/storyblok-component-types.d.ts",
+        "pull-sb-components": "storyblok pull-components --path storyblok/ --space 312547",
+        "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths storyblok/components.312547.json --destinationFilePath types/storyblok-component-types.d.ts",
         "update-storyblok": "npm run pull-sb-components && npm run generate-sb-types"
     },
     "devDependencies": {
@@ -53,6 +53,7 @@
         "@nuxt/image": "^1.8.0",
         "@pinia/nuxt": "^0.5.4",
         "@storyblok/js": "^3.0.8",
+        "embla-carousel-vue": "^8.3.1",
         "esbuild": "^0.23.1",
         "pinia": "^2.2.2",
         "stylelint-prettier": "^5.0.2",
