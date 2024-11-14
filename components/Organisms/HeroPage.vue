@@ -19,7 +19,7 @@
                             url: slide.media.filename,
                             alt: slide.media.alt ?? ''
                         }"
-                        sizes="336px md:700px xl:1200px 2xl:1600px"
+                        sizes="336px md:700px xl:1200px 2xl:1600px max:2000px"
                     />
 
                     <component
