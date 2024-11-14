@@ -1,0 +1,54 @@
+/**
+ * ----------------------
+ * Molecules - Embla Carousel
+ * ----------------------
+ */
+.embla__viewport {
+    @apply overflow-clip;
+}
+
+.embla__container {
+    @apply flex touch-pan-y touch-pinch-zoom xl:h-full;
+
+    backface-visibility: hidden;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+// Slides
+@layer utilities {
+    .embla {
+        @apply overflow-clip xl:h-full;
+    }
+
+    .embla--overflow {
+        @apply overflow-visible;
+    }
+
+    .embla__slide {
+        @apply min-w-0 flex-shrink-0 flex-grow-0 basis-full;
+    }
+
+    .embla__slide--25 {
+        @apply basis-1/4;
+    }
+
+    .embla__slide--33 {
+        @apply basis-1/3;
+    }
+
+    .embla__slide--40 {
+        @apply basis-2/5;
+    }
+
+    .embla__slide--50 {
+        @apply basis-1/2;
+    }
+
+    .embla__slide--66 {
+        @apply basis-2/3;
+    }
+
+    .embla__slide--90 {
+        @apply basis-11/12;
+    }
+}

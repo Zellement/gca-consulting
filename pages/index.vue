@@ -1,6 +1,6 @@
 <template>
-    <div class="page pt-40">
-        <hero-page />
+    <div class="page">
+        <hero-page full-screen />
         <modular-content />
     </div>
 </template>

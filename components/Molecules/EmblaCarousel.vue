@@ -7,15 +7,8 @@
                 class="embla relative"
                 :class="{ 'embla--overflow': overflow }"
             >
-                <div
-                    v-auto-animate
-                    class="embla__container"
-                    :class="wrapperClasses"
-                >
-                    <slot
-                        name="carousel-items"
-                        :active-slide="state.activeIndex"
-                    ></slot>
+                <div class="embla__container" :class="wrapperClasses">
+                    <slot name="carousel-items"></slot>
                 </div>
             </div>
 
@@ -73,7 +66,7 @@
 
 <script setup lang="ts">
 import emblaCarouselVue from 'embla-carousel-vue'
-import type { EmblaOptionsType, EmblaPluginType } from 'embla-carousel'
+import type { EmblaOptionsType } from 'embla-carousel'
 
 /**
  * Types, interfaces, props & state
@@ -134,9 +127,7 @@ const options_thumbs: EmblaOptionsType = {
     dragFree: false
 }
 
-const plugins: EmblaPluginType[] = props.autoHeight ? [AutoHeight()] : []
-
-const [emblaRef, emblaApi] = emblaCarouselVue(props.options, plugins)
+const [emblaRef, emblaApi] = emblaCarouselVue(props.options)
 const [emblaRefThumbs, emblaApiThumbs] = emblaCarouselVue(options_thumbs)
 defineExpose({ emblaApi })
 

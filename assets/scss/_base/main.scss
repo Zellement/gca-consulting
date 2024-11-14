@@ -22,11 +22,11 @@ picture img {
 
 .page {
     // ::before to push content down to overwrite fixed header
-    &::before {
-        content: '';
+    // &::before {
+    //     content: '';
 
-        @apply block h-[72px] w-full lg:h-24;
-    }
+    //     @apply block h-[72px] w-full lg:h-24;
+    // }
 }
 
 .container {

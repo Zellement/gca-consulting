@@ -1,8 +1,4 @@
-import type {
-    DataSocialLinkStoryblok,
-    TemplateNewsStoryblok,
-    TemplatePageStoryblok
-} from './storyblok-component-types'
+import * as StoryblokTypes from './storyblok-component-types'
 
 declare global {
     type AllTypes =
@@ -27,6 +23,8 @@ declare global {
     interface UtmParameters {
         [key: `utm_${string}`]: string
     }
+
+    type EmblaScrollEvents = 'next' | 'prev' | 'to'
 
     /**
      * Storyblok Types - imported from storyblok-component-types

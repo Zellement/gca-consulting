@@ -2,7 +2,7 @@
     <header
         role="banner"
         :class="headerClasses"
-        class="fixed left-0 right-0 top-0 z-50 w-full bg-white/80 py-4 transition-transform duration-500 lg:bg-opacity-20 lg:py-6 lg:backdrop-blur"
+        class="fixed left-0 right-0 top-0 z-50 w-full bg-white py-4 transition-transform duration-500 lg:py-6"
     >
         <div class="grid-layout container container-px">
             <div
