@@ -117,7 +117,7 @@ export default defineNuxtConfig({
                 {
                     rel: 'icon',
                     type: 'image/x-icon',
-                    href: '/favicon.png'
+                    href: '/android-chrome-512x512.png'
                 }
                 // {
                 //     rel: 'preconnect',
