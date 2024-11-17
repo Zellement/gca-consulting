@@ -30,6 +30,16 @@ declare global {
      * Storyblok Types - imported from storyblok-component-types
      * Note: these will need to be updated if the Storyblok schema changes
      */
+
+    interface MappedBlock {
+        id: string
+        component: DefineComponent<object, object, any>
+        content?: SectionTypesStoryblok
+        contentType?: string
+    }
+
+    type SectionTypesStoryblok = SectionCardBlockStoryblok
+
     type AssetStoryblok = StoryblokTypes.AssetStoryblok
     type MetaGlobalOptionsStoryblok = StoryblokTypes.MetaGlobalOptionsStoryblok
     type MultiassetStoryblok = StoryblokTypes.MultiassetStoryblok

@@ -75,12 +75,7 @@ export const useStoryblokStore = defineStore('storyblok', {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${queryParam}`,
                     {
-                        resolve_links: 'url',
-                        resolve_relations: [
-                            'atomTestimonials.testimonials',
-                            'templateJournal.categories',
-                            'templateJournal.author'
-                        ]
+                        resolve_relations: ['sectionCardBlock.cards']
                     }
                 )
 
