@@ -34,7 +34,7 @@ export default {
     ],
     theme: {
         fontFamily: {
-            sans: ['Open-Sans', ...defaultTheme.fontFamily.sans]
+            sans: ['Inter', ...defaultTheme.fontFamily.sans]
         },
         fontSize: {
             /* Step -1: 14.17px → 16.00px */
