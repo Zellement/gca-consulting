@@ -46,6 +46,7 @@ declare global {
     type AtomHeroSlideStoryblok = StoryblokTypes.AtomHeroSlideStoryblok
     type TemplatePageStoryblok = StoryblokTypes.TemplatePageStoryblok
     type TemplateLocationStoryblok = StoryblokTypes.TemplateLocationStoryblok
+    type SectionCardBlockStoryblok = StoryblokTypes.SectionCardBlockStoryblok
 }
 
 export {}

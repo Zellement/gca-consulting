@@ -187,7 +187,7 @@ export default {
                 0: 'repeat(1, minmax(0, 0fr));'
             },
             transitionDuration: {
-                DEFAULT: '300ms'
+                DEFAULT: '500ms'
             }
         }
     },

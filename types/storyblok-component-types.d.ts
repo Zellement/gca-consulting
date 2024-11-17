@@ -124,6 +124,13 @@ export interface MetaGlobalOptionsStoryblok {
   [k: string]: any;
 }
 
+export interface SectionCardBlockStoryblok {
+  cards?: (ISbStoryData<TemplatePageStoryblok> | ISbStoryData<TemplateLocationStoryblok> | string)[];
+  component: "sectionCardBlock";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface TemplateLocationStoryblok {
   tel: string;
   email: string;
@@ -140,7 +147,9 @@ export interface TemplateNewsStoryblok {
 }
 
 export interface TemplatePageStoryblok {
-  hero?: AtomHeroSlideStoryblok[];
+  pageOverview?: string;
+  hero: AtomHeroSlideStoryblok[];
+  body?: SectionCardBlockStoryblok[];
   component: "templatePage";
   _uid: string;
   [k: string]: any;

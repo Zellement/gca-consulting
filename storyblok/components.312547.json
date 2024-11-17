@@ -114,6 +114,42 @@
       "component_group_name": ""
     },
     {
+      "name": "sectionCardBlock",
+      "display_name": "Card Block",
+      "created_at": "2024-11-17T12:39:18.458Z",
+      "updated_at": "2024-11-17T12:41:04.105Z",
+      "id": 6569258,
+      "schema": {
+        "cards": {
+          "type": "options",
+          "pos": 0,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "card",
+          "allow_advanced_search": true,
+          "filter_content_type": [
+            "templatePage",
+            "templateLocation"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Card Block",
+      "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "color": "#F5A928",
+      "icon": "block-table",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Body Blocks"
+    },
+    {
       "name": "templateLocation",
       "display_name": "Location",
       "created_at": "2024-11-17T11:56:52.764Z",
@@ -179,16 +215,32 @@
       "name": "templatePage",
       "display_name": "Page",
       "created_at": "2024-11-08T21:08:41.880Z",
-      "updated_at": "2024-11-17T11:58:02.293Z",
+      "updated_at": "2024-11-17T12:46:17.033Z",
       "id": 6534174,
       "schema": {
+        "pageOverview": {
+          "type": "textarea",
+          "pos": 0,
+          "description": "This is an overview of the page - this text is often used on cards that link to this page."
+        },
         "hero": {
           "type": "bloks",
-          "pos": 0,
+          "pos": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "atomHeroSlide"
+          ],
+          "required": true
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "de6d149f-4e46-47d8-aa68-28d9aa49a52e"
           ]
         }
       },
@@ -209,5 +261,13 @@
       "component_group_name": ""
     }
   ],
-  "component_groups": []
+  "component_groups": [
+    {
+      "name": "Body Blocks",
+      "id": 441759,
+      "uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "parent_id": null,
+      "parent_uuid": null
+    }
+  ]
 }
