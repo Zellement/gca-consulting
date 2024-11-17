@@ -14,6 +14,6 @@ const currentStory = computed(() => {
 })
 
 definePageMeta({
-    title: 'Elevated living in the heart of Walthamstow'
+    title: 'GCA'
 })
 </script>
