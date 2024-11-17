@@ -10,7 +10,7 @@
                 <div
                     v-for="location in locations"
                     :key="location.uuid"
-                    class="col-span-full text-center md:col-span-4"
+                    class="col-span-full flex flex-col items-center text-center md:col-span-4"
                 >
                     <h3 class="font-bold text-green">
                         GCA {{ location.name }}
