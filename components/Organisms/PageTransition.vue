@@ -21,7 +21,12 @@
                     : 'opacity-0 delay-200'
             "
         >
-            GCA Consulting
+            <div class="w-20">
+                <svg-icon
+                    name="logo-gca"
+                    class="aspect-[106/40] h-full w-full text-blue"
+                />
+            </div>
         </div>
     </div>
 </template>
