@@ -92,11 +92,6 @@ export default defineNuxtConfig({
         host: '0.0.0.0' // default: localhost
     },
 
-    alias: {
-        '@blocks': fileURLToPath(
-            new URL('./components/Sections/', import.meta.url)
-        )
-    },
     app: {
         head: {
             htmlAttrs: {

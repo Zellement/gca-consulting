@@ -7,7 +7,6 @@
 
 <script setup lang="ts">
 const uiStore = useUiStore()
-const storyblokStore = useStoryblokStore()
 
 /* --------------------------
 // Computed
@@ -30,10 +29,6 @@ const pageTransitionClasses: ComputedRef<string> = computed(() => {
 /* --------------------------
 // Hooks and composables
 -------------------------- */
-
-onMounted(async () => {
-    await storyblokStore.fetchRequired()
-})
 
 useHead({
     // Prevent page scrolling when mobile nav is open

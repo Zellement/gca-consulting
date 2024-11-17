@@ -1,8 +1,5 @@
 <template>
-    <div class="page">
-        <hero-page />
-        <modular-content />
-    </div>
+    <div class="page">page</div>
 </template>
 
 <script setup lang="ts"></script>
