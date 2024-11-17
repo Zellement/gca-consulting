@@ -128,7 +128,7 @@ const displayThumbs: ComputedRef<boolean> = computed(() => {
     return !!props.media && props.media.length > 0 && props.showThumbs
 })
 const displayDots: ComputedRef<boolean> = computed(() => {
-    return !!props.media && props.media.length > 0 && props.showDots
+    return !!props.media && props.media.length > 1 && props.showDots
 })
 
 const options_thumbs: EmblaOptionsType = {
