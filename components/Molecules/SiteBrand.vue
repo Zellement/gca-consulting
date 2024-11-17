@@ -1,7 +1,7 @@
 <template>
     <nuxt-link to="/" class="flex">
         <span class="sr-only">Go to the homepage</span>
-        <svg-icon name="logo-gca" class="aspect-[106/40] h-full w-full" />
+        <gca-logo class="my-auto h-8" />
     </nuxt-link>
 </template>
 

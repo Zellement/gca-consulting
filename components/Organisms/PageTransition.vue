@@ -22,10 +22,7 @@
             "
         >
             <div class="w-20">
-                <svg-icon
-                    name="logo-gca"
-                    class="aspect-[106/40] h-full w-full text-blue"
-                />
+                <gca-logo />
             </div>
         </div>
     </div>
