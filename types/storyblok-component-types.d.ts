@@ -118,12 +118,17 @@ export interface DataSocialLinkStoryblok {
 }
 
 export interface MetaGlobalOptionsStoryblok {
-  email?: string;
-  telDerby?: string;
-  telLeicester?: string;
-  telWarwick?: string;
   socialLinks?: (ISbStoryData<DataSocialLinkStoryblok> | string)[];
   component: "metaGlobalOptions";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface TemplateLocationStoryblok {
+  tel: string;
+  email: string;
+  address: string;
+  component: "templateLocation";
   _uid: string;
   [k: string]: any;
 }

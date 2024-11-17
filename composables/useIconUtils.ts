@@ -11,16 +11,16 @@ export const useIconUtils = () => {
             case 'x':
             case 'Twitter':
             case 'twitter':
-                return 'hugeicons:new-twitter'
+                return 'ri:twitter-x-fill'
             case 'Facebook':
             case 'facebook':
-                return 'hugeicons:facebook-02'
+                return 'uil:facebook'
             case 'LinkedIn':
             case 'linkedin':
-                return 'hugeicons:linkedin-02'
+                return 'uil:linkedin'
             case 'Instagram':
             case 'instagram':
-                return 'hugeicons:instagram'
+                return 'uil:instagram-alt'
         }
         return `check`
     }

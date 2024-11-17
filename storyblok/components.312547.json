@@ -82,28 +82,12 @@
       "name": "metaGlobalOptions",
       "display_name": "Meta (Global Options)",
       "created_at": "2024-11-08T21:10:31.049Z",
-      "updated_at": "2024-11-08T21:25:07.072Z",
+      "updated_at": "2024-11-17T12:01:56.008Z",
       "id": 6534180,
       "schema": {
-        "email": {
-          "type": "text",
-          "pos": 0
-        },
-        "telDerby": {
-          "type": "text",
-          "pos": 1
-        },
-        "telLeicester": {
-          "type": "text",
-          "pos": 2
-        },
-        "telWarwick": {
-          "type": "text",
-          "pos": 3
-        },
         "socialLinks": {
           "type": "options",
-          "pos": 4,
+          "pos": 7,
           "is_reference_type": true,
           "source": "internal_stories",
           "entry_appearance": "card",
@@ -130,17 +114,56 @@
       "component_group_name": ""
     },
     {
+      "name": "templateLocation",
+      "display_name": "Location",
+      "created_at": "2024-11-17T11:56:52.764Z",
+      "updated_at": "2024-11-17T11:58:52.060Z",
+      "id": 6569220,
+      "schema": {
+        "tel": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "email": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "address": {
+          "type": "textarea",
+          "pos": 2,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Location",
+      "component_group_uuid": "all",
+      "color": "#EF6252",
+      "icon": "block-@",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "templateNews",
       "display_name": "News",
       "created_at": "2024-11-08T21:09:36.199Z",
-      "updated_at": "2024-11-08T21:09:51.868Z",
+      "updated_at": "2024-11-17T11:57:53.699Z",
       "id": 6534179,
       "schema": {},
       "image": null,
       "preview_field": null,
       "is_root": true,
       "preview_tmpl": null,
-      "is_nestable": true,
+      "is_nestable": false,
       "all_presets": [],
       "preset_id": null,
       "real_name": "News",
@@ -156,7 +179,7 @@
       "name": "templatePage",
       "display_name": "Page",
       "created_at": "2024-11-08T21:08:41.880Z",
-      "updated_at": "2024-11-14T21:15:24.725Z",
+      "updated_at": "2024-11-17T11:58:02.293Z",
       "id": 6534174,
       "schema": {
         "hero": {
@@ -173,7 +196,7 @@
       "preview_field": null,
       "is_root": true,
       "preview_tmpl": null,
-      "is_nestable": true,
+      "is_nestable": false,
       "all_presets": [],
       "preset_id": null,
       "real_name": "Page",

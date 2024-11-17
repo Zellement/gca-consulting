@@ -7,7 +7,7 @@
             :title="`Go to ${link.name}`"
             target="_blank"
         >
-            <Icon :name="iconFinder(link?.content.icon)" class="size-8" />
+            <Icon :name="iconFinder(link?.content.icon)" class="size-5" />
         </nuxt-link>
     </div>
 </template>

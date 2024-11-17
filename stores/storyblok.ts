@@ -9,6 +9,7 @@ type EnvType = 'published' | 'draft'
 interface State {
     currentStory: AllTypes | null
     globalOptions: MetaGlobalOptionsStoryblok | null
+    locations: AllTypes | null
     dataLoaded: boolean
     dataIsLoading: boolean
     firstLoad: boolean
@@ -29,6 +30,7 @@ export const useStoryblokStore = defineStore('storyblok', {
     state: (): State => ({
         currentStory: null,
         globalOptions: null,
+        locations: null,
         dataLoaded: false,
         dataIsLoading: false,
         firstLoad: true
@@ -107,9 +109,21 @@ export const useStoryblokStore = defineStore('storyblok', {
             }
         },
 
+        async fetchLocations(): Promise<void> {
+            try {
+                const response = await this.fetchStoryblokData(`cdn/stories/`, {
+                    content_type: 'templateLocation'
+                })
+                this.locations = response.data?.stories
+            } catch (error) {
+                throw error
+            }
+        },
+
         // Fetches required data once in app.vue
         async fetchRequired(): Promise<void> {
             await this.fetchGlobalOptions()
+            await this.fetchLocations()
         }
     }
 })
