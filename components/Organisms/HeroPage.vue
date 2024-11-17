@@ -1,10 +1,5 @@
 <template>
-    <section
-        :class="[
-            'relative border-l-[20px] border-green bg-gray-50',
-            'after:absolute after:left-0 after:top-full after:block after:h-[50px] after:w-[20px] after:-translate-x-[20px] after:bg-green-500 after:content-[\'\'`] xl:after:h-[100px]'
-        ]"
-    >
+    <section :class="['relative border-l-[20px] border-green bg-gray-50']">
         <embla-carousel
             :key="`embla-carousel-hero-${heroSlides.length}`"
             ref="carouselRef"

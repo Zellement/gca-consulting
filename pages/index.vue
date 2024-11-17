@@ -1,7 +1,8 @@
 <template>
     <div class="page">
         <hero-page full-screen />
-        <block-loop :blocks="currentStory?.content.body" />
+        <site-breadcrumbs hide-text />
+        <block-loop class="-mt-8" :blocks="currentStory?.content.body" />
     </div>
 </template>
 

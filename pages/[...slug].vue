@@ -1,7 +1,8 @@
 <template>
     <div class="page">
         <hero-page />
-        <block-loop :blocks="currentStory?.content.body" />
+        <site-breadcrumbs />
+        <block-loop class="-mt-8" :blocks="currentStory?.content.body" />
     </div>
 </template>
 
