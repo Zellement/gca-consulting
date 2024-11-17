@@ -41,6 +41,7 @@ declare global {
     type SectionTypesStoryblok =
         | SectionCardBlockStoryblok
         | SectionCardCarouselStoryblok
+        | SectionReviewBlockStoryblok
 
     type AtomHeroSlideStoryblok = StoryblokTypes.AtomHeroSlideStoryblok
     type AssetStoryblok = StoryblokTypes.AssetStoryblok
@@ -48,9 +49,13 @@ declare global {
 
     type MetaGlobalOptionsStoryblok = StoryblokTypes.MetaGlobalOptionsStoryblok
 
+    type DataSingleReviewStoryblok = StoryblokTypes.DataSingleReviewStoryblok
+
     type SectionCardBlockStoryblok = StoryblokTypes.SectionCardBlockStoryblok
     type SectionCardCarouselStoryblok =
         StoryblokTypes.SectionCardCarouselStoryblok
+    type SectionReviewBlockStoryblok =
+        StoryblokTypes.SectionReviewBlockStoryblok
 
     type TemplatePageStoryblok = StoryblokTypes.TemplatePageStoryblok
     type TemplateLocationStoryblok = StoryblokTypes.TemplateLocationStoryblok

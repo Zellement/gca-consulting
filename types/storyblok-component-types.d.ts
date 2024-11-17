@@ -109,6 +109,13 @@ export interface AtomHeroSlideStoryblok {
   [k: string]: any;
 }
 
+export interface DataSingleReviewStoryblok {
+  quote?: string;
+  component: "dataSingleReview";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface DataSocialLinkStoryblok {
   url: string;
   icon: number | string;
@@ -132,9 +139,18 @@ export interface SectionCardBlockStoryblok {
 }
 
 export interface SectionCardCarouselStoryblok {
+  title: string;
   useRecentNews?: boolean;
   cards?: (ISbStoryData<TemplateNewsStoryblok> | ISbStoryData<TemplatePageStoryblok> | string)[];
   component: "sectionCardCarousel";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface SectionReviewBlockStoryblok {
+  showAllAsGrid?: boolean;
+  reviews: (ISbStoryData<DataSingleReviewStoryblok> | string)[];
+  component: "sectionReviewBlock";
   _uid: string;
   [k: string]: any;
 }
@@ -150,7 +166,7 @@ export interface TemplateLocationStoryblok {
 
 export interface TemplateNewsStoryblok {
   hero: AtomHeroSlideStoryblok[];
-  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok)[];
+  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok | SectionReviewBlockStoryblok)[];
   component: "templateNews";
   _uid: string;
   [k: string]: any;
@@ -159,7 +175,7 @@ export interface TemplateNewsStoryblok {
 export interface TemplatePageStoryblok {
   pageOverview?: string;
   hero: AtomHeroSlideStoryblok[];
-  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok)[];
+  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok | SectionReviewBlockStoryblok)[];
   component: "templatePage";
   _uid: string;
   [k: string]: any;

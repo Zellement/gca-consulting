@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import type { MetaGlobalOptionsStoryblok } from '@/types/storyblok-component-types'
 import type { RuntimeConfig } from 'nuxt/schema'
 
 // TS Interfaces & Types
@@ -11,6 +10,7 @@ interface State {
     globalOptions: MetaGlobalOptionsStoryblok | null
     locations: TemplateLocationStoryblok[] | null
     news: TemplateNewsStoryblok[] | null
+    reviews: DataSingleReviewStoryblok[] | null
 
     // Booleans
     dataLoaded: boolean
@@ -35,6 +35,7 @@ export const useStoryblokStore = defineStore('storyblok', {
         globalOptions: null,
         locations: null,
         news: null,
+        reviews: null,
         dataLoaded: false,
         dataIsLoading: false,
         firstLoad: true
@@ -81,7 +82,8 @@ export const useStoryblokStore = defineStore('storyblok', {
                     {
                         resolve_relations: [
                             'sectionCardBlock.cards',
-                            'sectionCardCarousel.cards'
+                            'sectionCardCarousel.cards',
+                            'sectionReviewBlock.reviews'
                         ]
                     }
                 )
@@ -134,11 +136,23 @@ export const useStoryblokStore = defineStore('storyblok', {
             }
         },
 
+        async fetchReviews(): Promise<void> {
+            try {
+                const response = await this.fetchStoryblokData(`cdn/stories/`, {
+                    content_type: 'dataSingleReview'
+                })
+                this.reviews = response.data?.stories
+            } catch (error) {
+                throw error
+            }
+        },
+
         // Fetches required data once in app.vue
         async fetchRequired(): Promise<void> {
             await this.fetchGlobalOptions()
             await this.fetchLocations()
             await this.fetchNews()
+            await this.fetchReviews()
         }
     }
 })
