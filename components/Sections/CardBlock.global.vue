@@ -1,5 +1,5 @@
 <template>
-    <div class="container grid-layout">
+    <div class="container grid-layout container-px">
         <nuxt-link
             v-for="card in content.cards"
             :key="card.uuid"

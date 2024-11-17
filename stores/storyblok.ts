@@ -9,7 +9,10 @@ type EnvType = 'published' | 'draft'
 interface State {
     currentStory: AllTypes | null
     globalOptions: MetaGlobalOptionsStoryblok | null
-    locations: AllTypes | null
+    locations: TemplateLocationStoryblok[] | null
+    news: TemplateNewsStoryblok[] | null
+
+    // Booleans
     dataLoaded: boolean
     dataIsLoading: boolean
     firstLoad: boolean
@@ -31,6 +34,7 @@ export const useStoryblokStore = defineStore('storyblok', {
         currentStory: null,
         globalOptions: null,
         locations: null,
+        news: null,
         dataLoaded: false,
         dataIsLoading: false,
         firstLoad: true
@@ -75,7 +79,10 @@ export const useStoryblokStore = defineStore('storyblok', {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${queryParam}`,
                     {
-                        resolve_relations: ['sectionCardBlock.cards']
+                        resolve_relations: [
+                            'sectionCardBlock.cards',
+                            'sectionCardCarousel.cards'
+                        ]
                     }
                 )
 
@@ -115,10 +122,23 @@ export const useStoryblokStore = defineStore('storyblok', {
             }
         },
 
+        async fetchNews(): Promise<void> {
+            try {
+                const response = await this.fetchStoryblokData(`cdn/stories/`, {
+                    content_type: 'templateNews',
+                    per_page: 12
+                })
+                this.news = response.data?.stories
+            } catch (error) {
+                throw error
+            }
+        },
+
         // Fetches required data once in app.vue
         async fetchRequired(): Promise<void> {
             await this.fetchGlobalOptions()
             await this.fetchLocations()
+            await this.fetchNews()
         }
     }
 })

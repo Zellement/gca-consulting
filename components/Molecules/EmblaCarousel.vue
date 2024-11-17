@@ -11,7 +11,7 @@
             <!-- Buttons / nav -->
             <div
                 v-if="showButtons"
-                class="absolute bottom-16 left-1/2 z-10 flex -translate-x-1/2 gap-1"
+                class="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-1"
             >
                 <button
                     v-for="button in buttonActions"

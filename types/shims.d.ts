@@ -38,15 +38,23 @@ declare global {
         contentType?: string
     }
 
-    type SectionTypesStoryblok = SectionCardBlockStoryblok
+    type SectionTypesStoryblok =
+        | SectionCardBlockStoryblok
+        | SectionCardCarouselStoryblok
 
-    type AssetStoryblok = StoryblokTypes.AssetStoryblok
-    type MetaGlobalOptionsStoryblok = StoryblokTypes.MetaGlobalOptionsStoryblok
-    type MultiassetStoryblok = StoryblokTypes.MultiassetStoryblok
     type AtomHeroSlideStoryblok = StoryblokTypes.AtomHeroSlideStoryblok
+    type AssetStoryblok = StoryblokTypes.AssetStoryblok
+    type MultiassetStoryblok = StoryblokTypes.MultiassetStoryblok
+
+    type MetaGlobalOptionsStoryblok = StoryblokTypes.MetaGlobalOptionsStoryblok
+
+    type SectionCardBlockStoryblok = StoryblokTypes.SectionCardBlockStoryblok
+    type SectionCardCarouselStoryblok =
+        StoryblokTypes.SectionCardCarouselStoryblok
+
     type TemplatePageStoryblok = StoryblokTypes.TemplatePageStoryblok
     type TemplateLocationStoryblok = StoryblokTypes.TemplateLocationStoryblok
-    type SectionCardBlockStoryblok = StoryblokTypes.SectionCardBlockStoryblok
+    type TemplateNewsStoryblok = StoryblokTypes.TemplateNewsStoryblok
 }
 
 export {}

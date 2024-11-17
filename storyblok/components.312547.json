@@ -150,6 +150,47 @@
       "component_group_name": "Body Blocks"
     },
     {
+      "name": "sectionCardCarousel",
+      "display_name": "Card Carousel",
+      "created_at": "2024-11-17T15:39:50.115Z",
+      "updated_at": "2024-11-17T15:47:36.688Z",
+      "id": 6569378,
+      "schema": {
+        "useRecentNews": {
+          "type": "boolean",
+          "pos": 0,
+          "description": "By ticking this, the latest news articles will be used instead of any manually curated cards."
+        },
+        "cards": {
+          "type": "options",
+          "pos": 1,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "card",
+          "allow_advanced_search": true,
+          "filter_content_type": [
+            "templateNews",
+            "templatePage"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Card Carousel",
+      "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "color": "#F5A928",
+      "icon": "block-block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Body Blocks"
+    },
+    {
       "name": "templateLocation",
       "display_name": "Location",
       "created_at": "2024-11-17T11:56:52.764Z",
@@ -192,9 +233,30 @@
       "name": "templateNews",
       "display_name": "News",
       "created_at": "2024-11-08T21:09:36.199Z",
-      "updated_at": "2024-11-17T11:57:53.699Z",
+      "updated_at": "2024-11-17T15:32:44.810Z",
       "id": 6534179,
-      "schema": {},
+      "schema": {
+        "hero": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomHeroSlide"
+          ],
+          "required": true
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "de6d149f-4e46-47d8-aa68-28d9aa49a52e"
+          ]
+        }
+      },
       "image": null,
       "preview_field": null,
       "is_root": true,

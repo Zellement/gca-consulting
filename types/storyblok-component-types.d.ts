@@ -131,6 +131,14 @@ export interface SectionCardBlockStoryblok {
   [k: string]: any;
 }
 
+export interface SectionCardCarouselStoryblok {
+  useRecentNews?: boolean;
+  cards?: (ISbStoryData<TemplateNewsStoryblok> | ISbStoryData<TemplatePageStoryblok> | string)[];
+  component: "sectionCardCarousel";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface TemplateLocationStoryblok {
   tel: string;
   email: string;
@@ -141,6 +149,8 @@ export interface TemplateLocationStoryblok {
 }
 
 export interface TemplateNewsStoryblok {
+  hero: AtomHeroSlideStoryblok[];
+  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok)[];
   component: "templateNews";
   _uid: string;
   [k: string]: any;
@@ -149,7 +159,7 @@ export interface TemplateNewsStoryblok {
 export interface TemplatePageStoryblok {
   pageOverview?: string;
   hero: AtomHeroSlideStoryblok[];
-  body?: SectionCardBlockStoryblok[];
+  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok)[];
   component: "templatePage";
   _uid: string;
   [k: string]: any;
