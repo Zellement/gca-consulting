@@ -49,6 +49,16 @@ export const useStoryblokStore = defineStore('storyblok', {
         },
         getGlobalOptionsContent(state): MetaGlobalOptionsStoryblok | null {
             return state.globalOptions?.content
+        },
+        getCurrentStorySeoMetaTags(state): MetaTags | null {
+            return {
+                title: state.currentStory?.content?.metaTitle || '',
+                description: state.currentStory?.content?.metaDescription || '',
+                og_title: state.currentStory?.content?.metaTitle || '',
+                og_description:
+                    state.currentStory?.content?.metaDescription || '',
+                og_image: state.currentStory?.content?.image || ''
+            }
         }
     },
     actions: {

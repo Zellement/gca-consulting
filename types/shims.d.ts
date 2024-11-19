@@ -24,6 +24,14 @@ declare global {
         [key: `utm_${string}`]: string
     }
 
+    interface MetaTags {
+        title: string
+        description: string
+        og_title: string
+        og_description: string
+        og_image: string
+    }
+
     type EmblaScrollEvents = 'next' | 'prev' | 'to'
 
     /**

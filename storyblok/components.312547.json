@@ -551,7 +551,7 @@
       "display_name": "Page",
       "description": null,
       "created_at": "2024-11-08T21:08:41.880Z",
-      "updated_at": "2024-11-17T12:46:17.033Z",
+      "updated_at": "2024-11-19T22:52:22.968Z",
       "id": 6534174,
       "schema": {
         "pageOverview": {
@@ -578,6 +578,22 @@
           "component_group_whitelist": [
             "de6d149f-4e46-47d8-aa68-28d9aa49a52e"
           ]
+        },
+        "metaTags": {
+          "type": "section",
+          "pos": 3,
+          "keys": [
+            "metaTitle",
+            "metaDescription"
+          ]
+        },
+        "metaTitle": {
+          "type": "text",
+          "pos": 4
+        },
+        "metaDescription": {
+          "type": "textarea",
+          "pos": 5
         }
       },
       "image": null,

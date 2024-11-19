@@ -251,6 +251,9 @@ export interface TemplatePageStoryblok {
     | SectionReviewBlockStoryblok
     | SectionTextMediaStoryblok
   )[];
+  metaTags?: any;
+  metaTitle?: string;
+  metaDescription?: string;
   component: "templatePage";
   _uid: string;
   [k: string]: any;

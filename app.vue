@@ -28,6 +28,18 @@ const pageTransitionClasses: ComputedRef<string> = computed(() => {
         : 'opacity-100'
 })
 
+const pageName: ComputedRef<string> = computed(() => {
+    return storyblokStore.currentStory.name
+})
+
+const metaTags: ComputedRef<MetaTags | null> = computed(
+    () => storyblokStore.getCurrentStorySeoMetaTags
+)
+
+const storyID: ComputedRef<string> = computed(() => {
+    return storyblokStore.currentStory.id
+})
+
 /* --------------------------
 // Hooks and composables
 -------------------------- */
@@ -38,6 +50,25 @@ watch(
     () => {
         uiStore.showMobileNav = false
     }
+)
+
+watch(
+    () => storyID.value,
+    (newVal, oldVal) => {
+        if (newVal === oldVal) return
+        useSeoMeta({ ...metaTags.value })
+        defineOgImageComponent('DefaultOgImage', {
+            title:
+                metaTags.value?.og_title ||
+                metaTags.value?.title ||
+                pageName.value,
+            description:
+                metaTags.value?.og_description ||
+                metaTags.value?.description ||
+                ''
+        })
+    },
+    { immediate: true }
 )
 
 onMounted(async () => {
