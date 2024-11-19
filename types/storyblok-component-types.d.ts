@@ -109,6 +109,14 @@ export interface AtomHeroSlideStoryblok {
   [k: string]: any;
 }
 
+export interface DataNavCategoryStoryblok {
+  titlePage: ISbStoryData<TemplatePageStoryblok> | string;
+  subPages?: (ISbStoryData<TemplatePageStoryblok> | string)[];
+  component: "dataNavCategory";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface DataSingleReviewStoryblok {
   quote?: string;
   component: "dataSingleReview";
@@ -125,6 +133,7 @@ export interface DataSocialLinkStoryblok {
 }
 
 export interface MetaGlobalOptionsStoryblok {
+  navItems?: DataNavCategoryStoryblok[];
   socialLinks?: (ISbStoryData<DataSocialLinkStoryblok> | string)[];
   component: "metaGlobalOptions";
   _uid: string;
@@ -149,7 +158,7 @@ export interface SectionCardCarouselStoryblok {
 
 export interface SectionReviewBlockStoryblok {
   showAllAsGrid?: boolean;
-  reviews: (ISbStoryData<DataSingleReviewStoryblok> | string)[];
+  reviews?: (ISbStoryData<DataSingleReviewStoryblok> | string)[];
   component: "sectionReviewBlock";
   _uid: string;
   [k: string]: any;

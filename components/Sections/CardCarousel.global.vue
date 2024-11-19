@@ -20,7 +20,7 @@
                             'embla__slide embla__slide--90 md:embla__slide--50 xl:embla__slide--33 2xl:embla__slide--25 group relative aspect-video',
                             'w-full'
                         ]"
-                        :to="`/${slide.full_slug}`"
+                        :to="getUrl(slide.full_slug)"
                     >
                         <single-picture
                             class="h-full w-full object-cover"
@@ -49,6 +49,7 @@ const storyblokStore = useStoryblokStore()
 interface Props {
     content: SectionCardCarouselStoryblok
 }
+const { getUrl } = useUrlUtils()
 
 /**
  * Ref

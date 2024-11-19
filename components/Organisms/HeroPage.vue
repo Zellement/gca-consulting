@@ -25,7 +25,7 @@
                     <component
                         :is="slide.link ? NuxtLink : 'div'"
                         v-if="slide.displayText"
-                        :to="`/${slide.link.cached_url ?? slide.link.url}`"
+                        :to="getUrl(slide.link.cached_url ?? slide.link.url)"
                         class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-lg font-bold text-white transition-colors hover:text-green-500"
                     >
                         {{ slide.displayText }}
@@ -47,6 +47,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const storyblokStore = useStoryblokStore()
+const { getUrl } = useUrlUtils()
 
 /**
  * Ref

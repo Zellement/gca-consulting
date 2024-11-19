@@ -1,12 +1,15 @@
 .site-nav {
 
-    @apply xl:text-lg;
 
     .router-link-active {
         @apply border-l-4 border-green-500 pl-4;
     }
 
-    a {
-        @apply text-white transition-colors hover:text-green-500;
+    &__item {
+        @apply text-white transition-colors hover:text-green-500 xl:text-lg flex flex-col;
+    }
+
+    &__sub-item {
+        @apply text-white transition-colors hover:text-green-500 text-sm xl:text-md leading-tight py-2 flex;
     }
 }

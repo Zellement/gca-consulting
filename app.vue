@@ -8,6 +8,7 @@
 <script setup lang="ts">
 const uiStore = useUiStore()
 const storyblokStore = useStoryblokStore()
+const route = useRoute()
 
 /* --------------------------
 // Computed
@@ -30,6 +31,14 @@ const pageTransitionClasses: ComputedRef<string> = computed(() => {
 /* --------------------------
 // Hooks and composables
 -------------------------- */
+
+//close modals on route change
+watch(
+    () => route.fullPath,
+    () => {
+        uiStore.showMobileNav = false
+    }
+)
 
 onMounted(async () => {
     await storyblokStore.fetchRequired()

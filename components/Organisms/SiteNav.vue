@@ -1,33 +1,31 @@
 <template>
-    <nav v-if="navigation" class="site-nav">
+    <nav v-if="navItems" class="site-nav">
         <ul class="my-auto lg:mr-4" :class="ulClasses">
-            <li
-                v-for="navItem in navigation"
-                :key="navItem.key"
-                class="group relative"
-            >
+            <li v-for="navItem in navItems" :key="navItem._uid">
                 <nuxt-link
-                    :to="navItem.url"
+                    :to="getUrl(navItem.titlePage.full_slug)"
+                    class="site-nav__item"
                     @click="uiStore.toggleBoolean('showMobileNav', false)"
                 >
-                    {{ navItem.label }}
+                    {{ navItem.titlePage.name }}
                 </nuxt-link>
                 <ul
-                    v-if="navItem.subItems && navItem.subItems.length > 0"
-                    class="z-10 flex flex-col p-4"
+                    v-if="navItem.subPages && navItem.subPages.length > 0"
+                    class="z-10 mt-2 grid grid-cols-2 flex-col px-4"
                 >
                     <li
-                        v-for="subItem in navItem.subItems"
-                        :key="subItem.key"
-                        class="ml-4 lg:m-0"
+                        v-for="subItem in navItem.subPages"
+                        :key="subItem.id"
+                        class=""
                     >
                         <nuxt-link
-                            :to="subItem.url"
+                            :to="getUrl(subItem.full_slug)"
+                            class="site-nav__sub-item"
                             @click="
                                 uiStore.toggleBoolean('showMobileNav', false)
                             "
                         >
-                            {{ subItem.label }}
+                            {{ subItem.name }}
                         </nuxt-link>
                     </li>
                 </ul>
@@ -37,49 +35,19 @@
 </template>
 
 <script lang="ts" setup>
+import type { DataNavCategoryStoryblok } from '~/types/storyblok-component-types'
+
+const { getUrl } = useUrlUtils()
+
 const uiStore = useUiStore()
+const storyblokStore = useStoryblokStore()
 
 defineProps<{
     ulClasses?: string
 }>()
 
-const navigation: NavItem[] = [
-    {
-        key: 'home',
-        label: 'Home',
-        url: '/'
-    },
-    {
-        key: 'about-us',
-        label: 'About',
-        url: '/about-us'
-    },
-    {
-        key: 'services',
-        label: 'Services',
-        url: '/services',
-        subItems: [
-            {
-                key: 'webDevelopment',
-                label: 'Web Development',
-                url: '/services/web-development'
-            },
-            {
-                key: 'graphicDesign',
-                label: 'Graphic Design',
-                url: '/services/graphic-design'
-            }
-        ]
-    },
-    {
-        key: 'blog',
-        label: 'Blog',
-        url: '/blog'
-    },
-    {
-        key: 'contact',
-        label: 'Contact',
-        url: '/contact'
-    }
-]
+const navItems: ComputedRef<DataNavCategoryStoryblok[] | null | undefined> =
+    computed(() => {
+        return storyblokStore?.globalOptions?.content.navItems
+    })
 </script>

@@ -74,6 +74,7 @@ const state: State = reactive({
 /* --------------------------
 // Computed
 -------------------------- */
+
 const headerClasses: ComputedRef<string> = computed(() => {
     return state.showHeader ? 'translate-y-0' : '-translate-y-full'
 })

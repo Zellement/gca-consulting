@@ -104,7 +104,11 @@ export const useStoryblokStore = defineStore('storyblok', {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${config.public.STORYBLOK_GLOBAL_OPTIONS_ID}`,
                     {
-                        resolve_relations: ['metaGlobalOptions.socialLinks']
+                        resolve_relations: [
+                            'metaGlobalOptions.socialLinks',
+                            'dataNavCategory.titlePage',
+                            'dataNavCategory.subPages'
+                        ]
                     }
                 )
                 this.globalOptions = response.data?.story

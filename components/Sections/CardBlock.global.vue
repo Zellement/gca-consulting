@@ -3,7 +3,7 @@
         <nuxt-link
             v-for="card in content.cards"
             :key="card.uuid"
-            :to="`/${card.full_slug}`"
+            :to="getUrl(card.full_slug)"
             class="group relative col-span-full grid grid-cols-1 grid-rows-1 overflow-clip md:col-span-6 3xl:col-span-4"
         >
             <div
@@ -52,4 +52,5 @@ interface Props {
 }
 
 defineProps<Props>()
+const { getUrl } = useUrlUtils()
 </script>

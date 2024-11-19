@@ -38,7 +38,7 @@ export default {
         },
         fontSize: {
             /* Step -1: 14.17px → 16.00px */
-            xs: [
+            sm: [
                 'clamp(0.89rem, calc(0.86rem + 0.14vw), 1.00rem)',
                 {
                     lineHeight: 'calc(100% + 10px)'
