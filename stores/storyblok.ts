@@ -52,7 +52,9 @@ export const useStoryblokStore = defineStore('storyblok', {
         },
         getCurrentStorySeoMetaTags(state): MetaTags | null {
             return {
-                title: state.currentStory?.content?.metaTitle || '',
+                title:
+                    state.currentStory?.content?.metaTitle ||
+                    state.currentStory?.name,
                 description: state.currentStory?.content?.metaDescription || '',
                 og_title: state.currentStory?.content?.metaTitle || '',
                 og_description:
