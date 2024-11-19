@@ -39,7 +39,7 @@
                 v-if="uiStore.showMobileNav"
                 class="fixed inset-0 z-10 h-screen w-full overflow-y-scroll bg-blue py-4 transition-transform duration-300"
             >
-                <div class="container container-px pt-24">
+                <div class="container container-px pt-24 xl:pb-20">
                     <site-nav
                         class="col-span-full"
                         ul-classes="flex gap-2 flex-col "

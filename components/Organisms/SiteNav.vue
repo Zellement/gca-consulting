@@ -5,13 +5,12 @@
                 <nuxt-link
                     :to="getUrl(navItem.titlePage.full_slug)"
                     class="site-nav__item"
-                    @click="uiStore.toggleBoolean('showMobileNav', false)"
                 >
                     {{ navItem.titlePage.name }}
                 </nuxt-link>
                 <ul
                     v-if="navItem.subPages && navItem.subPages.length > 0"
-                    class="z-10 mt-2 grid grid-cols-2 flex-col px-4"
+                    class="z-10 mt-2 grid grid-cols-2 flex-col px-4 2xl:grid-cols-3"
                 >
                     <li
                         v-for="subItem in navItem.subPages"
@@ -21,9 +20,6 @@
                         <nuxt-link
                             :to="getUrl(subItem.full_slug)"
                             class="site-nav__sub-item"
-                            @click="
-                                uiStore.toggleBoolean('showMobileNav', false)
-                            "
                         >
                             {{ subItem.name }}
                         </nuxt-link>
@@ -39,7 +35,6 @@ import type { DataNavCategoryStoryblok } from '~/types/storyblok-component-types
 
 const { getUrl } = useUrlUtils()
 
-const uiStore = useUiStore()
 const storyblokStore = useStoryblokStore()
 
 defineProps<{

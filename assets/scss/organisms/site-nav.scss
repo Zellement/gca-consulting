@@ -6,10 +6,10 @@
     }
 
     &__item {
-        @apply text-white transition-colors hover:text-green-500 xl:text-lg flex flex-col;
+        @apply text-white transition-colors hover:text-green-500 xl:text-lg flex flex-col font-bold;
     }
 
     &__sub-item {
-        @apply text-white transition-colors hover:text-green-500 text-sm xl:text-md leading-tight py-2 flex;
+        @apply text-white transition-colors hover:text-green-500 text-sm xl:text-base leading-tight py-2 flex;
     }
 }
