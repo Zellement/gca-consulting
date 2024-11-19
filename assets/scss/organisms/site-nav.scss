@@ -1,5 +1,12 @@
 .site-nav {
+
+    @apply xl:text-lg;
+
     .router-link-active {
-        @apply mb-5 border-b px-4 pb-5 hover:underline md:border-b-0 md:px-0;
+        @apply border-l-4 border-green-500 pl-4;
+    }
+
+    a {
+        @apply text-white transition-colors hover:text-green-500;
     }
 }

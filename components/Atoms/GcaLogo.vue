@@ -1,7 +1,7 @@
 <template>
     <svg
         id="Layer_2"
-        class="fill-blue-500"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 115.176 43.137"
     >

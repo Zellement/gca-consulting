@@ -1,42 +1,52 @@
 <template>
     <header
         role="banner"
-        :class="headerClasses"
-        class="fixed left-0 right-0 top-0 z-50 w-full bg-white py-4 transition-transform duration-500 lg:py-6"
+        :class="[headerClasses, headerBgClasses]"
+        class="fixed left-0 right-0 top-0 z-50 w-full py-4 transition-all duration-500 lg:py-6"
     >
         <div class="grid-layout container container-px">
             <div
-                class="relative col-span-9 col-start-2 row-start-1 flex w-full items-center justify-between lg:col-span-10 lg:col-start-2"
+                class="relative col-span-4 col-start-5 flex w-full items-center justify-between"
             >
-                <site-brand class="h-10 text-blue-500" />
-                <div
-                    class="fixed inset-0 z-10 grid h-screen w-full grid-flow-row auto-rows-max grid-cols-12 overflow-y-scroll bg-gray-100 py-4 transition-all duration-300 lg:static lg:inset-auto lg:z-auto lg:flex lg:h-auto lg:overflow-y-visible lg:bg-transparent lg:p-0"
-                    :class="mobileNavWrapperClasses"
+                <site-brand class="relative z-40 mx-auto h-10" />
+            </div>
+            <div
+                class="col-span-3 col-start-1 row-start-1 flex items-center justify-center"
+            >
+                <button
+                    class="relative z-50 mr-auto flex h-8 w-full"
+                    aria-label="Open navigation"
+                    @click="uiStore.toggleBoolean('showMobileNav')"
                 >
-                    <site-brand
-                        class="col-span-10 col-start-2 row-start-1 lg:hidden"
-                    />
-                    <button
-                        class="relative z-10 col-start-11 row-start-1 lg:hidden"
-                        aria-label="Close mobile navigation"
-                        @click="uiStore.toggleBoolean('showMobileNav', false)"
-                    >
-                        Close
-                    </button>
+                    <Transition name="slide-up">
+                        <span
+                            v-if="!uiStore.showMobileNav"
+                            class="absolute left-0 top-0 border-b-2 border-green-500"
+                            >Menu</span
+                        >
+                        <span
+                            v-else-if="uiStore.showMobileNav"
+                            class="absolute left-0 top-0 border-b-2 border-green-500"
+                            >Close</span
+                        >
+                    </Transition>
+                </button>
+            </div>
+        </div>
+
+        <Transition name="slide-up">
+            <div
+                v-if="uiStore.showMobileNav"
+                class="fixed inset-0 z-10 h-screen w-full overflow-y-scroll bg-blue py-4 transition-transform duration-300"
+            >
+                <div class="container container-px pt-24">
                     <site-nav
-                        class="col-span-10 col-start-2 row-start-2 mt-8 lg:mt-0 lg:w-full"
-                        ul-classes="flex gap-2 flex-col lg:flex-row lg:gap-4 lg:justify-end"
+                        class="col-span-full"
+                        ul-classes="flex gap-2 flex-col "
                     />
                 </div>
             </div>
-            <button
-                class="col-start-11 row-start-1 lg:hidden"
-                aria-label="Open mobile navigation"
-                @click="uiStore.toggleBoolean('showMobileNav', true)"
-            >
-                Menu
-            </button>
-        </div>
+        </Transition>
     </header>
 </template>
 
@@ -67,11 +77,8 @@ const state: State = reactive({
 const headerClasses: ComputedRef<string> = computed(() => {
     return state.showHeader ? 'translate-y-0' : '-translate-y-full'
 })
-
-const mobileNavWrapperClasses: ComputedRef<string> = computed(() => {
-    return uiStore.showMobileNav
-        ? 'translate-x-0'
-        : 'translate-x-full lg:translate-x-0'
+const headerBgClasses: ComputedRef<string> = computed(() => {
+    return uiStore.showMobileNav ? 'bg-blue text-white' : 'bg-white text-blue'
 })
 
 /* --------------------------

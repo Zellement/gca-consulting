@@ -22,7 +22,7 @@
             "
         >
             <div class="w-20">
-                <gca-logo />
+                <gca-logo class="text-blue" />
             </div>
         </div>
     </div>

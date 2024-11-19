@@ -14,7 +14,7 @@
                 </nuxt-link>
                 <ul
                     v-if="navItem.subItems && navItem.subItems.length > 0"
-                    class="z-10 flex flex-col bg-gray-100 p-4 lg:absolute lg:right-0 lg:top-full lg:z-20 lg:hidden lg:w-[300px] lg:text-right lg:group-hover:block"
+                    class="z-10 flex flex-col p-4"
                 >
                     <li
                         v-for="subItem in navItem.subItems"
