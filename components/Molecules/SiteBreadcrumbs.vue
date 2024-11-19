@@ -22,7 +22,7 @@
                 :class="hideText ? 'invisible' : ''"
                 aria-current="page"
             >
-                {{ storyblokStore.currentStory?.name }}
+                <h1>{{ storyblokStore.currentStory?.name }}</h1>
             </li>
         </ol>
     </nav>
