@@ -56,6 +56,7 @@ declare global {
         StoryblokTypes.SectionCardCarouselStoryblok
     type SectionReviewBlockStoryblok =
         StoryblokTypes.SectionReviewBlockStoryblok
+    type SectionTextMediaStoryblok = StoryblokTypes.SectionTextMediaStoryblok
 
     type TemplatePageStoryblok = StoryblokTypes.TemplatePageStoryblok
     type TemplateLocationStoryblok = StoryblokTypes.TemplateLocationStoryblok

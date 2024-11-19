@@ -82,7 +82,7 @@ button,
 /**
  * Rich Text / Body Copy
  */
-.content {
+.content > div {
     @apply flex flex-col space-y-4;
 
     @for $i from 1 through 6 {
@@ -91,24 +91,20 @@ button,
         }
     }
 
-    h1 {
-        @apply text-3xl;
-    }
-
     h2 {
-        @apply text-2xl;
+        @apply text-xl text-blue-500;
     }
 
     h3 {
-        @apply text-xl;
+        @apply text-lg text-green-500;
     }
 
     h4 {
-        @apply text-lg;
+        @apply text-md text-blue-500;
     }
 
     h5 {
-        @apply text-base;
+        @apply text-base text-green-500;
     }
 
     p strong {
@@ -118,7 +114,7 @@ button,
     ul,
     ol,
     dl {
-        @apply mb-4 flex flex-col gap-2 pl-4;
+        @apply mb-4 flex flex-col gap-4 pl-4;
 
         li,
         dd {
