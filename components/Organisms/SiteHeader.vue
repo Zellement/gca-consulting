@@ -2,7 +2,7 @@
     <header
         role="banner"
         :class="[headerClasses, headerBgClasses]"
-        class="fixed left-0 right-0 top-0 z-50 w-full py-4 transition-all duration-500 lg:py-6"
+        class="fixed left-0 right-0 top-0 z-50 w-full py-4 transition-[background-color,transform] lg:py-6"
     >
         <div class="grid-layout container container-px">
             <div
@@ -21,12 +21,12 @@
                     <Transition name="slide-up">
                         <span
                             v-if="!uiStore.showMobileNav"
-                            class="absolute left-0 top-0 border-b-2 border-green-500"
+                            class="absolute left-0 top-0 border-b-2 border-green-500 transition-colors hover:text-green"
                             >Menu</span
                         >
                         <span
                             v-else-if="uiStore.showMobileNav"
-                            class="absolute left-0 top-0 border-b-2 border-green-500"
+                            class="absolute left-0 top-0 border-b-2 border-green-500 transition-colors hover:text-green"
                             >Close</span
                         >
                     </Transition>
