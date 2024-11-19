@@ -111,7 +111,7 @@ export interface AtomHeroSlideStoryblok {
 
 export interface DataNavCategoryStoryblok {
   titlePage: ISbStoryData<TemplatePageStoryblok> | string;
-  subPages?: (ISbStoryData<TemplatePageStoryblok> | string)[];
+  subPages?: (ISbStoryData<TemplatePageStoryblok> | ISbStoryData<TemplateLocationStoryblok> | string)[];
   component: "dataNavCategory";
   _uid: string;
   [k: string]: any;
@@ -165,6 +165,7 @@ export interface SectionReviewBlockStoryblok {
 }
 
 export interface TemplateLocationStoryblok {
+  hero: AtomHeroSlideStoryblok[];
   tel: string;
   email: string;
   address: string;

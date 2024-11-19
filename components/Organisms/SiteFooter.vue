@@ -35,7 +35,7 @@
             >
                 <social-links class="flex gap-4 text-green" />
                 <div class="flex flex-row items-center gap-4">
-                    <p class="text-sm flex flex-row gap-1">
+                    <p class="flex flex-row gap-1 text-sm">
                         Copyright <span>&copy;</span>
                         <span>{{ date }}</span> GCA (UK) Ltd
                     </p>

@@ -13,10 +13,10 @@
                 class="col-span-full row-span-full aspect-landscape bg-blue-100"
             >
                 <single-picture
-                    v-if="card.content.hero[0]?.media.filename"
+                    v-if="card.content.hero?.[0]?.media.filename"
                     :img-data="{
-                        url: card.content.hero[0]?.media.filename,
-                        alt: card.content.hero[0]?.media.alt
+                        url: card.content.hero?.[0]?.media.filename,
+                        alt: card.content.hero?.[0]?.media.alt
                     }"
                     class="h-full w-full object-cover transition-transform group-hover:scale-105"
                 />
