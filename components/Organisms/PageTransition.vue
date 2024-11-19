@@ -21,7 +21,7 @@
                     : 'opacity-0 delay-200'
             "
         >
-            <div class="w-20">
+            <div class="w-32">
                 <gca-logo class="text-blue" />
             </div>
         </div>

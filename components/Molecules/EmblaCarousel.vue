@@ -39,11 +39,11 @@
                                 v-for="(slide, i) in media"
                                 :key="`thumb-${slide.id}`"
                                 class="embla-thumbs__slide cursor-pointer"
-                                @click="scrollTo(i)"
+                                @click="scrollTo(Number(i))"
                             >
                                 <div
                                     class="size-10 bg-red-500"
-                                    :class="isThumbActiveClass(i)"
+                                    :class="isThumbActiveClass(Number(i))"
                                 />
                             </div>
                         </div>
@@ -61,8 +61,8 @@
                             v-for="(slide, i) in media"
                             :key="`dot-${slide.id}`"
                             class="size-3 cursor-pointer rounded-full border border-white"
-                            :class="isDotActiveClass(i)"
-                            @click="scrollTo(i)"
+                            :class="isDotActiveClass(Number(i))"
+                            @click="scrollTo(Number(i))"
                         ></div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ interface Props {
     thumbsWrapperClasses?: string
     // Embla & Storyblok specific
     options?: EmblaOptionsType
-    media?: MultiassetStoryblok | AtomHeroSlideStoryblok | null
+    media?: MultiassetStoryblok | AtomHeroSlideStoryblok[] | null
 }
 
 const props = withDefaults(defineProps<Props>(), {

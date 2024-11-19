@@ -43,6 +43,80 @@
       "component_group_name": ""
     },
     {
+      "name": "atomMediaBlock",
+      "display_name": "Media Block",
+      "description": null,
+      "created_at": "2024-11-19T21:39:24.452Z",
+      "updated_at": "2024-11-19T21:55:56.098Z",
+      "id": 6582854,
+      "schema": {
+        "media": {
+          "type": "multiasset",
+          "pos": 0,
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Media Block",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-image",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "atomTextBlock",
+      "display_name": "Text Block",
+      "description": null,
+      "created_at": "2024-11-19T21:39:00.461Z",
+      "updated_at": "2024-11-19T21:54:55.961Z",
+      "id": 6582853,
+      "schema": {
+        "text": {
+          "type": "richtext",
+          "pos": 0,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-rephrase",
+            "bold",
+            "list",
+            "h2",
+            "h3",
+            "h4",
+            "link",
+            "paragraph",
+            "paste-action"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text Block",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-text-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "dataNavCategory",
       "display_name": "Data (Nav Category)",
       "description": null,
@@ -335,6 +409,43 @@
       "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
       "color": "#F5A928",
       "icon": "block-shield-2",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Body Blocks"
+    },
+    {
+      "name": "sectionTextMedia",
+      "display_name": "Text & Media",
+      "description": null,
+      "created_at": "2024-11-19T21:37:28.146Z",
+      "updated_at": "2024-11-19T21:53:43.062Z",
+      "id": 6582850,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "pos": 0,
+          "maximum": 2,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomMediaBlock",
+            "atomTextBlock"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text & Media",
+      "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "color": "#F5A928",
+      "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,

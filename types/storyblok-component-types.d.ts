@@ -109,6 +109,54 @@ export interface AtomHeroSlideStoryblok {
   [k: string]: any;
 }
 
+export type MultiassetStoryblok = {
+  alt: string | null;
+  copyright?: string | null;
+  fieldtype: "asset";
+  id: number;
+  filename: string | null;
+  name: string;
+  title: string | null;
+  focus: string | null;
+  meta_data?: {
+    [k: string]: any;
+  };
+  source?: string | null;
+  is_external_url?: boolean;
+  is_private?: boolean;
+  src?: string;
+  updated_at?: string;
+  width?: number | null;
+  height?: number | null;
+  aspect_ratio?: number | null;
+  public_id?: string | null;
+  content_type?: string;
+  [k: string]: any;
+}[];
+
+export interface AtomMediaBlockStoryblok {
+  media?: MultiassetStoryblok;
+  component: "atomMediaBlock";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface AtomTextBlockStoryblok {
+  text?: RichtextStoryblok;
+  component: "atomTextBlock";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface DataNavCategoryStoryblok {
   titlePage: ISbStoryData<TemplatePageStoryblok> | string;
   subPages?: (ISbStoryData<TemplatePageStoryblok> | ISbStoryData<TemplateLocationStoryblok> | string)[];
@@ -164,6 +212,13 @@ export interface SectionReviewBlockStoryblok {
   [k: string]: any;
 }
 
+export interface SectionTextMediaStoryblok {
+  body?: (AtomMediaBlockStoryblok | AtomTextBlockStoryblok)[];
+  component: "sectionTextMedia";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface TemplateLocationStoryblok {
   hero: AtomHeroSlideStoryblok[];
   tel: string;
@@ -176,7 +231,12 @@ export interface TemplateLocationStoryblok {
 
 export interface TemplateNewsStoryblok {
   hero: AtomHeroSlideStoryblok[];
-  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok | SectionReviewBlockStoryblok)[];
+  body?: (
+    | SectionCardBlockStoryblok
+    | SectionCardCarouselStoryblok
+    | SectionReviewBlockStoryblok
+    | SectionTextMediaStoryblok
+  )[];
   component: "templateNews";
   _uid: string;
   [k: string]: any;
@@ -185,7 +245,12 @@ export interface TemplateNewsStoryblok {
 export interface TemplatePageStoryblok {
   pageOverview?: string;
   hero: AtomHeroSlideStoryblok[];
-  body?: (SectionCardBlockStoryblok | SectionCardCarouselStoryblok | SectionReviewBlockStoryblok)[];
+  body?: (
+    | SectionCardBlockStoryblok
+    | SectionCardCarouselStoryblok
+    | SectionReviewBlockStoryblok
+    | SectionTextMediaStoryblok
+  )[];
   component: "templatePage";
   _uid: string;
   [k: string]: any;
