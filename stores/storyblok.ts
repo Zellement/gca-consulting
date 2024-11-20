@@ -96,7 +96,8 @@ export const useStoryblokStore = defineStore('storyblok', {
                             'sectionCardBlock.cards',
                             'sectionCardCarousel.cards',
                             'sectionReviewBlock.reviews'
-                        ]
+                        ],
+                        resolve_links: 'story'
                     }
                 )
 

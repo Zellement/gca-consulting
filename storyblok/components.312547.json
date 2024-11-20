@@ -105,6 +105,47 @@
       "component_group_name": ""
     },
     {
+      "name": "atomSingleLink",
+      "display_name": "Single Link",
+      "description": null,
+      "created_at": "2024-11-20T15:41:58.150Z",
+      "updated_at": "2024-11-20T15:42:57.661Z",
+      "id": 6587463,
+      "schema": {
+        "link": {
+          "type": "multilink",
+          "pos": 0,
+          "required": true,
+          "allow_target_blank": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "templateNews",
+            "templatePage",
+            "templateLocation"
+          ]
+        },
+        "displayText": {
+          "type": "text",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Single Link",
+      "component_group_uuid": "e62abd8d-582d-42a8-a62f-f9dc40f85cba",
+      "color": "#2DB47D",
+      "icon": "block-arrow-pointer",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Text Content Blocks"
+    },
+    {
       "name": "atomTextBlock",
       "display_name": "Text Block",
       "description": null,
@@ -301,7 +342,7 @@
       "display_name": "Meta (Global Options)",
       "description": null,
       "created_at": "2024-11-08T21:10:31.049Z",
-      "updated_at": "2024-11-20T13:09:17.897Z",
+      "updated_at": "2024-11-20T13:16:44.599Z",
       "id": 6534180,
       "schema": {
         "socialLinks": {
@@ -322,7 +363,10 @@
           "restrict_components": true,
           "component_whitelist": [
             "dataSinglePrinciple"
-          ]
+          ],
+          "maximum": 3,
+          "minimum": 3,
+          "required": true
         },
         "tab-b1d20ddd-9b78-4243-81b3-20bb4bd2224c": {
           "display_name": "Nav",
@@ -341,14 +385,17 @@
             "dataNavCategory"
           ]
         },
-        "resultPrinciple": {
+        "resultPrinciples": {
           "type": "bloks",
           "pos": 4,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "dataSinglePrinciple"
-          ]
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
         }
       },
       "image": null,
@@ -566,6 +613,48 @@
       "component_group_name": "Body Blocks"
     },
     {
+      "name": "sectionStandaloneLink",
+      "display_name": "Standalone Link",
+      "description": null,
+      "created_at": "2024-11-20T15:50:48.292Z",
+      "updated_at": "2024-11-20T15:52:28.052Z",
+      "id": 6587536,
+      "schema": {
+        "link": {
+          "type": "multilink",
+          "pos": 0,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "templatePage",
+            "templateNews",
+            "templateLocation"
+          ],
+          "force_link_scope": false,
+          "allow_target_blank": false,
+          "required": true
+        },
+        "displayText": {
+          "type": "text",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Standalone Link",
+      "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "color": "#F5A928",
+      "icon": "block-arrow-pointer",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Body Blocks"
+    },
+    {
       "name": "sectionTextMedia",
       "display_name": "Text & Media",
       "description": null,
@@ -644,13 +733,13 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Location",
-      "component_group_uuid": "all",
+      "component_group_uuid": "fcc9488e-faff-4970-92b0-88ea3fd541ec",
       "color": "#EF6252",
       "icon": "block-@",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
-      "component_group_name": ""
+      "component_group_name": "Templates"
     },
     {
       "name": "templateNews",
@@ -689,13 +778,13 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "News",
-      "component_group_uuid": "all",
+      "component_group_uuid": "fcc9488e-faff-4970-92b0-88ea3fd541ec",
       "color": "#ff6159",
       "icon": "block-text-img-l",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
-      "component_group_name": ""
+      "component_group_name": "Templates"
     },
     {
       "name": "templatePage",
@@ -755,13 +844,13 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Page",
-      "component_group_uuid": "all",
+      "component_group_uuid": "fcc9488e-faff-4970-92b0-88ea3fd541ec",
       "color": "#ff6159",
       "icon": "block-block",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
-      "component_group_name": ""
+      "component_group_name": "Templates"
     }
   ],
   "component_groups": [
@@ -769,6 +858,13 @@
       "name": "Body Blocks",
       "id": 441759,
       "uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "parent_id": null,
+      "parent_uuid": null
+    },
+    {
+      "name": "Templates",
+      "id": 444341,
+      "uuid": "fcc9488e-faff-4970-92b0-88ea3fd541ec",
       "parent_id": null,
       "parent_uuid": null
     },

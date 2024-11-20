@@ -52,6 +52,7 @@ declare global {
         | SectionReviewBlockStoryblok
 
     type AtomHeroSlideStoryblok = StoryblokTypes.AtomHeroSlideStoryblok
+    type AtomSingleLinkStoryblok = StoryblokTypes.AtomSingleLinkStoryblok
     type AssetStoryblok = StoryblokTypes.AssetStoryblok
     type MultiassetStoryblok = StoryblokTypes.MultiassetStoryblok
 
@@ -66,6 +67,8 @@ declare global {
     type SectionReviewBlockStoryblok =
         StoryblokTypes.SectionReviewBlockStoryblok
     type SectionTextMediaStoryblok = StoryblokTypes.SectionTextMediaStoryblok
+    type SectionStandaloneLinkStoryblok =
+        StoryblokTypes.SectionStandaloneLinkStoryblok
 
     type TemplatePageStoryblok = StoryblokTypes.TemplatePageStoryblok
     type TemplateLocationStoryblok = StoryblokTypes.TemplateLocationStoryblok

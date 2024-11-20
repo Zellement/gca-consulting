@@ -148,6 +148,14 @@ export interface AtomMediaBlockStoryblok {
   [k: string]: any;
 }
 
+export interface AtomSingleLinkStoryblok {
+  link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  displayText?: string;
+  component: "atomSingleLink";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -197,9 +205,9 @@ export interface DataSocialLinkStoryblok {
 
 export interface MetaGlobalOptionsStoryblok {
   socialLinks?: (ISbStoryData<DataSocialLinkStoryblok> | string)[];
-  leadingPrinciples?: DataSinglePrincipleStoryblok[];
+  leadingPrinciples: DataSinglePrincipleStoryblok[];
   navItems?: DataNavCategoryStoryblok[];
-  resultPrinciple?: DataSinglePrincipleStoryblok[];
+  resultPrinciples: DataSinglePrincipleStoryblok[];
   component: "metaGlobalOptions";
   _uid: string;
   [k: string]: any;
@@ -213,7 +221,7 @@ export interface MoleculeMediaContentStoryblok {
 }
 
 export interface MoleculeTextContentStoryblok {
-  body?: (AtomCorePrinciplesStoryblok | AtomTextBlockStoryblok)[];
+  body?: (AtomCorePrinciplesStoryblok | AtomSingleLinkStoryblok | AtomTextBlockStoryblok)[];
   component: "moleculeTextContent";
   _uid: string;
   [k: string]: any;
@@ -243,6 +251,14 @@ export interface SectionReviewBlockStoryblok {
   [k: string]: any;
 }
 
+export interface SectionStandaloneLinkStoryblok {
+  link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  displayText?: string;
+  component: "sectionStandaloneLink";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface SectionTextMediaStoryblok {
   columns?: (MoleculeTextContentStoryblok | MoleculeMediaContentStoryblok)[];
   component: "sectionTextMedia";
@@ -266,6 +282,7 @@ export interface TemplateNewsStoryblok {
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
     | SectionReviewBlockStoryblok
+    | SectionStandaloneLinkStoryblok
     | SectionTextMediaStoryblok
   )[];
   component: "templateNews";
@@ -280,6 +297,7 @@ export interface TemplatePageStoryblok {
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
     | SectionReviewBlockStoryblok
+    | SectionStandaloneLinkStoryblok
     | SectionTextMediaStoryblok
   )[];
   metaTags?: any;
