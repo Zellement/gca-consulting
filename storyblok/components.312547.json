@@ -5,7 +5,7 @@
       "display_name": "Contact Form",
       "description": null,
       "created_at": "2024-11-20T17:25:58.483Z",
-      "updated_at": "2024-11-20T17:45:21.931Z",
+      "updated_at": "2024-11-20T17:49:00.260Z",
       "id": 6588201,
       "schema": {
         "message": {
@@ -23,7 +23,7 @@
       "preset_id": null,
       "real_name": "Contact Form",
       "component_group_uuid": "e62abd8d-582d-42a8-a62f-f9dc40f85cba",
-      "color": "#F5A928",
+      "color": "#2DB47D",
       "icon": "block-email",
       "internal_tags_list": [],
       "internal_tag_ids": [],
