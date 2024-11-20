@@ -1,6 +1,36 @@
 {
   "components": [
     {
+      "name": "atomCorePrinciples",
+      "display_name": "Core Principles",
+      "description": null,
+      "created_at": "2024-11-20T10:49:44.686Z",
+      "updated_at": "2024-11-20T10:53:01.905Z",
+      "id": 6584964,
+      "schema": {
+        "message": {
+          "type": "section",
+          "pos": 0,
+          "display_name": "This will drop GCA's core principles in - these can be changed from Global Options."
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Core Principles",
+      "component_group_uuid": "e62abd8d-582d-42a8-a62f-f9dc40f85cba",
+      "color": "#2DB47D",
+      "icon": "block-shield",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Text Content Blocks"
+    },
+    {
       "name": "atomHeroSlide",
       "display_name": "Hero Slide",
       "description": null,
@@ -47,7 +77,7 @@
       "display_name": "Media Block",
       "description": null,
       "created_at": "2024-11-19T21:39:24.452Z",
-      "updated_at": "2024-11-19T21:55:56.098Z",
+      "updated_at": "2024-11-20T10:48:10.855Z",
       "id": 6582854,
       "schema": {
         "media": {
@@ -79,7 +109,7 @@
       "display_name": "Text Block",
       "description": null,
       "created_at": "2024-11-19T21:39:00.461Z",
-      "updated_at": "2024-11-19T21:54:55.961Z",
+      "updated_at": "2024-11-20T10:51:59.025Z",
       "id": 6582853,
       "schema": {
         "text": {
@@ -96,7 +126,8 @@
             "h4",
             "link",
             "paragraph",
-            "paste-action"
+            "paste-action",
+            "quote"
           ]
         }
       },
@@ -108,13 +139,13 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Text Block",
-      "component_group_uuid": "all",
+      "component_group_uuid": "e62abd8d-582d-42a8-a62f-f9dc40f85cba",
       "color": "#2DB47D",
       "icon": "block-text-l",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
-      "component_group_name": ""
+      "component_group_name": "Text Content Blocks"
     },
     {
       "name": "dataNavCategory",
@@ -286,6 +317,75 @@
       "component_group_name": ""
     },
     {
+      "name": "moleculeMediaContent",
+      "display_name": "Media Content",
+      "description": null,
+      "created_at": "2024-11-20T10:47:00.435Z",
+      "updated_at": "2024-11-20T10:48:39.621Z",
+      "id": 6584960,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomMediaBlock"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Media Content",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-image",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
+      "name": "moleculeTextContent",
+      "display_name": "Text Content",
+      "description": null,
+      "created_at": "2024-11-20T10:45:20.023Z",
+      "updated_at": "2024-11-20T10:58:09.498Z",
+      "id": 6584954,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "e62abd8d-582d-42a8-a62f-f9dc40f85cba"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text Content",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-text-img-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "sectionCardBlock",
       "display_name": "Card Block",
       "description": null,
@@ -419,10 +519,10 @@
       "display_name": "Text & Media",
       "description": null,
       "created_at": "2024-11-19T21:37:28.146Z",
-      "updated_at": "2024-11-19T21:53:43.062Z",
+      "updated_at": "2024-11-20T10:57:08.851Z",
       "id": 6582850,
       "schema": {
-        "body": {
+        "columns": {
           "type": "bloks",
           "pos": 0,
           "maximum": 2,
@@ -430,8 +530,8 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "atomMediaBlock",
-            "atomTextBlock"
+            "moleculeTextContent",
+            "moleculeMediaContent"
           ]
         }
       },
@@ -445,7 +545,7 @@
       "real_name": "Text & Media",
       "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
       "color": "#F5A928",
-      "icon": null,
+      "icon": "block-text-img-l",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
@@ -618,6 +718,13 @@
       "name": "Body Blocks",
       "id": 441759,
       "uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "parent_id": null,
+      "parent_uuid": null
+    },
+    {
+      "name": "Text Content Blocks",
+      "id": 443932,
+      "uuid": "e62abd8d-582d-42a8-a62f-f9dc40f85cba",
       "parent_id": null,
       "parent_uuid": null
     }

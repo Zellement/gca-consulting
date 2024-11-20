@@ -1,7 +1,7 @@
 <template>
     <nav
         aria-label="breadcrumb "
-        class="border-l-[20px] border-green-500 py-4 pb-16 pl-4 text-green-500"
+        class="mb-12 border-l-[20px] border-green-500 py-4 pl-4 text-green-500 xl:mb-0 xl:pb-16"
     >
         <ol class="flex flex-row items-center gap-2">
             <li

@@ -1,48 +1,71 @@
 <template>
     <section
-        class="container container-px grid w-full grid-cols-1 gap-8"
-        :class="sectionClasses"
+        class="container container-px grid w-full grid-cols-1 gap-8 xl:grid-cols-2"
     >
+        <!-- Column loop -->
         <div
-            v-for="column in content.body"
-            :key="column.id"
-            class="col-span-full flex h-full w-full"
-            :class="columnClasses"
+            v-for="column in content.columns"
+            :key="column._uid"
+            class="flex flex-col gap-8"
+            :class="spanFinder"
         >
-            <rich-text
-                v-if="column.component === 'atomTextBlock'"
-                :content="column.text"
-                class="my-auto mr-auto max-w-screen-md"
-            />
-            <embla-carousel
-                v-if="column.component === 'atomMediaBlock'"
-                :key="`embla-carousel-hero-${column?.media?.length}`"
-                ref="carouselRef"
-                class="flex h-full w-full"
-                wrapper-classes="h-full w-full flex bg-green-100"
-                :options="{ loop: true }"
-                show-buttons
+            <!-- Content in columns -->
+
+            <div
+                v-for="bodyContent in column.body"
+                :key="bodyContent._uid"
+                class="flex flex-col"
             >
-                <template #carousel-items>
-                    <div
-                        v-for="slide in column.media"
-                        :key="slide._uid"
-                        :class="[
-                            'embla__slide relative',
-                            'flex aspect-square h-full w-full bg-red-300 md:aspect-video xl:aspect-auto xl:max-h-[70vh]'
-                        ]"
+                <!-- Components -->
+                <rich-text
+                    v-if="bodyContent.component === 'atomTextBlock'"
+                    :content="bodyContent.text"
+                    class="max-w-screen-md"
+                />
+                <div v-if="bodyContent.component === 'atomCorePrinciples'">
+                    {{ columnCount }}
+                    gca principles
+                </div>
+                <div v-if="bodyContent.component === 'atomMediaBlock'">
+                    <embla-carousel
+                        :key="`${bodyContent._uid}_${bodyContent.media?.[0]?.filename}`"
+                        ref="carouselRef"
+                        class="flex h-full w-full"
+                        wrapper-classes="h-full w-full flex "
+                        :options="{
+                            loop: true,
+                            active:
+                                bodyContent?.media &&
+                                bodyContent?.media?.length > 1
+                        }"
+                        :show-buttons="
+                            bodyContent?.media && bodyContent?.media?.length > 1
+                                ? true
+                                : false
+                        "
                     >
-                        <single-picture
-                            class="h-full w-full object-cover"
-                            :img-data="{
-                                url: slide.filename ?? '',
-                                alt: slide.alt ?? ''
-                            }"
-                            sizes="336px md:700px xl:1200px 2xl:1600px max:2000px"
-                        />
-                    </div>
-                </template>
-            </embla-carousel>
+                        <template #carousel-items>
+                            <div
+                                v-for="slide in bodyContent.media"
+                                :key="slide._uid"
+                                :class="[
+                                    'embla__slide relative',
+                                    'flex aspect-square h-full w-full md:aspect-video xl:aspect-landscape xl:max-h-[70vh]'
+                                ]"
+                            >
+                                <single-picture
+                                    class="h-full w-full object-cover"
+                                    :img-data="{
+                                        url: slide.filename ?? '',
+                                        alt: slide.alt ?? ''
+                                    }"
+                                    sizes="336px md:700px xl:1200px 2xl:1600px max:2000px"
+                                />
+                            </div>
+                        </template>
+                    </embla-carousel>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -57,13 +80,13 @@ const props = defineProps<{
  * Ref
  */
 
+const columnCount: ComputedRef<number> = computed(() => {
+    return props.content?.columns?.length ?? 0
+})
+
+const spanFinder: ComputedRef<string> = computed(() => {
+    return columnCount.value === 2 ? 'xl:col-span-1' : 'xl:col-span-full'
+})
+
 const carouselRef = ref<{ emblaApi: EmblaCarouselType | null } | null>(null)
-
-const sectionClasses: ComputedRef<string> = computed(() => {
-    return props.content?.body?.length === 2 ? 'xl:grid-cols-2' : ''
-})
-
-const columnClasses: ComputedRef<string> = computed(() => {
-    return props.content?.body?.length === 2 ? 'xl:col-span-1' : ''
-})
 </script>
