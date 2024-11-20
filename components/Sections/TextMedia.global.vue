@@ -25,6 +25,10 @@
                         :content="bodyContent.text"
                         class="max-w-screen-md"
                     />
+                    <contact-form
+                        v-if="bodyContent.component === 'atomContactForm'"
+                        class="max-w-screen-md"
+                    />
                     <!-- Core Principles -->
                     <core-principles
                         v-if="bodyContent.component === 'atomCorePrinciples'"
