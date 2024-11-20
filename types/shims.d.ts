@@ -58,6 +58,7 @@ declare global {
     type MetaGlobalOptionsStoryblok = StoryblokTypes.MetaGlobalOptionsStoryblok
 
     type DataSingleReviewStoryblok = StoryblokTypes.DataSingleReviewStoryblok
+    type DataSinglePrinciple = StoryblokTypes.DataSinglePrinciple
 
     type SectionCardBlockStoryblok = StoryblokTypes.SectionCardBlockStoryblok
     type SectionCardCarouselStoryblok =

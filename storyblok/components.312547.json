@@ -197,6 +197,39 @@
       "component_group_name": ""
     },
     {
+      "name": "dataSinglePrinciple",
+      "display_name": "Single Principle",
+      "description": null,
+      "created_at": "2024-11-20T13:07:25.666Z",
+      "updated_at": "2024-11-20T13:08:35.892Z",
+      "id": 6585632,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "text": {
+          "type": "textarea",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Single Principle",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-add",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "dataSingleReview",
       "display_name": "Data (Single Review)",
       "description": null,
@@ -268,35 +301,53 @@
       "display_name": "Meta (Global Options)",
       "description": null,
       "created_at": "2024-11-08T21:10:31.049Z",
-      "updated_at": "2024-11-19T19:48:56.871Z",
+      "updated_at": "2024-11-20T13:09:17.897Z",
       "id": 6534180,
       "schema": {
-        "tab-b1d20ddd-9b78-4243-81b3-20bb4bd2224c": {
-          "display_name": "Nav",
-          "keys": [
-            "navItems"
-          ],
-          "pos": 0,
-          "type": "tab"
-        },
-        "navItems": {
-          "type": "bloks",
-          "pos": 2,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": [
-            "dataNavCategory"
-          ]
-        },
         "socialLinks": {
           "type": "options",
-          "pos": 7,
+          "pos": 0,
           "is_reference_type": true,
           "source": "internal_stories",
           "entry_appearance": "card",
           "allow_advanced_search": true,
           "filter_content_type": [
             "dataSocialLink"
+          ]
+        },
+        "leadingPrinciples": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "dataSinglePrinciple"
+          ]
+        },
+        "tab-b1d20ddd-9b78-4243-81b3-20bb4bd2224c": {
+          "display_name": "Nav",
+          "keys": [
+            "navItems"
+          ],
+          "pos": 2,
+          "type": "tab"
+        },
+        "navItems": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "dataNavCategory"
+          ]
+        },
+        "resultPrinciple": {
+          "type": "bloks",
+          "pos": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "dataSinglePrinciple"
           ]
         }
       },

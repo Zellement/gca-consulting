@@ -16,7 +16,9 @@
                 :key="bodyContent._uid"
                 class="flex flex-col"
             >
-                <!-- Components -->
+                <!-- -------------
+                    Components
+                ------------ -->
                 <!-- Rich Text -->
                 <rich-text
                     v-if="bodyContent.component === 'atomTextBlock'"
@@ -24,10 +26,10 @@
                     class="max-w-screen-md"
                 />
                 <!-- Core Principles -->
-                <div v-if="bodyContent.component === 'atomCorePrinciples'">
-                    {{ columnCount }}
-                    gca principles
-                </div>
+                <core-principles
+                    v-if="bodyContent.component === 'atomCorePrinciples'"
+                />
+
                 <!-- Media Block -->
                 <div v-if="bodyContent.component === 'atomMediaBlock'">
                     <embla-carousel

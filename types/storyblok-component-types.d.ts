@@ -172,6 +172,14 @@ export interface DataNavCategoryStoryblok {
   [k: string]: any;
 }
 
+export interface DataSinglePrincipleStoryblok {
+  title?: string;
+  text?: string;
+  component: "dataSinglePrinciple";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface DataSingleReviewStoryblok {
   quote?: string;
   component: "dataSingleReview";
@@ -188,8 +196,10 @@ export interface DataSocialLinkStoryblok {
 }
 
 export interface MetaGlobalOptionsStoryblok {
-  navItems?: DataNavCategoryStoryblok[];
   socialLinks?: (ISbStoryData<DataSocialLinkStoryblok> | string)[];
+  leadingPrinciples?: DataSinglePrincipleStoryblok[];
+  navItems?: DataNavCategoryStoryblok[];
+  resultPrinciple?: DataSinglePrincipleStoryblok[];
   component: "metaGlobalOptions";
   _uid: string;
   [k: string]: any;
