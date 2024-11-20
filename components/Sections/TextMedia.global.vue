@@ -17,15 +17,18 @@
                 class="flex flex-col"
             >
                 <!-- Components -->
+                <!-- Rich Text -->
                 <rich-text
                     v-if="bodyContent.component === 'atomTextBlock'"
                     :content="bodyContent.text"
                     class="max-w-screen-md"
                 />
+                <!-- Core Principles -->
                 <div v-if="bodyContent.component === 'atomCorePrinciples'">
                     {{ columnCount }}
                     gca principles
                 </div>
+                <!-- Media Block -->
                 <div v-if="bodyContent.component === 'atomMediaBlock'">
                     <embla-carousel
                         :key="`${bodyContent._uid}_${bodyContent.media?.[0]?.filename}`"
