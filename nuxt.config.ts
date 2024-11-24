@@ -34,22 +34,49 @@ export default defineNuxtConfig({
         cssPath: '~/assets/scss/app.scss'
     },
 
+    // Storyblok image provider
     image: {
-        domains: ['https://a.storyblok.com', 'localhost'],
+        format: ['avif', 'webp'],
+        quality: 60,
+        densities: [1, 2],
+        providers: {
+            storyblok: {
+                provider: 'storyblok',
+                baseURL: 'https://a.storyblok.com'
+            }
+        },
+        domains: ['localhost', 'https://curator-assets.b-cdn.net'],
         screens: {
             '3xs': 21 * 16,
             '2xs': 23 * 16,
             xs: 25.625 * 16,
             sm: 30 * 16,
-            'sm-md': 35 * 16,
             md: 43.125 * 16,
             lg: 54.875 * 16,
-            xl: 79.6875 * 16,
-            '2xl': 90 * 16,
-            '3xl': 100 * 16,
-            max: 1920
+            xl: 64 * 16,
+            '2xl': 72.6 * 16,
+            '3xl': 81.2 * 16,
+            max: 95 * 16,
+            fullscreen: 100 * 16
         }
     },
+
+    // image: {
+    //     domains: ['https://a.storyblok.com', 'localhost'],
+    //     screens: {
+    //         '3xs': 21 * 16,
+    //         '2xs': 23 * 16,
+    //         xs: 25.625 * 16,
+    //         sm: 30 * 16,
+    //         'sm-md': 35 * 16,
+    //         md: 43.125 * 16,
+    //         lg: 54.875 * 16,
+    //         xl: 79.6875 * 16,
+    //         '2xl': 90 * 16,
+    //         '3xl': 100 * 16,
+    //         max: 1920
+    //     }
+    // },
 
     css: ['@/assets/scss/app.scss'],
 
