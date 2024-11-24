@@ -175,6 +175,7 @@ export interface RichtextStoryblok {
 
 export interface AtomTextBlockStoryblok {
   text?: RichtextStoryblok;
+  standout?: boolean;
   component: "atomTextBlock";
   _uid: string;
   [k: string]: any;
@@ -251,6 +252,13 @@ export interface SectionCardCarouselStoryblok {
   [k: string]: any;
 }
 
+export interface SectionPdfDownloadBlockStoryblok {
+  pdfs: MultiassetStoryblok;
+  component: "sectionPdfDownloadBlock";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface SectionReviewBlockStoryblok {
   showAllAsGrid?: boolean;
   reviews?: (ISbStoryData<DataSingleReviewStoryblok> | string)[];
@@ -289,6 +297,7 @@ export interface TemplateNewsStoryblok {
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
+    | SectionPdfDownloadBlockStoryblok
     | SectionReviewBlockStoryblok
     | SectionStandaloneLinkStoryblok
     | SectionTextMediaStoryblok
@@ -304,6 +313,7 @@ export interface TemplatePageStoryblok {
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
+    | SectionPdfDownloadBlockStoryblok
     | SectionReviewBlockStoryblok
     | SectionStandaloneLinkStoryblok
     | SectionTextMediaStoryblok

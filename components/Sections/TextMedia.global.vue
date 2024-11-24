@@ -20,11 +20,23 @@
                     Components
                 ------------ -->
                     <!-- Rich Text -->
-                    <rich-text
+                    <div
                         v-if="bodyContent.component === 'atomTextBlock'"
-                        :content="bodyContent.text"
-                        class="max-w-screen-md"
-                    />
+                        :class="
+                            bodyContent.standout
+                                ? 'mx-auto flex w-full items-center bg-blue p-8 text-center text-[1.1em] italic text-white'
+                                : ''
+                        "
+                    >
+                        <rich-text
+                            :content="bodyContent.text"
+                            :class="
+                                bodyContent.standout
+                                    ? 'mx-auto max-w-screen-sm'
+                                    : 'max-w-screen-md'
+                            "
+                        />
+                    </div>
                     <contact-form
                         v-if="bodyContent.component === 'atomContactForm'"
                         class="max-w-screen-md"
