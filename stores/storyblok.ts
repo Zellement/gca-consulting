@@ -9,7 +9,9 @@ interface State {
     currentStory: AllTypes | null
     globalOptions: MetaGlobalOptionsStoryblok | null
     locations: TemplateLocationStoryblok[] | null
-    news: TemplateNewsStoryblok[] | null
+    newsStories: TemplateNewsStoryblok[] | null
+    recentNewsStories: TemplateNewsStoryblok[] | null
+    totalNewsStories: number | null
     reviews: DataSingleReviewStoryblok[] | null
 
     // Booleans
@@ -34,7 +36,9 @@ export const useStoryblokStore = defineStore('storyblok', {
         currentStory: null,
         globalOptions: null,
         locations: null,
-        news: null,
+        newsStories: null,
+        recentNewsStories: null,
+        totalNewsStories: null,
         reviews: null,
         dataLoaded: false,
         dataIsLoading: false,
@@ -145,9 +149,22 @@ export const useStoryblokStore = defineStore('storyblok', {
             try {
                 const response = await this.fetchStoryblokData(`cdn/stories/`, {
                     content_type: 'templateNews',
-                    per_page: 12
+                    per_page: 2
                 })
-                this.news = response.data?.stories
+                this.newsStories = response.data?.stories
+                this.totalNewsStories = response.total
+            } catch (error) {
+                throw error
+            }
+        },
+
+        async fetchRecentNews(): Promise<void> {
+            try {
+                const response = await this.fetchStoryblokData(`cdn/stories/`, {
+                    content_type: 'templateNews',
+                    per_page: 5
+                })
+                this.recentNewsStories = response.data?.stories
             } catch (error) {
                 throw error
             }
@@ -168,7 +185,7 @@ export const useStoryblokStore = defineStore('storyblok', {
         async fetchRequired(): Promise<void> {
             await this.fetchGlobalOptions()
             await this.fetchLocations()
-            await this.fetchNews()
+            await this.fetchRecentNews()
             await this.fetchReviews()
         }
     }

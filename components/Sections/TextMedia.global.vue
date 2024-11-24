@@ -92,7 +92,7 @@
                                             url: slide.filename ?? '',
                                             alt: slide.alt ?? ''
                                         }"
-                                        sizes="336px md:700px xl:1200px 2xl:1600px max:2000px"
+                                        sizes="336px lg:800px"
                                     />
                                 </div>
                             </template>

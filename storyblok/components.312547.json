@@ -609,6 +609,36 @@
       "component_group_name": "Body Blocks"
     },
     {
+      "name": "sectionNewsArticles",
+      "display_name": "News Articles",
+      "description": null,
+      "created_at": "2024-11-24T12:52:45.366Z",
+      "updated_at": "2024-11-24T12:53:36.008Z",
+      "id": 6601547,
+      "schema": {
+        "message": {
+          "type": "section",
+          "pos": 0,
+          "display_name": "This will display all the news articles and pagination."
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "News Articles",
+      "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "color": "#F5A928",
+      "icon": "block-text-c",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Body Blocks"
+    },
+    {
       "name": "sectionPdfDownloadBlock",
       "display_name": "PDF Downloads Block",
       "description": null,

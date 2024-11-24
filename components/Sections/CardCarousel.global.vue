@@ -61,7 +61,7 @@ const slides: ComputedRef<
     (TemplateNewsStoryblok | TemplatePageStoryblok)[] | null
 > = computed(() => {
     return props.content.useRecentNews
-        ? (storyblokStore.news ?? null)
+        ? (storyblokStore.recentNewsStories ?? null)
         : (props.content.cards ?? null)
 })
 

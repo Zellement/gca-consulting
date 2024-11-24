@@ -252,6 +252,13 @@ export interface SectionCardCarouselStoryblok {
   [k: string]: any;
 }
 
+export interface SectionNewsArticlesStoryblok {
+  message?: any;
+  component: "sectionNewsArticles";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface SectionPdfDownloadBlockStoryblok {
   pdfs: MultiassetStoryblok;
   component: "sectionPdfDownloadBlock";
@@ -297,6 +304,7 @@ export interface TemplateNewsStoryblok {
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
+    | SectionNewsArticlesStoryblok
     | SectionPdfDownloadBlockStoryblok
     | SectionReviewBlockStoryblok
     | SectionStandaloneLinkStoryblok
@@ -313,6 +321,7 @@ export interface TemplatePageStoryblok {
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
+    | SectionNewsArticlesStoryblok
     | SectionPdfDownloadBlockStoryblok
     | SectionReviewBlockStoryblok
     | SectionStandaloneLinkStoryblok
