@@ -77,7 +77,7 @@
                                     :key="slide._uid"
                                     :class="[
                                         'embla__slide relative',
-                                        'flex aspect-square h-full w-full md:aspect-video xl:aspect-landscape xl:max-h-[70vh]'
+                                        'flex h-full w-full xl:max-h-[70vh]'
                                     ]"
                                 >
                                     <div
@@ -87,7 +87,7 @@
                                         {{ slide.title }}
                                     </div>
                                     <single-picture
-                                        class="h-full w-full object-cover"
+                                        class="aspect-square md:aspect-video xl:aspect-landscape"
                                         :img-data="{
                                             url: slide.filename ?? '',
                                             alt: slide.alt ?? ''

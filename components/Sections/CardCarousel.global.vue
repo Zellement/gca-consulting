@@ -17,18 +17,18 @@
                         v-for="slide in slides"
                         :key="slide._uid"
                         :class="[
-                            'embla__slide embla__slide--90 md:embla__slide--50 xl:embla__slide--33 2xl:embla__slide--25 group relative aspect-video',
+                            'embla__slide embla__slide--90 md:embla__slide--50 xl:embla__slide--33 2xl:embla__slide--25 group relative',
                             'w-full'
                         ]"
                         :to="getUrl(slide.full_slug)"
                     >
                         <single-picture
-                            class="h-full w-full object-cover"
+                            class="aspect-video"
                             :img-data="{
                                 url: slide.content.hero[0].media.filename,
                                 alt: slide.content.hero[0].media.alt ?? ''
                             }"
-                            sizes="336px md:700px xl:1200px 2xl:1600px max:2000px"
+                            sizes="600px"
                         />
                         <div
                             class="absolute inset-0 flex bg-black/60 p-8 text-center text-md text-white transition-colors group-hover:bg-blue-500/80 group-hover:text-green"

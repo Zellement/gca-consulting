@@ -9,16 +9,15 @@
             <div
                 class="pointer-events-none absolute inset-0 z-10 bg-blue-500/80 opacity-0 transition-opacity group-hover:opacity-100"
             ></div>
-            <div
-                class="col-span-full row-span-full aspect-landscape bg-blue-100"
-            >
+            <div class="col-span-full row-span-full bg-blue-100">
                 <single-picture
                     v-if="card.content.hero?.[0]?.media.filename"
                     :img-data="{
                         url: card.content.hero?.[0]?.media.filename,
                         alt: card.content.hero?.[0]?.media.alt
                     }"
-                    class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                    class="aspect-landscape transition-transform group-hover:scale-105"
+                    sizes="600px"
                 />
             </div>
             <div
