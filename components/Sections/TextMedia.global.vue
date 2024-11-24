@@ -68,6 +68,12 @@
                                         'flex aspect-square h-full w-full md:aspect-video xl:aspect-landscape xl:max-h-[70vh]'
                                     ]"
                                 >
+                                    <div
+                                        v-if="bodyContent.showTitles"
+                                        class="absolute left-0 top-0 z-10 bg-white px-2 py-1 text-[12px]"
+                                    >
+                                        {{ slide.title }}
+                                    </div>
                                     <single-picture
                                         class="h-full w-full object-cover"
                                         :img-data="{

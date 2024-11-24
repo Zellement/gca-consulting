@@ -150,6 +150,7 @@ export type MultiassetStoryblok = {
 
 export interface AtomMediaBlockStoryblok {
   media?: MultiassetStoryblok;
+  showTitles?: boolean;
   component: "atomMediaBlock";
   _uid: string;
   [k: string]: any;

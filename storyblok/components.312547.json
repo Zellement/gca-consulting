@@ -107,7 +107,7 @@
       "display_name": "Media Block",
       "description": null,
       "created_at": "2024-11-19T21:39:24.452Z",
-      "updated_at": "2024-11-20T10:48:10.855Z",
+      "updated_at": "2024-11-24T09:08:47.300Z",
       "id": 6582854,
       "schema": {
         "media": {
@@ -116,6 +116,11 @@
           "filetypes": [
             "images"
           ]
+        },
+        "showTitles": {
+          "type": "boolean",
+          "pos": 1,
+          "description": "Toggle this on to show titles of images when they are available."
         }
       },
       "image": null,
