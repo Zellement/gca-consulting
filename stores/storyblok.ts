@@ -145,11 +145,13 @@ export const useStoryblokStore = defineStore('storyblok', {
             }
         },
 
-        async fetchNews(): Promise<void> {
+        async fetchNews(page?: number): Promise<void> {
             try {
                 const response = await this.fetchStoryblokData(`cdn/stories/`, {
                     content_type: 'templateNews',
-                    per_page: 2
+                    per_page: 2,
+                    page: page ?? 1,
+                    excluding_slugs: 'news/'
                 })
                 this.newsStories = response.data?.stories
                 this.totalNewsStories = response.total
