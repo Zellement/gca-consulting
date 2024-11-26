@@ -13,7 +13,7 @@ interface State {
     recentNewsStories: TemplateNewsStoryblok[] | null
     totalNewsStories: number | null
     reviews: DataSingleReviewStoryblok[] | null
-
+    POSTS_PER_PAGE: number
     // Booleans
     dataLoaded: boolean
     dataIsLoading: boolean
@@ -42,9 +42,17 @@ export const useStoryblokStore = defineStore('storyblok', {
         reviews: null,
         dataLoaded: false,
         dataIsLoading: false,
-        firstLoad: true
+        firstLoad: true,
+        POSTS_PER_PAGE: 1
     }),
     getters: {
+        getTotalNewsPages(state): number {
+            return Math.ceil(
+                state.totalNewsStories
+                    ? state.totalNewsStories / state.POSTS_PER_PAGE
+                    : 0
+            )
+        },
         getCurrentStory(state): AllTypes | null {
             return state.currentStory
         },
@@ -149,7 +157,7 @@ export const useStoryblokStore = defineStore('storyblok', {
             try {
                 const response = await this.fetchStoryblokData(`cdn/stories/`, {
                     content_type: 'templateNews',
-                    per_page: 2,
+                    per_page: this.POSTS_PER_PAGE,
                     page: page ?? 1,
                     excluding_slugs: 'news/'
                 })

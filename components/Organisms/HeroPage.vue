@@ -1,5 +1,8 @@
 <template>
-    <section :class="['relative border-l-[20px] border-green bg-gray-50']">
+    <section
+        v-if="hasSlides"
+        :class="['relative border-l-[20px] border-green bg-gray-50']"
+    >
         <embla-carousel
             :key="`embla-carousel-hero-${heroSlides.length}`"
             ref="carouselRef"
@@ -65,6 +68,10 @@ const currentStory = computed(() => {
 
 const heroSlides: ComputedRef<MultiassetStoryblok> = computed(() => {
     return currentStory.value?.content.hero
+})
+
+const hasSlides: ComputedRef<boolean> = computed(() => {
+    return !!heroSlides.value && heroSlides.value?.length > 0
 })
 
 const isCarousel: ComputedRef<boolean> = computed(() => {

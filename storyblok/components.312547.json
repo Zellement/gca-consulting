@@ -896,7 +896,7 @@
       "display_name": "Page",
       "description": null,
       "created_at": "2024-11-08T21:08:41.880Z",
-      "updated_at": "2024-11-19T22:52:22.968Z",
+      "updated_at": "2024-11-26T20:29:59.717Z",
       "id": 6534174,
       "schema": {
         "pageOverview": {
@@ -912,11 +912,11 @@
           "component_whitelist": [
             "atomHeroSlide"
           ],
-          "required": true
+          "required": false
         },
         "body": {
           "type": "bloks",
-          "pos": 2,
+          "pos": 3,
           "restrict_type": "groups",
           "restrict_components": true,
           "component_whitelist": [],
@@ -926,7 +926,7 @@
         },
         "metaTags": {
           "type": "section",
-          "pos": 3,
+          "pos": 4,
           "keys": [
             "metaTitle",
             "metaDescription"
@@ -934,11 +934,11 @@
         },
         "metaTitle": {
           "type": "text",
-          "pos": 4
+          "pos": 5
         },
         "metaDescription": {
           "type": "textarea",
-          "pos": 5
+          "pos": 6
         }
       },
       "image": null,

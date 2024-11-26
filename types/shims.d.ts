@@ -32,6 +32,16 @@ declare global {
         og_image: string
     }
 
+    /**
+     * Pagination
+     */
+    interface PaginationOptions {
+        totalPosts: number
+        postsPerPage: number
+        maxPagesToShow: number
+        currentPage: number
+    }
+
     type EmblaScrollEvents = 'next' | 'prev' | 'to'
 
     /**

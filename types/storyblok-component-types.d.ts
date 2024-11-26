@@ -317,7 +317,7 @@ export interface TemplateNewsStoryblok {
 
 export interface TemplatePageStoryblok {
   pageOverview?: string;
-  hero: AtomHeroSlideStoryblok[];
+  hero?: AtomHeroSlideStoryblok[];
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
