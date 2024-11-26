@@ -17,7 +17,7 @@
             :current-page="currentPage"
             :total-pages="storyblokStore.getTotalNewsPages"
             :total-posts="storyblokStore.totalNewsStories ?? 0"
-            :posts-per-page="storyblokStore.POSTS_PER_PAGE"
+            :posts-per-page="storyblokStore.postsPerPage"
             class="container container-px mt-12 justify-center lg:mt-16 2xl:mt-20"
             :max-pages-to-show="5"
         />

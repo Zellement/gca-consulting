@@ -164,6 +164,14 @@ export interface AtomSingleLinkStoryblok {
   [k: string]: any;
 }
 
+export interface AtomSinglePdfStoryblok {
+  file: AssetStoryblok;
+  media?: AssetStoryblok;
+  component: "atomSinglePdf";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -260,7 +268,7 @@ export interface SectionNewsArticlesStoryblok {
 }
 
 export interface SectionPdfDownloadBlockStoryblok {
-  pdfs: MultiassetStoryblok;
+  pdfs?: AtomSinglePdfStoryblok[];
   component: "sectionPdfDownloadBlock";
   _uid: string;
   [k: string]: any;

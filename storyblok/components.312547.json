@@ -181,6 +181,44 @@
       "component_group_name": "Text Content Blocks"
     },
     {
+      "name": "atomSinglePdf",
+      "display_name": "Single PDF",
+      "description": null,
+      "created_at": "2024-11-26T21:16:57.009Z",
+      "updated_at": "2024-11-26T21:22:15.208Z",
+      "id": 6612222,
+      "schema": {
+        "file": {
+          "type": "asset",
+          "pos": 1,
+          "filetypes": [
+            "texts"
+          ],
+          "required": true
+        },
+        "media": {
+          "type": "asset",
+          "pos": 2,
+          "description": "The 'front page' of the PDF. If this is not set, a PDF icon will be used instead."
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Single PDF",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-add",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "atomTextBlock",
       "display_name": "Text Block",
       "description": null,
@@ -643,18 +681,17 @@
       "display_name": "PDF Downloads Block",
       "description": null,
       "created_at": "2024-11-24T09:43:19.336Z",
-      "updated_at": "2024-11-24T10:07:29.259Z",
+      "updated_at": "2024-11-26T21:19:41.780Z",
       "id": 6601382,
       "schema": {
         "pdfs": {
-          "type": "multiasset",
+          "type": "bloks",
           "pos": 0,
-          "filetypes": [
-            "texts"
-          ],
-          "asset_folder_id": 671477,
-          "required": true,
-          "allow_external_url": true
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomSinglePdf"
+          ]
         }
       },
       "image": null,
