@@ -22,11 +22,11 @@
                             url: slide.media.filename,
                             alt: slide.media.alt ?? ''
                         }"
-                        sizes="336px md:700px xl:1200px 2xl:1600px max:2000px"
+                        sizes="336px md:700px xl:1200px 2xl:1600px max:1800px"
                     />
 
                     <component
-                        :is="slide.link ? NuxtLink : 'div'"
+                        :is="slide.link ? NuxtLink : 'h2'"
                         v-if="slide.displayText"
                         :to="getUrl(slide.link.cached_url ?? slide.link.url)"
                         class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-lg font-bold text-white transition-colors hover:text-green-500"

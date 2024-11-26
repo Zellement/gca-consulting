@@ -2,7 +2,7 @@
     <div v-if="hasSlides" class="grid-layout">
         <div class="col-span-full">
             <div class="container container-px text-center">
-                <h2 class="mb-4 text-lg font-bold text-blue-500">
+                <h2 class="mb-4 text-lg text-blue-500">
                     {{ content.title }}
                 </h2>
             </div>
@@ -33,7 +33,7 @@
                         <div
                             class="absolute inset-0 flex bg-black/60 p-8 text-center text-md text-white transition-colors group-hover:bg-blue-500/80 group-hover:text-green"
                         >
-                            <span class="m-auto">{{ slide.name }}</span>
+                            <h3 class="m-auto">{{ slide.name }}</h3>
                         </div>
                     </nuxt-link>
                 </template>

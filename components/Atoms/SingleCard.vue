@@ -23,7 +23,7 @@
             <div
                 class="absolute bottom-0 z-10 w-full bg-black/70 p-4 text-white transition-all group-hover:translate-y-1/2 group-hover:opacity-0"
             >
-                <h3 class="text-lg font-bold">
+                <h3 class="text-lg">
                     {{ name }}
                 </h3>
             </div>

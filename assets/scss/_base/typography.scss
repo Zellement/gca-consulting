@@ -94,7 +94,7 @@ h6 {
 
         li,
         dd {
-            @apply ml-4 list-disc leading-none;
+            @apply relative ml-4 list-none after:absolute after:left-0 after:top-3.5 after:size-2 after:-translate-x-6 after:rounded-full after:bg-blue after:content-[''];
 
             > ul,
             > dl,
@@ -111,6 +111,6 @@ h6 {
     }
 
     a {
-        @apply underline;
+        @apply text-green-500 underline transition-colors hover:text-green-900;
     }
 }
