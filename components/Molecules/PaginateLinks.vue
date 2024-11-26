@@ -3,26 +3,23 @@
         <nuxt-link
             :to="queryParamsToQueryString({ page: currentPage - 1 })"
             aria-label="Previous page"
-            rel="prev"
-            icon="arrow"
-            class="button"
-            :class="{ 'button--disabled': !showPreviousPage }"
-            icon-classes="-rotate-180"
+            :class="{ 'pointer-events-none opacity-10': !showPreviousPage }"
+            class="flex"
         >
-            link
+            <Icon name="ic:baseline-chevron-right" class="size-10 rotate-180" />
         </nuxt-link>
 
-        <div class="flex items-center">
+        <div class="flex items-center gap-2">
             <template v-for="page in pages" :key="`page-${page}`">
                 <nuxt-link
                     v-if="page"
                     :to="queryParamsToQueryString({ page })"
                     type="button"
                     :aria-label="`Page ${page}`"
-                    class="digit hover:underline"
+                    class="flex size-10 items-center justify-center rounded-full bg-blue text-center text-sm text-white hover:underline"
                     :active-class="getPageActiveClass(Number(page))"
                 >
-                    {{ page }}
+                    <span>{{ page }}</span>
                 </nuxt-link>
 
                 <span
@@ -38,12 +35,10 @@
         <nuxt-link
             :to="queryParamsToQueryString({ page: currentPage + 1 })"
             aria-label="Next page"
-            rel="next"
-            icon="arrow"
-            class="button"
-            :class="{ 'button--disabled': !showNextPage }"
+            :class="{ 'pointer-events-none opacity-10': !showNextPage }"
+            class="flex"
         >
-            link
+            <Icon name="ic:baseline-chevron-right" class="size-10 text-blue" />
         </nuxt-link>
     </nav>
 </template>
@@ -107,7 +102,7 @@ const queryParamsToQueryString = (overrides: ParamOverrides): string => {
 
 const getPageActiveClass = (digit: number): string => {
     const isActive = props.currentPage === (digit ?? 1)
-    return isActive ? 'underline' : ''
+    return isActive ? 'bg-green-500' : ''
 }
 </script>
 

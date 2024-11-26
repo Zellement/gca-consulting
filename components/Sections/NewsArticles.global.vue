@@ -19,7 +19,7 @@
             :total-posts="storyblokStore.totalNewsStories ?? 0"
             :posts-per-page="storyblokStore.POSTS_PER_PAGE"
             class="container container-px mt-12 justify-center lg:mt-16 2xl:mt-20"
-            :max-pages-to-show="10"
+            :max-pages-to-show="5"
         />
     </div>
 </template>
