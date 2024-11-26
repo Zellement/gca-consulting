@@ -80,7 +80,7 @@ const isCarousel: ComputedRef<boolean> = computed(() => {
 
 const slideClasses: ComputedRef<string> = computed(() => {
     return props.fullScreen
-        ? 'h-screen'
+        ? 'h-[90vh]'
         : 'aspect-square md:aspect-video max-h-[70vh]'
 })
 
