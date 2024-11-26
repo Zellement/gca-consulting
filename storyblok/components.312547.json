@@ -267,6 +267,44 @@
       "component_group_name": "Text Content Blocks"
     },
     {
+      "name": "atomTextIconPair",
+      "display_name": "Text & Icon Pair",
+      "description": null,
+      "created_at": "2024-11-26T22:03:16.081Z",
+      "updated_at": "2024-11-26T22:03:51.992Z",
+      "id": 6612321,
+      "schema": {
+        "text": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "icon": {
+          "type": "asset",
+          "pos": 1,
+          "filetypes": [
+            "images"
+          ],
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text & Icon Pair",
+      "component_group_uuid": "all",
+      "color": "#2DB47D",
+      "icon": "block-suitcase",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": ""
+    },
+    {
       "name": "dataNavCategory",
       "display_name": "Data (Nav Category)",
       "description": null,
@@ -641,6 +679,46 @@
       "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
       "color": "#F5A928",
       "icon": "block-block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Body Blocks"
+    },
+    {
+      "name": "sectionIconGrid",
+      "display_name": "Icon Grid",
+      "description": null,
+      "created_at": "2024-11-26T22:02:32.289Z",
+      "updated_at": "2024-11-26T22:05:49.465Z",
+      "id": 6612320,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "grid": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomTextIconPair"
+          ],
+          "minimum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Icon Grid",
+      "component_group_uuid": "de6d149f-4e46-47d8-aa68-28d9aa49a52e",
+      "color": "#F5A928",
+      "icon": "block-1-2block",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,

@@ -189,6 +189,14 @@ export interface AtomTextBlockStoryblok {
   [k: string]: any;
 }
 
+export interface AtomTextIconPairStoryblok {
+  text: string;
+  icon: AssetStoryblok;
+  component: "atomTextIconPair";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface DataNavCategoryStoryblok {
   titlePage: ISbStoryData<TemplatePageStoryblok> | string;
   subPages?: (ISbStoryData<TemplatePageStoryblok> | ISbStoryData<TemplateLocationStoryblok> | string)[];
@@ -260,6 +268,14 @@ export interface SectionCardCarouselStoryblok {
   [k: string]: any;
 }
 
+export interface SectionIconGridStoryblok {
+  title?: string;
+  grid: AtomTextIconPairStoryblok[];
+  component: "sectionIconGrid";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface SectionNewsArticlesStoryblok {
   message?: any;
   component: "sectionNewsArticles";
@@ -312,6 +328,7 @@ export interface TemplateNewsStoryblok {
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
+    | SectionIconGridStoryblok
     | SectionNewsArticlesStoryblok
     | SectionPdfDownloadBlockStoryblok
     | SectionReviewBlockStoryblok
@@ -329,6 +346,7 @@ export interface TemplatePageStoryblok {
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok
+    | SectionIconGridStoryblok
     | SectionNewsArticlesStoryblok
     | SectionPdfDownloadBlockStoryblok
     | SectionReviewBlockStoryblok

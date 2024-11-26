@@ -81,6 +81,7 @@ declare global {
         StoryblokTypes.SectionStandaloneLinkStoryblok
     type SectionPdfDownloadBlockStoryblok =
         StoryblokTypes.SectionPdfDownloadBlockStoryblok
+    type SectionIconGridStoryblok = StoryblokTypes.SectionIconGridStoryblok
 
     type TemplatePageStoryblok = StoryblokTypes.TemplatePageStoryblok
     type TemplateLocationStoryblok = StoryblokTypes.TemplateLocationStoryblok

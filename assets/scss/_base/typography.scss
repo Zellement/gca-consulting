@@ -32,38 +32,6 @@ strong {
     @apply font-bold;
 }
 
-// .single-link {
-//     @apply relative  underline text-green-500 cursor-pointer;
-    
-//             @screen lg {
-//                 @apply no-underline text-current;
-    
-//                 background: linear-gradient(
-//                     to right,
-//                     rgba(100, 200, 200, 0),
-//                     rgba(100, 200, 200, 0)
-//                 ),
-//                 linear-gradient(
-//                     to right,
-//                     theme("colors.black"),
-//                     theme("colors.black")
-//                 ),
-//                 linear-gradient(
-//                     to right,
-//                     rgba(100, 200, 200, 0),
-//                     rgba(100, 200, 200, 0)
-//                 );
-//                 background-position: 0 101%, 50% 101%, 100% 101%;
-//                 background-repeat: no-repeat;
-//                 transition: background-size 300ms;
-//                 background-size: 0 0.1rem, 100% 0.1rem, 0 0.1rem;
-    
-//                 &:hover {
-//                     background-size: 35% 0.1rem, 30% 0.1rem, 35% 0.1rem;
-//                 }
-//             } 
-// }
-
 /**
  * Outline styles
  */
@@ -77,6 +45,14 @@ button,
     &:not(:focus-visible) {
         @apply outline-none;
     }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-bold;
 }
 
 /**
