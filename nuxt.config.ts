@@ -36,7 +36,7 @@ export default defineNuxtConfig({
 
     // Storyblok image provider
     image: {
-        format: ['avif', 'webp'],
+        format: ['avif', 'webp', 'png'],
         quality: 60,
         densities: [1, 2],
         providers: {
@@ -45,7 +45,7 @@ export default defineNuxtConfig({
                 baseURL: 'https://a.storyblok.com'
             }
         },
-        domains: ['localhost', 'https://curator-assets.b-cdn.net'],
+        domains: ['localhost'],
         screens: {
             '3xs': 21 * 16,
             '2xs': 23 * 16,
