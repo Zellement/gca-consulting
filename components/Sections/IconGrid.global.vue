@@ -14,7 +14,7 @@
                     :key="icon._uid"
                     class="jus flex flex-col items-center gap-4"
                 >
-                    <nuxt-img
+                    <nuxt-picture
                         :src="icon.icon.filename ?? ''"
                         class="mx-auto h-12 w-auto xl:h-20"
                     />
