@@ -1,6 +1,6 @@
 <template>
     <section
-        class="container container-px grid w-full grid-cols-1 gap-8 xl:grid-cols-2"
+        class="container container-px grid w-full grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-16"
     >
         <!-- Column loop -->
         <div
