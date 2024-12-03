@@ -14,9 +14,13 @@
                     :key="icon._uid"
                     class="jus flex flex-col items-center gap-4"
                 >
-                    <nuxt-picture
+                    <nuxt-img
                         :src="icon.icon.filename ?? ''"
+                        width="200"
+                        height="200"
+                        fit="in"
                         class="mx-auto h-12 w-auto xl:h-20"
+                        provider="storyblok"
                     />
                     <span class="text-center text-blue">{{ icon.text }}</span>
                 </div>
