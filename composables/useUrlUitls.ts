@@ -5,7 +5,11 @@ export const useUrlUtils = () => {
      * @returns - The string converted to a slug.
      */
     const getUrl = (full_slug: string): string => {
-        if (full_slug.startsWith('http')) {
+        if (!full_slug) {
+            return '/'
+        }
+
+        if (full_slug?.startsWith('http')) {
             return full_slug
         }
 
