@@ -5,6 +5,7 @@
                 <nuxt-link
                     :to="getUrl(navItem.titlePage.full_slug)"
                     class="site-nav__item"
+                    @click="uiStore.showMobileNav = false"
                 >
                     {{ navItem.titlePage.name }}
                 </nuxt-link>
@@ -20,6 +21,7 @@
                         <nuxt-link
                             :to="getUrl(subItem.full_slug)"
                             class="site-nav__sub-item"
+                            @click="uiStore.showMobileNav = false"
                         >
                             {{ subItem.name }}
                         </nuxt-link>
@@ -36,6 +38,7 @@ import type { DataNavCategoryStoryblok } from '~/types/storyblok-component-types
 const { getUrl } = useUrlUtils()
 
 const storyblokStore = useStoryblokStore()
+const uiStore = useUiStore()
 
 defineProps<{
     ulClasses?: string
