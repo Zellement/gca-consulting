@@ -100,7 +100,7 @@ export const useStoryblokStore = defineStore('storyblok', {
         async fetchStory(queryParam: string): Promise<void> {
             this.dataIsLoading = true
             this.dataLoaded = false
-            const today = new Date()
+            const config = useRuntimeConfig()
             try {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${queryParam}`,
@@ -111,7 +111,9 @@ export const useStoryblokStore = defineStore('storyblok', {
                             'sectionReviewBlock.reviews'
                         ],
                         resolve_links: 'story',
-                        cv: today.getTime()
+                        cv: config.public.STORYBLOK_CV_DISABLED
+                            ? +new Date()
+                            : null
                     }
                 )
 
