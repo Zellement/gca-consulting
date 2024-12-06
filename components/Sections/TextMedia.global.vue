@@ -45,6 +45,11 @@
                     <core-principles
                         v-if="bodyContent.component === 'atomCorePrinciples'"
                     />
+                    <!-- Inline media -->
+                    <inline-media
+                        v-if="bodyContent.component === 'atomInlineMedia'"
+                        :content="bodyContent"
+                    />
                     <!-- Single link -->
                     <single-link
                         v-if="bodyContent.component === 'atomSingleLink'"

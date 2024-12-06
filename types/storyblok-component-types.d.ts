@@ -148,6 +148,13 @@ export type MultiassetStoryblok = {
   [k: string]: any;
 }[];
 
+export interface AtomInlineMediaStoryblok {
+  media?: MultiassetStoryblok;
+  component: "atomInlineMedia";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface AtomMediaBlockStoryblok {
   media?: MultiassetStoryblok;
   showTitles?: boolean;
@@ -159,6 +166,7 @@ export interface AtomMediaBlockStoryblok {
 export interface AtomSingleLinkStoryblok {
   link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   displayText?: string;
+  alignment: "" | "left" | "centre" | "right";
   component: "atomSingleLink";
   _uid: string;
   [k: string]: any;
@@ -246,7 +254,13 @@ export interface MoleculeMediaContentStoryblok {
 }
 
 export interface MoleculeTextContentStoryblok {
-  body?: (AtomContactFormStoryblok | AtomCorePrinciplesStoryblok | AtomSingleLinkStoryblok | AtomTextBlockStoryblok)[];
+  body?: (
+    | AtomContactFormStoryblok
+    | AtomCorePrinciplesStoryblok
+    | AtomInlineMediaStoryblok
+    | AtomSingleLinkStoryblok
+    | AtomTextBlockStoryblok
+  )[];
   component: "moleculeTextContent";
   _uid: string;
   [k: string]: any;
@@ -342,7 +356,8 @@ export interface TemplateNewsStoryblok {
 
 export interface TemplatePageStoryblok {
   pageOverview?: string;
-  hero?: AtomHeroSlideStoryblok[];
+  hero: AtomHeroSlideStoryblok[];
+  showHero?: boolean;
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok

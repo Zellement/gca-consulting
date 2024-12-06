@@ -3,9 +3,9 @@
     {
       "name": "atomContactForm",
       "display_name": "Contact Form",
-      "description": null,
+      "description": "Drops the default contact form in.",
       "created_at": "2024-11-20T17:25:58.483Z",
-      "updated_at": "2024-11-20T17:49:00.260Z",
+      "updated_at": "2024-12-03T20:43:38.047Z",
       "id": 6588201,
       "schema": {
         "message": {
@@ -14,7 +14,7 @@
           "display_name": "This will drop the Formspree form on to the page."
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/bb790900d1/screenshot-at-dec-03-20-42-11.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -33,9 +33,9 @@
     {
       "name": "atomCorePrinciples",
       "display_name": "Core Principles",
-      "description": null,
+      "description": "Drops in the Core Principles. Much of this content will be found in the Global Options.",
       "created_at": "2024-11-20T10:49:44.686Z",
-      "updated_at": "2024-11-20T10:53:01.905Z",
+      "updated_at": "2024-12-03T20:43:17.513Z",
       "id": 6584964,
       "schema": {
         "message": {
@@ -44,7 +44,7 @@
           "display_name": "This will drop GCA's core principles in - these can be changed from Global Options."
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/c887d61ccd/screenshot-at-dec-03-20-42-44.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -63,9 +63,9 @@
     {
       "name": "atomHeroSlide",
       "display_name": "Hero Slide",
-      "description": null,
+      "description": "A single slide for the hero - contains an image, optional text and optional link.",
       "created_at": "2024-11-14T21:14:03.212Z",
-      "updated_at": "2024-11-14T21:15:06.495Z",
+      "updated_at": "2024-12-03T20:54:01.984Z",
       "id": 6562443,
       "schema": {
         "media": {
@@ -86,7 +86,7 @@
           "pos": 2
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/99504958b4/screenshot-at-dec-03-20-53-42.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -103,11 +103,40 @@
       "component_group_name": ""
     },
     {
+      "name": "atomInlineMedia",
+      "display_name": "Inline Media",
+      "description": null,
+      "created_at": "2024-12-06T13:23:13.944Z",
+      "updated_at": "2024-12-06T13:23:48.698Z",
+      "id": 6658799,
+      "schema": {
+        "media": {
+          "type": "multiasset",
+          "pos": 0
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Inline Media",
+      "component_group_uuid": "e62abd8d-582d-42a8-a62f-f9dc40f85cba",
+      "color": "#2DB47D",
+      "icon": "block-image",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Text Content Blocks"
+    },
+    {
       "name": "atomMediaBlock",
       "display_name": "Media Block",
-      "description": null,
+      "description": "Allows for multiple images to be dropped in to this column.",
       "created_at": "2024-11-19T21:39:24.452Z",
-      "updated_at": "2024-11-24T09:08:47.300Z",
+      "updated_at": "2024-12-03T20:54:24.163Z",
       "id": 6582854,
       "schema": {
         "media": {
@@ -123,7 +152,7 @@
           "description": "Toggle this on to show titles of images when they are available."
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/09a1cb5d3d/screenshot-at-dec-03-20-44-55.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -144,27 +173,54 @@
       "display_name": "Single Link",
       "description": null,
       "created_at": "2024-11-20T15:41:58.150Z",
-      "updated_at": "2024-11-20T15:42:57.661Z",
+      "updated_at": "2024-12-03T21:08:48.390Z",
       "id": 6587463,
       "schema": {
         "link": {
           "type": "multilink",
           "pos": 0,
           "required": true,
-          "allow_target_blank": true,
+          "allow_target_blank": false,
           "restrict_content_types": true,
           "component_whitelist": [
             "templateNews",
             "templatePage",
             "templateLocation"
-          ]
+          ],
+          "description": "Choose an internal page or an external website to link to.",
+          "email_link_type": false
         },
         "displayText": {
           "type": "text",
           "pos": 1
+        },
+        "alignment": {
+          "type": "option",
+          "pos": 2,
+          "description": "Choose the alignment of this link.",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "5680a17d-614d-48f9-90e3-53bfef0bed2c",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "895b5f47-de49-46ca-8046-121e9ea9e578",
+              "value": "centre",
+              "name": "Centre"
+            },
+            {
+              "_uid": "099f203d-25e9-43df-a4f5-689f32365ea0",
+              "value": "right",
+              "name": "Right"
+            }
+          ],
+          "default_value": "left",
+          "required": true
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/6f3c7f4c9c/screenshot-at-dec-03-21-08-37.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -223,7 +279,7 @@
       "display_name": "Text Block",
       "description": null,
       "created_at": "2024-11-19T21:39:00.461Z",
-      "updated_at": "2024-11-24T10:28:11.237Z",
+      "updated_at": "2024-12-03T20:46:09.615Z",
       "id": 6582853,
       "schema": {
         "text": {
@@ -250,7 +306,7 @@
           "description": "Enable this to give a blue background and make the text stand out. Best used sparingly."
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/2b582c7923/screenshot-at-dec-03-20-45-58.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -271,7 +327,7 @@
       "display_name": "Text & Icon Pair",
       "description": null,
       "created_at": "2024-11-26T22:03:16.081Z",
-      "updated_at": "2024-11-26T22:03:51.992Z",
+      "updated_at": "2024-12-03T20:46:40.665Z",
       "id": 6612321,
       "schema": {
         "text": {
@@ -288,7 +344,7 @@
           "required": true
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/e02e2a738c/screenshot-at-dec-03-20-46-29.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -535,7 +591,7 @@
       "display_name": "Media Content",
       "description": null,
       "created_at": "2024-11-20T10:47:00.435Z",
-      "updated_at": "2024-11-20T10:48:39.621Z",
+      "updated_at": "2024-12-03T20:40:52.393Z",
       "id": 6584960,
       "schema": {
         "body": {
@@ -548,7 +604,7 @@
           ]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/732f337c72/screenshot-at-dec-03-20-40-29.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -567,9 +623,9 @@
     {
       "name": "moleculeTextContent",
       "display_name": "Text Content",
-      "description": null,
+      "description": "Allows you to drop in different types of 'text content', like rich text, links, core principles etc.",
       "created_at": "2024-11-20T10:45:20.023Z",
-      "updated_at": "2024-11-20T10:58:09.498Z",
+      "updated_at": "2024-12-03T20:41:32.859Z",
       "id": 6584954,
       "schema": {
         "body": {
@@ -583,7 +639,7 @@
           ]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/dbc36fae96/screenshot-at-dec-03-20-40-49.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -604,7 +660,7 @@
       "display_name": "Card Block",
       "description": null,
       "created_at": "2024-11-17T12:39:18.458Z",
-      "updated_at": "2024-11-17T12:41:04.105Z",
+      "updated_at": "2024-12-03T20:35:11.571Z",
       "id": 6569258,
       "schema": {
         "cards": {
@@ -620,7 +676,7 @@
           ]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/c15b26bd11/screenshot-at-dec-03-20-34-45.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -641,7 +697,7 @@
       "display_name": "Card Carousel",
       "description": null,
       "created_at": "2024-11-17T15:39:50.115Z",
-      "updated_at": "2024-11-17T16:28:51.993Z",
+      "updated_at": "2024-12-03T20:35:43.508Z",
       "id": 6569378,
       "schema": {
         "title": {
@@ -668,7 +724,7 @@
           "max_options": "10"
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/ea9794a937/screenshot-at-dec-03-20-35-26.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -689,7 +745,7 @@
       "display_name": "Icon Grid",
       "description": null,
       "created_at": "2024-11-26T22:02:32.289Z",
-      "updated_at": "2024-11-26T22:05:49.465Z",
+      "updated_at": "2024-12-03T20:36:55.135Z",
       "id": 6612320,
       "schema": {
         "title": {
@@ -708,7 +764,7 @@
           "required": true
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/730417be3d/screenshot-at-dec-03-20-36-43.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -729,7 +785,7 @@
       "display_name": "News Articles",
       "description": null,
       "created_at": "2024-11-24T12:52:45.366Z",
-      "updated_at": "2024-11-24T12:53:36.008Z",
+      "updated_at": "2024-12-03T20:37:30.476Z",
       "id": 6601547,
       "schema": {
         "message": {
@@ -738,7 +794,7 @@
           "display_name": "This will display all the news articles and pagination."
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/fa9c367c57/screenshot-at-dec-03-20-37-16.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -759,7 +815,7 @@
       "display_name": "PDF Downloads Block",
       "description": null,
       "created_at": "2024-11-24T09:43:19.336Z",
-      "updated_at": "2024-11-26T21:19:41.780Z",
+      "updated_at": "2024-12-03T20:38:04.930Z",
       "id": 6601382,
       "schema": {
         "pdfs": {
@@ -772,7 +828,7 @@
           ]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/b848d58e83/screenshot-at-dec-03-20-37-51.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -793,7 +849,7 @@
       "display_name": "Review Block",
       "description": null,
       "created_at": "2024-11-17T16:54:47.523Z",
-      "updated_at": "2024-11-17T17:45:30.140Z",
+      "updated_at": "2024-12-03T20:39:05.781Z",
       "id": 6569459,
       "schema": {
         "showAllAsGrid": {
@@ -816,7 +872,7 @@
           "description": "If the above is disabled, you can manually choose reviews to be placed into a carousel here."
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/fffc426612/screenshot-at-dec-03-20-38-56.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -837,7 +893,7 @@
       "display_name": "Standalone Link",
       "description": null,
       "created_at": "2024-11-20T15:50:48.292Z",
-      "updated_at": "2024-11-20T15:52:28.052Z",
+      "updated_at": "2024-12-03T20:39:55.470Z",
       "id": 6587536,
       "schema": {
         "link": {
@@ -858,7 +914,7 @@
           "pos": 1
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/81e24c80e7/screenshot-at-dec-03-20-39-45.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -879,7 +935,7 @@
       "display_name": "Text & Media",
       "description": null,
       "created_at": "2024-11-19T21:37:28.146Z",
-      "updated_at": "2024-11-20T10:57:08.851Z",
+      "updated_at": "2024-12-03T20:36:10.249Z",
       "id": 6582850,
       "schema": {
         "columns": {
@@ -895,7 +951,7 @@
           ]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/312547/x/e9b87a6175/screenshot-at-dec-03-20-35-54.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -1011,7 +1067,7 @@
       "display_name": "Page",
       "description": null,
       "created_at": "2024-11-08T21:08:41.880Z",
-      "updated_at": "2024-11-26T20:29:59.717Z",
+      "updated_at": "2024-12-06T13:24:29.696Z",
       "id": 6534174,
       "schema": {
         "pageOverview": {
@@ -1027,7 +1083,12 @@
           "component_whitelist": [
             "atomHeroSlide"
           ],
-          "required": false
+          "required": true
+        },
+        "showHero": {
+          "type": "boolean",
+          "pos": 2,
+          "description": "Do you want to show the hero on this page?"
         },
         "body": {
           "type": "bloks",

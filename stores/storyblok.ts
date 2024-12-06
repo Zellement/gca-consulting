@@ -100,6 +100,7 @@ export const useStoryblokStore = defineStore('storyblok', {
         async fetchStory(queryParam: string): Promise<void> {
             this.dataIsLoading = true
             this.dataLoaded = false
+            const today = new Date()
             try {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${queryParam}`,
@@ -109,7 +110,8 @@ export const useStoryblokStore = defineStore('storyblok', {
                             'sectionCardCarousel.cards',
                             'sectionReviewBlock.reviews'
                         ],
-                        resolve_links: 'story'
+                        resolve_links: 'story',
+                        cv: today.getTime()
                     }
                 )
 

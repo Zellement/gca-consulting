@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <hero-page full-screen />
+        <hero-page v-if="showHero" full-screen />
         <site-breadcrumbs hide-text />
         <block-loop class="-mt-8" :blocks="currentStory?.content.body" />
     </div>
@@ -11,6 +11,10 @@ const storyblokStore = useStoryblokStore()
 
 const currentStory = computed(() => {
     return storyblokStore.currentStory
+})
+
+const showHero: ComputedRef<boolean> = computed(() => {
+    return currentStory.value?.content?.showHero
 })
 
 definePageMeta({
