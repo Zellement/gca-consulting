@@ -12,9 +12,12 @@
             <div
                 class="flex aspect-2/3 w-full items-center justify-center bg-blue-50 transition-colors group-hover:bg-blue-100"
             >
-                <nuxt-picture
+                <single-picture
                     v-if="item.media?.filename"
-                    :src="item.media?.filename"
+                    :img-data="{
+                        url: item.media.filename,
+                        alt: item.file.title ?? item.file.filename ?? ''
+                    }"
                     class="aspect-2/3 h-full w-full object-cover"
                 />
                 <Icon v-else class="size-16" name="proicons:pdf" />
