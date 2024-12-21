@@ -82,10 +82,12 @@ export const useStoryblokStore = defineStore('storyblok', {
         ): Promise<any> {
             const nuxtApp: NuxtApp = useNuxtApp() as unknown as NuxtApp
             const $storyblokClient: StoryblokClient = nuxtApp.$storyblokClient
-            const config: RuntimeConfig = useRuntimeConfig()
+            // const config: RuntimeConfig = useRuntimeConfig/()
+            const { $preview } = useNuxtApp()
+            const version = $preview ? 'draft' : 'published'
             try {
                 const response = await $storyblokClient.get(fullPath, {
-                    version: config.public.STORYBLOK_ENV as EnvType,
+                    version: version,
                     ...options
                 })
                 if (!response.data) {
@@ -98,8 +100,6 @@ export const useStoryblokStore = defineStore('storyblok', {
             }
         },
         async fetchStory(queryParam: string): Promise<void> {
-            const { $preview } = useNuxtApp()
-            const version = $preview ? 'draft' : 'published'
             this.dataIsLoading = true
             this.dataLoaded = false
             // const config = useRuntimeConfig()
@@ -112,8 +112,7 @@ export const useStoryblokStore = defineStore('storyblok', {
                             'sectionCardCarousel.cards',
                             'sectionReviewBlock.reviews'
                         ],
-                        resolve_links: 'story',
-                        version: version
+                        resolve_links: 'story'
                     }
                 )
 
