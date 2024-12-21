@@ -58,7 +58,7 @@ h6 {
 /**
  * Rich Text / Body Copy
  */
-.content > div {
+.content {
     @apply flex flex-col space-y-4;
 
     @for $i from 1 through 6 {
