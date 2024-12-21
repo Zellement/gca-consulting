@@ -98,9 +98,11 @@ export const useStoryblokStore = defineStore('storyblok', {
             }
         },
         async fetchStory(queryParam: string): Promise<void> {
+            const { $preview } = useNuxtApp()
+            const version = $preview ? 'draft' : 'published'
             this.dataIsLoading = true
             this.dataLoaded = false
-            const config = useRuntimeConfig()
+            // const config = useRuntimeConfig()
             try {
                 const response = await this.fetchStoryblokData(
                     `cdn/stories/${queryParam}`,
@@ -111,9 +113,7 @@ export const useStoryblokStore = defineStore('storyblok', {
                             'sectionReviewBlock.reviews'
                         ],
                         resolve_links: 'story',
-                        cv: config.public.STORYBLOK_CV_DISABLED
-                            ? +new Date()
-                            : null
+                        version: version
                     }
                 )
 
