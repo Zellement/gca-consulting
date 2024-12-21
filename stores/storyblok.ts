@@ -83,11 +83,11 @@ export const useStoryblokStore = defineStore('storyblok', {
             const nuxtApp: NuxtApp = useNuxtApp() as unknown as NuxtApp
             const $storyblokClient: StoryblokClient = nuxtApp.$storyblokClient
             // const config: RuntimeConfig = useRuntimeConfig/()
-            // const { $preview } = useNuxtApp()
-            // const version = $preview ? 'draft' : 'published'
+            const { $preview } = useNuxtApp()
+            const version = $preview ? 'draft' : 'published'
             try {
                 const response = await $storyblokClient.get(fullPath, {
-                    version: 'draft',
+                    version: version,
                     ...options
                 })
                 if (!response.data) {
