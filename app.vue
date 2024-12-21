@@ -2,13 +2,15 @@
     <nuxt-layout>
         <nuxt-page />
     </nuxt-layout>
-    <page-transition :class="pageTransitionClasses" />
+    <page-transition v-if="!$preview" :class="pageTransitionClasses" />
 </template>
 
 <script setup lang="ts">
 const uiStore = useUiStore()
 const storyblokStore = useStoryblokStore()
 const route = useRoute()
+
+const { $preview } = useNuxtApp()
 
 /* --------------------------
 // Computed
@@ -73,6 +75,29 @@ watch(
 
 onMounted(async () => {
     await storyblokStore.fetchRequired()
+
+    if ($preview) {
+        const script = document.createElement('script')
+        script.src = 'https://app.storyblok.com/f/storyblok-v2-latest.js'
+        script.async = true
+        script.onload = () => {
+            const { StoryblokBridge, location } = window
+            const storyblokInstance = new StoryblokBridge({
+                resolveRelations: [
+                    'sectionCardBlock.cards',
+                    'sectionCardCarousel.cards',
+                    'sectionReviewBlock.reviews'
+                ],
+                preventClicks: true
+            })
+
+            storyblokInstance.on(['published', 'change'], () => {
+                // reload page if save or publish is clicked
+                location.reload()
+            })
+        }
+        document.head.appendChild(script)
+    }
 })
 
 useHead({
