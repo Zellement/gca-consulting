@@ -113,4 +113,8 @@ h6 {
     a {
         @apply text-green-500 underline transition-colors hover:text-green-900;
     }
+
+    blockquote {
+        @apply border-l-4 border-stone-500 bg-stone-200 p-4 italic;
+    }
 }
