@@ -3,7 +3,7 @@ import type { RuntimeConfig } from 'nuxt/schema'
 
 // TS Interfaces & Types
 
-type EnvType = 'published' | 'draft'
+// type EnvType = 'published' | 'draft'
 
 interface State {
     currentStory: AllTypes | null
