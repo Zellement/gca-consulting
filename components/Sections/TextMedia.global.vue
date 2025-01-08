@@ -18,7 +18,7 @@
                 >
                     <!-- -------------
                     Components
-                ------------ -->
+                    ------------ -->
                     <!-- Rich Text -->
                     <div
                         v-if="bodyContent.component === 'atomTextBlock'"
@@ -62,7 +62,7 @@
                             :key="`${bodyContent._uid}_${bodyContent.media?.[0]?.filename}`"
                             ref="carouselRef"
                             class="flex h-full w-full"
-                            wrapper-classes="h-full w-full flex "
+                            wrapper-classes="h-full w-full flex"
                             :options="{
                                 loop: true,
                                 active:
@@ -82,7 +82,10 @@
                                     :key="slide._uid"
                                     :class="[
                                         'embla__slide relative',
-                                        'flex h-full w-full xl:max-h-[70vh]'
+                                        'flex xl:max-h-[70vh]',
+                                        bodyContent.isPortrait
+                                            ? 'aspect-5/2 mx-auto h-full w-auto'
+                                            : 'w-full'
                                     ]"
                                 >
                                     <div
@@ -92,12 +95,22 @@
                                         {{ slide.title }}
                                     </div>
                                     <single-picture
-                                        class="aspect-square md:aspect-video xl:aspect-landscape"
+                                        class="mx-auto aspect-auto h-full w-auto"
                                         :img-data="{
                                             url: slide.filename ?? '',
                                             alt: slide.alt ?? ''
                                         }"
-                                        sizes="336px lg:800px"
+                                        :class="
+                                            bodyContent.isPortrait
+                                                ? 'aspect-5/2'
+                                                : 'aspect-landscape'
+                                        "
+                                        :fit="
+                                            bodyContent.isPortrait
+                                                ? 'contain'
+                                                : 'cover'
+                                        "
+                                        sizes="336px sm:336px lg:800px"
                                     />
                                 </div>
                             </template>

@@ -158,6 +158,7 @@ export interface AtomInlineMediaStoryblok {
 export interface AtomMediaBlockStoryblok {
   media?: MultiassetStoryblok;
   showTitles?: boolean;
+  isPortrait?: boolean;
   component: "atomMediaBlock";
   _uid: string;
   [k: string]: any;
@@ -275,6 +276,7 @@ export interface SectionCardBlockStoryblok {
 
 export interface SectionCardCarouselStoryblok {
   title: string;
+  titleLink?: ISbStoryData<TemplatePageStoryblok> | string;
   useRecentNews?: boolean;
   cards?: (ISbStoryData<TemplateNewsStoryblok> | ISbStoryData<TemplatePageStoryblok> | string)[];
   component: "sectionCardCarousel";
@@ -329,6 +331,7 @@ export interface SectionTextMediaStoryblok {
 
 export interface TemplateLocationStoryblok {
   hero: AtomHeroSlideStoryblok[];
+  showHero?: boolean;
   tel: string;
   email: string;
   address: string;
@@ -339,6 +342,7 @@ export interface TemplateLocationStoryblok {
 
 export interface TemplateNewsStoryblok {
   hero: AtomHeroSlideStoryblok[];
+  showHero?: boolean;
   body?: (
     | SectionCardBlockStoryblok
     | SectionCardCarouselStoryblok

@@ -65,7 +65,7 @@
       "display_name": "Hero Slide",
       "description": "A single slide for the hero - contains an image, optional text and optional link.",
       "created_at": "2024-11-14T21:14:03.212Z",
-      "updated_at": "2024-12-03T20:54:01.984Z",
+      "updated_at": "2024-12-20T16:05:23.730Z",
       "id": 6562443,
       "schema": {
         "media": {
@@ -95,7 +95,7 @@
       "preset_id": null,
       "real_name": "Hero Slide",
       "component_group_uuid": "all",
-      "color": "#2DB47D",
+      "color": "#2db47d",
       "icon": "block-image",
       "internal_tags_list": [],
       "internal_tag_ids": [],
@@ -136,7 +136,7 @@
       "display_name": "Media Block",
       "description": "Allows for multiple images to be dropped in to this column.",
       "created_at": "2024-11-19T21:39:24.452Z",
-      "updated_at": "2024-12-03T20:54:24.163Z",
+      "updated_at": "2025-01-08T11:35:23.850Z",
       "id": 6582854,
       "schema": {
         "media": {
@@ -144,12 +144,20 @@
           "pos": 0,
           "filetypes": [
             "images"
-          ]
+          ],
+          "id": "a2lvIQV7QpCEMd4yJyhuhg"
         },
         "showTitles": {
           "type": "boolean",
           "pos": 1,
-          "description": "Toggle this on to show titles of images when they are available."
+          "description": "Toggle this on to show titles of images when they are available.",
+          "id": "j3PP9t7nQqSoMZpd6pmATg"
+        },
+        "isPortrait": {
+          "type": "boolean",
+          "pos": 2,
+          "description": "Enable this if the images you are using are portrait - best used when ALL images are portrait, do not use a mixture of landscape & portrait.",
+          "id": "NM33xzWGQAqbbdvAqfWHMg"
         }
       },
       "image": "//a.storyblok.com/f/312547/x/09a1cb5d3d/screenshot-at-dec-03-20-44-55.png",
@@ -697,22 +705,35 @@
       "display_name": "Card Carousel",
       "description": null,
       "created_at": "2024-11-17T15:39:50.115Z",
-      "updated_at": "2024-12-03T20:35:43.508Z",
+      "updated_at": "2025-01-08T11:36:52.092Z",
       "id": 6569378,
       "schema": {
         "title": {
           "type": "text",
           "pos": 0,
-          "required": true
+          "required": true,
+          "id": "mAJryr6uQ9i7DmnXGtpF-w"
+        },
+        "titleLink": {
+          "type": "option",
+          "pos": 1,
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": [
+            "templatePage"
+          ],
+          "id": "ydnUe2uxRRaPp0XZDgyzMw",
+          "description": "This will link the title itself to a page."
         },
         "useRecentNews": {
           "type": "boolean",
-          "pos": 1,
-          "description": "By ticking this, the latest news articles will be used instead of any manually curated cards."
+          "pos": 2,
+          "description": "By ticking this, the latest news articles will be used instead of any manually curated cards.",
+          "id": "_3mn3d-RTRKq18ngxtGTHA"
         },
         "cards": {
           "type": "options",
-          "pos": 2,
+          "pos": 3,
           "is_reference_type": true,
           "source": "internal_stories",
           "entry_appearance": "card",
@@ -721,7 +742,8 @@
             "templateNews",
             "templatePage"
           ],
-          "max_options": "10"
+          "max_options": "10",
+          "id": "b3QTqx9wSWuWya0ZjQMtog"
         }
       },
       "image": "//a.storyblok.com/f/312547/x/ea9794a937/screenshot-at-dec-03-20-35-26.png",
@@ -972,7 +994,7 @@
       "display_name": "Location",
       "description": null,
       "created_at": "2024-11-17T11:56:52.764Z",
-      "updated_at": "2024-11-19T20:41:40.391Z",
+      "updated_at": "2024-12-21T06:53:52.432Z",
       "id": 6569220,
       "schema": {
         "hero": {
@@ -983,22 +1005,31 @@
           "component_whitelist": [
             "atomHeroSlide"
           ],
-          "required": true
+          "required": true,
+          "id": "Hrmx-pXXSD2VrA6b-ATtgw"
+        },
+        "showHero": {
+          "type": "boolean",
+          "pos": 1,
+          "id": "MbjzBW3lRvmhObzEwef5lw"
         },
         "tel": {
           "type": "text",
-          "pos": 1,
-          "required": true
+          "pos": 2,
+          "required": true,
+          "id": "U5DFyL5nTKC0RTql_IVU-A"
         },
         "email": {
           "type": "text",
-          "pos": 2,
-          "required": true
+          "pos": 3,
+          "required": true,
+          "id": "oCDKMcUsQ76187Q9rB5tfA"
         },
         "address": {
           "type": "textarea",
-          "pos": 3,
-          "required": true
+          "pos": 4,
+          "required": true,
+          "id": "413QkiWlTbiqgKnGylQ30Q"
         }
       },
       "image": null,
@@ -1022,18 +1053,24 @@
       "display_name": "News",
       "description": null,
       "created_at": "2024-11-08T21:09:36.199Z",
-      "updated_at": "2024-11-17T15:32:44.810Z",
+      "updated_at": "2024-12-21T06:53:25.772Z",
       "id": 6534179,
       "schema": {
         "hero": {
           "type": "bloks",
-          "pos": 1,
+          "pos": 0,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "atomHeroSlide"
           ],
-          "required": true
+          "required": true,
+          "id": "GlXNoSQ_R1yPEVPZnWzPYA"
+        },
+        "showHero": {
+          "type": "boolean",
+          "pos": 1,
+          "id": "WkyF-rpiRQ6eCpmhJ5Orgg"
         },
         "body": {
           "type": "bloks",
@@ -1043,7 +1080,8 @@
           "component_whitelist": [],
           "component_group_whitelist": [
             "de6d149f-4e46-47d8-aa68-28d9aa49a52e"
-          ]
+          ],
+          "id": "UzEVhBguQNO40BRwmQoZAA"
         }
       },
       "image": null,
