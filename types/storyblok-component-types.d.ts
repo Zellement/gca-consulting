@@ -192,7 +192,7 @@ export interface RichtextStoryblok {
 
 export interface AtomTextBlockStoryblok {
   text?: RichtextStoryblok;
-  standout?: boolean;
+  display?: "" | "bolden" | "standout";
   component: "atomTextBlock";
   _uid: string;
   [k: string]: any;

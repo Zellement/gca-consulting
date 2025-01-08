@@ -287,7 +287,7 @@
       "display_name": "Text Block",
       "description": null,
       "created_at": "2024-11-19T21:39:00.461Z",
-      "updated_at": "2024-12-03T20:46:09.615Z",
+      "updated_at": "2025-01-08T12:08:15.164Z",
       "id": 6582853,
       "schema": {
         "text": {
@@ -306,12 +306,27 @@
             "paragraph",
             "paste-action",
             "quote"
-          ]
+          ],
+          "id": "wKO5yCBdRgu8ddx8BYA4BA"
         },
-        "standout": {
-          "type": "boolean",
-          "pos": 1,
-          "description": "Enable this to give a blue background and make the text stand out. Best used sparingly."
+        "display": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "e042c46a-5b1b-4dcc-b04d-b6bc9605e47b",
+              "name": "Bolden",
+              "value": "bolden"
+            },
+            {
+              "_uid": "a262b84d-930d-4549-aa6e-a9b3d1683a1d",
+              "value": "standout",
+              "name": "Standout"
+            }
+          ],
+          "description": "Choose how to display this text. Bolden will make the text larger, blue and bold, and standout will place it on a blue background.",
+          "id": "pJixHFZKT_2uh6Z2jQQstA"
         }
       },
       "image": "//a.storyblok.com/f/312547/x/2b582c7923/screenshot-at-dec-03-20-45-58.png",

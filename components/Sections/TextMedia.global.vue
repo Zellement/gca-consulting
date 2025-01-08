@@ -22,11 +22,7 @@
                     <!-- Rich Text -->
                     <div
                         v-if="bodyContent.component === 'atomTextBlock'"
-                        :class="
-                            bodyContent.standout
-                                ? 'mx-auto flex w-full items-center bg-blue p-8 text-center text-[1.1em] italic text-white'
-                                : ''
-                        "
+                        :class="getDisplayStyles(bodyContent.display)"
                     >
                         <rich-text
                             :content="bodyContent.text"
@@ -141,4 +137,15 @@ const spanFinder: ComputedRef<string> = computed(() => {
 })
 
 const carouselRef = ref<{ emblaApi: EmblaCarouselType | null } | null>(null)
+
+const getDisplayStyles = (display: string | undefined) => {
+    switch (display) {
+        case 'bolden':
+            return 'text-[1.3em] font-bold text-blue'
+        case 'standout':
+            return 'mx-auto flex w-full items-center bg-blue p-8 text-center text-[1.1em] italic text-white'
+        default:
+            return ''
+    }
+}
 </script>
