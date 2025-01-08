@@ -1,6 +1,6 @@
 <template>
     <nuxt-layout>
-        <nuxt-page />
+        <nuxt-page :key="`app-key__${appKey}`" />
     </nuxt-layout>
     <page-transition v-if="!$preview" :class="pageTransitionClasses" />
 </template>
@@ -11,6 +11,10 @@ const storyblokStore = useStoryblokStore()
 const route = useRoute()
 
 const { $preview } = useNuxtApp()
+
+// Forces a re-render when the Storyblok content changes
+// Used for the Storyblok Visual Editor e.g. localhost/somepage?_storyblok=id1234
+const appKey = ref<number>(0)
 
 /* --------------------------
 // Computed
@@ -86,9 +90,20 @@ onMounted(async () => {
                 resolveRelations: [
                     'sectionCardBlock.cards',
                     'sectionCardCarousel.cards',
-                    'sectionReviewBlock.reviews'
+                    'sectionReviewBlock.reviews',
+                    'sectionCardCarousel.titleLink'
                 ],
                 preventClicks: true
+            })
+
+            storyblokInstance.on(['published', 'change'], () => {
+                location.reload()
+            })
+
+            storyblokInstance.on('input', (payload) => {
+                // On data change, increment the value of i to force a re-render
+                appKey.value = appKey.value + 1
+                storyblokStore.currentStory = payload?.story as any
             })
 
             storyblokInstance.on(['published', 'change'], () => {

@@ -1,11 +1,24 @@
 <template>
     <div v-if="hasSlides" class="grid-layout">
         <div class="col-span-full">
-            <div class="container container-px text-center">
-                <h2 class="mb-4 text-lg text-blue-500">
-                    {{ content.title }}
-                </h2>
+            <div
+                class="container container-px flex items-center justify-center text-center text-blue-500"
+            >
+                <component
+                    :is="titleLink ? NuxtLink : 'span'"
+                    :to="titleLink ? getUrl(titleLink) : null"
+                    :class="
+                        titleLink
+                            ? 'transition-colors hover:text-green-500'
+                            : ''
+                    "
+                >
+                    <h2 class="mb-4 text-lg">
+                        {{ content.title }}
+                    </h2>
+                </component>
             </div>
+            <!-- {{ content.titleLink }} -->
             <embla-carousel
                 :key="`embla-carousel-card-carousel-${slides?.length}`"
                 ref="carouselRef"
@@ -43,6 +56,7 @@
 </template>
 
 <script lang="ts" setup>
+import { NuxtLink } from '#components'
 import type { EmblaCarouselType } from 'embla-carousel'
 const storyblokStore = useStoryblokStore()
 
@@ -63,6 +77,10 @@ const slides: ComputedRef<
     return props.content.useRecentNews
         ? (storyblokStore.recentNewsStories ?? null)
         : (props.content.cards ?? null)
+})
+
+const titleLink: ComputedRef<string> = computed(() => {
+    return props.content.titleLink?.full_slug ?? ''
 })
 
 const hasSlides: ComputedRef<boolean> = computed(
