@@ -252,12 +252,6 @@ const animateParallax = (delta: number): string => {
     return `transform: translate3d(0, ${distance}, 0);`
 }
 
-onMounted(() => {
-    // This is a fallback to mediaLoaded not running for whatever reason
-    // After 1.5s we will assume the media has loaded
-    setTimeout(() => mediaLoaded(), 1500)
-})
-
 onUnmounted(() => {
     // window.removeEventListener('resize', getImageDimensions)
     state.mediaLoaded = false
