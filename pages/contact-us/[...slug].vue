@@ -3,25 +3,30 @@
         <hero-page v-if="showHero" />
         <site-breadcrumbs />
         <div
-            class="container container-px -mt-8 flex flex-col gap-4 py-8 md:flex-row"
+            class="container container-px -mt-8 flex flex-col items-start justify-start gap-3 py-8 md:flex-row md:gap-8"
         >
-            <div
+            <a
                 v-if="currentStory.content.tel"
-                class="flex flex-shrink-0 flex-row items-center gap-1"
+                :href="`tel:${currentStory.content.tel}`"
+                class="flex flex-row items-center gap-1 self-start transition-colors hover:text-green-500"
             >
-                <svg-icon
+                <Icon
                     name="material-symbols:phone-enabled"
-                    class="size-4"
+                    class="size-5 text-blue opacity-50"
                 />
                 {{ currentStory.content.tel }}
-            </div>
-            <div
+            </a>
+            <a
                 v-if="currentStory.content.email"
-                class="flex flex-shrink-0 flex-row items-center gap-1"
+                :href="`mailto:${currentStory.content.email}`"
+                class="flex flex-row items-center gap-1 self-start transition-colors hover:text-green-500"
             >
-                <svg-icon name="ic:sharp-email" class="size-4" />
+                <Icon
+                    name="ic:sharp-email"
+                    class="size-5 text-blue opacity-50"
+                />
                 {{ currentStory.content.email }}
-            </div>
+            </a>
         </div>
         <block-loop
             :key="`${id}__${currentStory?.id}`"
