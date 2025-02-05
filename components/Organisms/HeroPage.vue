@@ -23,6 +23,7 @@
                             alt: slide.media.alt ?? ''
                         }"
                         sizes="336px md:700px xl:1200px 2xl:1600px max:1800px"
+                        loading="eager"
                     />
 
                     <component
