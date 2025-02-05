@@ -14,7 +14,7 @@
                     alt: imgData.alt
                 }"
                 class="aspect-landscape transition-transform group-hover:scale-105"
-                sizes="600px"
+                sizes="300px xs:336px 2xs:336px md:550px"
             />
         </div>
         <div
