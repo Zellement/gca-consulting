@@ -13,19 +13,20 @@
                     v-if="navItem.subPages && navItem.subPages.length > 0"
                     class="z-10 mt-2 grid grid-cols-2 flex-col px-4 2xl:grid-cols-3"
                 >
-                    <li
+                    <template
                         v-for="subItem in navItem.subPages"
                         :key="subItem.id"
-                        class=""
                     >
-                        <nuxt-link
-                            :to="getUrl(subItem.full_slug)"
-                            class="site-nav__sub-item"
-                            @click="uiStore.showMobileNav = false"
-                        >
-                            {{ subItem.name }}
-                        </nuxt-link>
-                    </li>
+                        <li v-if="subItem.full_slug" class="">
+                            <nuxt-link
+                                :to="getUrl(subItem.full_slug)"
+                                class="site-nav__sub-item"
+                                @click="uiStore.showMobileNav = false"
+                            >
+                                {{ subItem.name }}
+                            </nuxt-link>
+                        </li>
+                    </template>
                 </ul>
             </li>
         </ul>
