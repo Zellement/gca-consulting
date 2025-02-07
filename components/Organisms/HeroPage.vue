@@ -35,10 +35,18 @@
                     />
 
                     <component
-                        :is="slide.link ? NuxtLink : 'h2'"
+                        :is="
+                            slide.link?.url || slide.link?.cached_url
+                                ? NuxtLink
+                                : 'h2'
+                        "
                         v-if="slide.displayText"
                         :to="getUrl(slide.link.cached_url ?? slide.link.url)"
-                        class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-lg font-bold text-white transition-colors hover:text-green-500"
+                        class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-lg font-bold text-white transition-colors"
+                        :class="{
+                            'hover:bg-green':
+                                slide.link?.url || slide.link?.cached_url
+                        }"
                     >
                         {{ slide.displayText }}
                     </component>
