@@ -74,7 +74,7 @@
                         >
                             <template #carousel-items>
                                 <div
-                                    v-for="slide in bodyContent.media"
+                                    v-for="(slide, index) in bodyContent.media"
                                     :key="slide._uid"
                                     :class="[
                                         'embla__slide relative',
@@ -91,6 +91,9 @@
                                         {{ slide.title }}
                                     </div>
                                     <single-picture
+                                        :loading="
+                                            index === 0 ? 'eager' : 'lazy'
+                                        "
                                         class="mx-auto aspect-auto h-full w-auto"
                                         :img-data="{
                                             url: slide.filename ?? '',
