@@ -16,14 +16,12 @@
                     :key="slide._uid"
                     :class="['embla__slide relative', 'w-full', slideClasses]"
                 >
-                    <single-picture
+                    <single-custom-picture
                         class="aspect-tall h-full w-full object-cover md:aspect-square xl:aspect-landscape"
-                        :img-data="{
-                            url: slide.media.filename,
-                            alt: slide.media.alt ?? ''
-                        }"
-                        sizes="336px md:700px xl:1200px 2xl:1600px max:1800px"
+                        :url="slide.media.filename"
+                        :alt="slide.media.alt"
                         :loading="index === 0 ? 'eager' : 'lazy'"
+                        :sizes="['300x800', '800x800', '1800x800']"
                     />
 
                     <component

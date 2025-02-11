@@ -80,7 +80,7 @@
                                         'embla__slide relative',
                                         'flex xl:max-h-[70vh]',
                                         bodyContent.isPortrait
-                                            ? 'aspect-5/2 mx-auto h-full w-auto'
+                                            ? 'mx-auto aspect-5/2 h-full w-auto'
                                             : 'w-full'
                                     ]"
                                 >
