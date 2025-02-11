@@ -4,6 +4,7 @@
             <source
                 v-for="size in sizes"
                 :key="size"
+                type="image/webp"
                 :srcset="`${url}/m/${size}`"
                 :media="`(min-width: ${size.split('x')[0]}px)`"
             />
