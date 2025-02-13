@@ -16,7 +16,11 @@
                     :key="slide._uid"
                     :class="['embla__slide relative', 'w-full', slideClasses]"
                 >
-                    <single-custom-picture
+                    <nuxt-picture
+                        :src="slide.media.filename"
+                        :loading="index === 0 ? 'eager' : 'lazy'"
+                    />
+                    <!-- <single-custom-picture
                         v-if="slide.media.filename"
                         :url="slide.media.filename"
                         :alt="slide.media.alt"
@@ -35,7 +39,7 @@
                                 from: '300px'
                             }
                         ]"
-                    />
+                    /> -->
 
                     <component
                         :is="
