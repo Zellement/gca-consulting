@@ -32,7 +32,7 @@
                             },
                             {
                                 dimensions: '300x800',
-                                from: '1px'
+                                from: '300px'
                             }
                         ]"
                     />
@@ -100,7 +100,7 @@ const isCarousel: ComputedRef<boolean> = computed(() => {
 
 const slideClasses: ComputedRef<string> = computed(() => {
     return props.fullScreen
-        ? 'h-[500px] 2xs:h-[600px]'
+        ? 'h-[80vh]'
         : 'aspect-square md:aspect-video max-h-[70vh] xl:aspect-5/2 xl:max-h-[60vh] 2xl:max-h-[50vh] 3xl:max-h-[40vh]'
 })
 
