@@ -17,11 +17,25 @@
                     :class="['embla__slide relative', 'w-full', slideClasses]"
                 >
                     <single-custom-picture
+                        v-if="slide.displayText"
                         class="aspect-tall h-full w-full object-cover md:aspect-square xl:aspect-landscape"
                         :url="slide.media.filename"
                         :alt="slide.media.alt"
                         :loading="index === 0 ? 'eager' : 'lazy'"
-                        :sizes="['300x800', '800x800', '1800x800']"
+                        :sizes="[
+                            {
+                                dimensions: '1800x800',
+                                from: '1800px'
+                            },
+                            {
+                                dimensions: '800x800',
+                                from: '800px'
+                            },
+                            {
+                                dimensions: '300x800',
+                                from: '300px'
+                            }
+                        ]"
                     />
 
                     <component
@@ -30,7 +44,6 @@
                                 ? NuxtLink
                                 : 'h2'
                         "
-                        v-if="slide.displayText"
                         :to="getUrl(slide.link.cached_url ?? slide.link.url)"
                         class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-lg font-bold text-white transition-colors"
                         :class="{

@@ -1,16 +1,19 @@
 <template>
-    <figure :class="['relative overflow-clip']">
-        <picture>
-            <source
-                v-for="size in sizes"
-                :key="size"
-                type="image/webp"
-                :srcset="`${url}/m/${size}`"
-                :media="`(min-width: ${size.split('x')[0]}px)`"
-            />
-            <img :src="`${url}/m/500x500`" :alt="alt" :loading="loading" />
-        </picture>
-    </figure>
+    {{ sizes }}
+    <picture>
+        <source
+            v-for="size in sizes"
+            :key="size.from"
+            type="image/webp"
+            :media="`(min-width: ${size.from})`"
+            :srcset="`${url}/m/${size.dimensions}/filters:format(webp)`"
+        />
+        <img
+            :src="`${url}/m/${sizes[0].dimensions}`"
+            :alt="alt"
+            :loading="loading"
+        />
+    </picture>
 </template>
 
 <script lang="ts" setup>
@@ -23,8 +26,13 @@
 interface Props {
     url: string
     alt: string
-    sizes: string[]
+    sizes: Sizes[]
     loading?: 'lazy' | 'eager'
+}
+
+interface Sizes {
+    dimensions: string
+    from: string
 }
 
 defineProps<Props>()
