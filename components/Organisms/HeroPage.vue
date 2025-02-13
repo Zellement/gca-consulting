@@ -18,7 +18,6 @@
                 >
                     <single-custom-picture
                         v-if="slide.media.filename"
-                        class="aspect-tall h-full w-full object-cover md:aspect-square xl:aspect-landscape"
                         :url="slide.media.filename"
                         :alt="slide.media.alt"
                         :loading="index === 0 ? 'eager' : 'lazy'"
@@ -33,7 +32,7 @@
                             },
                             {
                                 dimensions: '300x800',
-                                from: '300px'
+                                from: '1px'
                             }
                         ]"
                     />
@@ -101,7 +100,7 @@ const isCarousel: ComputedRef<boolean> = computed(() => {
 
 const slideClasses: ComputedRef<string> = computed(() => {
     return props.fullScreen
-        ? 'h-[90vh]'
+        ? 'h-[500px] 2xs:h-[600px]'
         : 'aspect-square md:aspect-video max-h-[70vh] xl:aspect-5/2 xl:max-h-[60vh] 2xl:max-h-[50vh] 3xl:max-h-[40vh]'
 })
 
