@@ -1,5 +1,5 @@
 <template>
-    <div class="relative">
+    <div class="relative h-full">
         <Icon
             name="svg-spinners:eclipse"
             class="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2"

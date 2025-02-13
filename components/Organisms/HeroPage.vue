@@ -17,7 +17,7 @@
                     :class="['embla__slide relative', 'w-full', slideClasses]"
                 >
                     <single-custom-picture
-                        v-if="slide.displayText"
+                        v-if="slide.media.filename"
                         class="aspect-tall h-full w-full object-cover md:aspect-square xl:aspect-landscape"
                         :url="slide.media.filename"
                         :alt="slide.media.alt"
@@ -44,6 +44,7 @@
                                 ? NuxtLink
                                 : 'h2'
                         "
+                        v-if="slide.displayText"
                         :to="getUrl(slide.link.cached_url ?? slide.link.url)"
                         class="absolute bottom-20 right-0 w-8/12 bg-black/70 px-4 py-2 text-lg font-bold text-white transition-colors"
                         :class="{

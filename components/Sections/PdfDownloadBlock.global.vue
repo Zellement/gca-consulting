@@ -7,7 +7,7 @@
             :key="item._uid"
             download
             :to="item?.file?.filename ?? ''"
-            class="group flex flex-col items-center gap-8 bg-white text-center"
+            class="group flex flex-col items-center gap-8 bg-white text-center transition-all hover:shadow-lg"
         >
             <div
                 class="flex w-full items-center justify-center bg-blue-50 transition-colors group-hover:bg-blue-100"
