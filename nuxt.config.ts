@@ -22,8 +22,7 @@ export default defineNuxtConfig({
         'nuxt-viewport',
         '@nuxtjs/seo',
         '@nuxt/fonts',
-        '@nuxt/icon',
-        'nuxt-delay-hydration'
+        '@nuxt/icon'
     ],
 
     delayHydration: {
