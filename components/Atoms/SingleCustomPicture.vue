@@ -16,7 +16,7 @@
                 :src="`${url}/m/${sizes[0].dimensions}`"
                 :alt="alt"
                 :loading="loading"
-                class="relative"
+                class="relative h-full w-full"
             />
         </picture>
     </div>
