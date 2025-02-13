@@ -25,13 +25,6 @@ export default defineNuxtConfig({
         '@nuxt/icon'
     ],
 
-    delayHydration: {
-        // enables nuxt-delay-hydration in dev mode for testing
-        // NOTE: you should disable this once you've finished testing, it will break HMR
-        debug: process.env.NODE_ENV === 'development',
-        mode: 'init'
-    },
-
     svgSprite: {
         input: '~/assets/icons/svg',
         output: '~/assets/icons/sprites'
