@@ -78,10 +78,8 @@
                                     :key="slide._uid"
                                     :class="[
                                         'embla__slide relative',
-                                        'flex xl:max-h-[70vh]',
-                                        bodyContent.isPortrait
-                                            ? 'aspect-5/2 mx-auto h-full w-auto'
-                                            : 'w-full'
+                                        'flex max-h-[70vh]',
+                                        'xl:max-h-max'
                                     ]"
                                 >
                                     <div
@@ -90,26 +88,36 @@
                                     >
                                         {{ slide.title }}
                                     </div>
-                                    <single-picture
+                                    <single-custom-picture
                                         :loading="
                                             index === 0 ? 'eager' : 'lazy'
                                         "
-                                        class="mx-auto aspect-auto h-full w-auto"
-                                        :img-data="{
-                                            url: slide.filename ?? '',
-                                            alt: slide.alt ?? ''
-                                        }"
-                                        :class="
-                                            bodyContent.isPortrait
-                                                ? 'aspect-5/2'
-                                                : 'aspect-landscape'
-                                        "
-                                        :fit="
-                                            bodyContent.isPortrait
-                                                ? 'contain'
-                                                : 'cover'
-                                        "
-                                        sizes="336px sm:336px lg:800px"
+                                        class="mx-auto h-full w-full"
+                                        :sizes="[
+                                            {
+                                                dimensions:
+                                                    bodyContent.isPortrait
+                                                        ? '500x0'
+                                                        : '0x500',
+                                                from: '1px'
+                                            },
+                                            {
+                                                dimensions:
+                                                    bodyContent.isPortrait
+                                                        ? '1000x0'
+                                                        : '0x1000',
+                                                from: '500px'
+                                            },
+                                            {
+                                                dimensions:
+                                                    bodyContent.isPortrait
+                                                        ? '1500x0'
+                                                        : '0x1500',
+                                                from: '1200px'
+                                            }
+                                        ]"
+                                        :url="slide.filename ?? ''"
+                                        :alt="slide.alt ?? slide.title ?? ''"
                                     />
                                 </div>
                             </template>

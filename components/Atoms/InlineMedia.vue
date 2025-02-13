@@ -21,13 +21,23 @@
                         'flex h-full w-full xl:max-h-[70vh]'
                     ]"
                 >
-                    <single-picture
-                        class="aspect-square md:aspect-video xl:aspect-landscape"
-                        :img-data="{
-                            url: slide.filename ?? '',
-                            alt: slide.alt ?? ''
-                        }"
-                        sizes="336px lg:800px"
+                    <single-custom-picture
+                        :url="slide.filename ?? ''"
+                        :alt="slide.alt ?? ''"
+                        :sizes="[
+                            {
+                                dimensions: '500x500',
+                                from: '1px'
+                            },
+                            {
+                                dimensions: '800x500',
+                                from: '500px'
+                            },
+                            {
+                                dimensions: '1200x800',
+                                from: '800px'
+                            }
+                        ]"
                     />
                 </div>
             </template>

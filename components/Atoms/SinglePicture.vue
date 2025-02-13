@@ -1,68 +1,52 @@
 <template>
     <figure :class="['relative overflow-clip', fitClasses]">
-        <figcaption
-            v-if="caption"
-            class="uc-text absolute left-0 top-0 z-10 bg-white p-2"
-        >
-            {{ caption }}
-        </figcaption>
-
-        <parallaxy
-            class="h-full w-full"
-            :speed="parallaxSpeed"
-            :animate="animateParallax"
-            :disabled="!enableParallax"
-        >
-            <!--placeholder-->
-            <transition name="placeholder-image">
-                <div
-                    v-if="!state.mediaLoaded"
-                    class="absolute inset-0 grid h-full w-full grid-cols-1 place-items-center"
+        <!--placeholder-->
+        <transition name="placeholder-image">
+            <div
+                v-if="!state.mediaLoaded"
+                class="absolute inset-0 grid h-full w-full grid-cols-1 place-items-center"
+                aria-hidden="true"
+            >
+                <nuxt-img
+                    :key="`${pictureKey}-placeholder`"
+                    :src="`${imgData.url}`"
+                    alt=""
+                    width="32"
+                    loading="eager"
                     aria-hidden="true"
-                >
-                    <nuxt-img
-                        :key="`${pictureKey}-placeholder`"
-                        :src="imgData.url"
-                        alt=""
-                        width="32"
-                        loading="eager"
-                        aria-hidden="true"
-                        class="h-full w-full scale-125 transform-gpu object-cover blur-md"
-                        densities="1"
-                        :provider="provider"
-                    />
+                    class="h-full w-full scale-125 transform-gpu object-cover blur-md"
+                    densities="1"
+                    :provider="provider"
+                />
 
-                    <!--Spinner-->
-                    <div
-                        class="absolute h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-l-white"
-                    />
-                </div>
-            </transition>
-            <nuxt-picture
-                ref="image"
-                :key="pictureKey"
-                :src="imgData.url"
-                :alt="imgData.alt"
-                :width="imageWidth"
-                :height="imageHeight"
-                :class="[
-                    pictureTransitionClasses,
-                    'block transition-opacity duration-200',
-                    pictureClassList,
-                    fitClasses
-                ]"
-                :sizes="srcSetSizes"
-                :loading="loading"
-                :preload="preload"
-                :provider="provider"
-                @load="mediaLoaded"
-            />
-        </parallaxy>
+                <!--Spinner-->
+                <div
+                    class="absolute h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-l-white"
+                />
+            </div>
+        </transition>
+        <nuxt-picture
+            ref="image"
+            :key="pictureKey"
+            :src="`${imgData.url}`"
+            :alt="imgData.alt"
+            :width="imageWidth"
+            :height="imageHeight"
+            :class="[
+                pictureTransitionClasses,
+                'block transition-opacity duration-200',
+                pictureClassList,
+                fitClasses
+            ]"
+            :sizes="srcSetSizes"
+            :loading="loading"
+            :preload="preload"
+            @load="mediaLoaded"
+        />
     </figure>
 </template>
 
 <script lang="ts" setup>
-import Parallaxy from '@lucien144/vue3-parallaxy'
 import type { NuxtPicture } from '#components'
 
 /* --------------------------
@@ -213,10 +197,6 @@ const pictureTransitionClasses: ComputedRef<string> = computed(() => {
           : 'opacity-0'
 })
 
-const enableParallax: ComputedRef<boolean> = computed(() => {
-    return props.parallax && !animationsDisabled.value
-})
-
 const provider: ComputedRef<string> = computed(() => {
     const isStoryblokDomain = props.imgData.url?.includes('storyblok.com')
     const isDevelopment = import.meta.dev ?? false
@@ -238,18 +218,6 @@ const fitClasses: ComputedRef<string> = computed(() => {
 const mediaLoaded = (): void => {
     state.mediaLoaded = true
     emit('loaded')
-}
-
-/**
- * Animation function for Parallaxy component that calculates a
- * movement based on the delta value and a percentage.
- * @param delta The current elements position
- * @returns A CSS transform string.
- */
-const animateParallax = (delta: number): string => {
-    const offset = 1 + props.parallaxPercentage
-    const distance = delta * offset
-    return `transform: translate3d(0, ${distance}, 0);`
 }
 
 onUnmounted(() => {

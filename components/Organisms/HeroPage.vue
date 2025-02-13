@@ -16,14 +16,25 @@
                     :key="slide._uid"
                     :class="['embla__slide relative', 'w-full', slideClasses]"
                 >
-                    <single-picture
-                        class="aspect-tall h-full w-full object-cover md:aspect-square xl:aspect-landscape"
-                        :img-data="{
-                            url: slide.media.filename,
-                            alt: slide.media.alt ?? ''
-                        }"
-                        sizes="336px md:700px xl:1200px 2xl:1600px max:1800px"
+                    <single-custom-picture
+                        v-if="slide.media.filename"
+                        :url="slide.media.filename"
+                        :alt="slide.media.alt"
                         :loading="index === 0 ? 'eager' : 'lazy'"
+                        :sizes="[
+                            {
+                                dimensions: '1800x800',
+                                from: '1800px'
+                            },
+                            {
+                                dimensions: '800x800',
+                                from: '800px'
+                            },
+                            {
+                                dimensions: '300x800',
+                                from: '300px'
+                            }
+                        ]"
                     />
 
                     <component
@@ -89,7 +100,7 @@ const isCarousel: ComputedRef<boolean> = computed(() => {
 
 const slideClasses: ComputedRef<string> = computed(() => {
     return props.fullScreen
-        ? 'h-[90vh]'
+        ? 'h-[80vh]'
         : 'aspect-square md:aspect-video max-h-[70vh] xl:aspect-5/2 xl:max-h-[60vh] 2xl:max-h-[50vh] 3xl:max-h-[40vh]'
 })
 

@@ -7,14 +7,21 @@
             class="pointer-events-none absolute inset-0 z-10 bg-blue-500/80 opacity-0 transition-opacity group-hover:opacity-100"
         ></div>
         <div class="col-span-full row-span-full bg-blue-100">
-            <single-picture
+            <single-custom-picture
                 v-if="imgData.url"
-                :img-data="{
-                    url: imgData.url,
-                    alt: imgData.alt
-                }"
-                class="aspect-landscape transition-transform group-hover:scale-105"
-                sizes="300px xs:336px 2xs:336px md:550px"
+                :url="imgData.url"
+                :alt="imgData.alt"
+                class="transition-transform group-hover:scale-105"
+                :sizes="[
+                    {
+                        dimensions: '500x300',
+                        from: '1px'
+                    },
+                    {
+                        dimensions: '1000x800',
+                        from: '500px'
+                    }
+                ]"
             />
         </div>
         <div

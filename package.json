@@ -48,7 +48,6 @@
         "vue-tsc": "2.1.10"
     },
     "dependencies": {
-        "@lucien144/vue3-parallaxy": "^0.1.2",
         "@nuxt/image": "^1.8.1",
         "@pinia/nuxt": "^0.7.0",
         "@storyblok/js": "^3.1.7",
