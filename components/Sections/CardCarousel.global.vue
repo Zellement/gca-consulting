@@ -34,16 +34,19 @@
                             ]"
                             :to="getUrl(slide.full_slug)"
                         >
-                            <single-picture
-                                class="aspect-video"
-                                :img-data="{
-                                    url: slide?.content?.hero?.[0]?.media
-                                        ?.filename,
-                                    alt:
-                                        slide?.content?.hero?.[0]?.media?.alt ??
-                                        ''
-                                }"
-                                sizes="600px"
+                            <single-custom-picture
+                                :url="
+                                    slide?.content?.hero?.[0]?.media?.filename
+                                "
+                                :alt="
+                                    slide?.content?.hero?.[0]?.media?.alt ?? ''
+                                "
+                                :sizes="[
+                                    {
+                                        dimensions: '500x300',
+                                        from: '1px'
+                                    }
+                                ]"
                             />
                             <div
                                 class="absolute inset-0 flex bg-black/60 p-8 text-center text-md text-white transition-colors group-hover:bg-blue-500/80 group-hover:text-green"
