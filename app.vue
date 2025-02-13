@@ -2,7 +2,7 @@
     <nuxt-layout>
         <nuxt-page :key="`app-key__${appKey}`" />
     </nuxt-layout>
-    <page-transition v-if="!$preview" :class="pageTransitionClasses" />
+    <!-- <page-transition v-if="!$preview" :class="pageTransitionClasses" /> -->
 </template>
 
 <script setup lang="ts">
@@ -20,19 +20,19 @@ const appKey = ref<number>(0)
 // Computed
 -------------------------- */
 
-const animationsDisabled: ComputedRef<boolean> = computed(() => {
-    return uiStore.animationsDisabled
-})
+// const animationsDisabled: ComputedRef<boolean> = computed(() => {
+//     return uiStore.animationsDisabled
+// })
 
 const isAnyModalActive: ComputedRef<boolean> = computed(() => {
     return uiStore.showMobileNav
 })
 
-const pageTransitionClasses: ComputedRef<string> = computed(() => {
-    return animationsDisabled.value
-        ? 'opacity-0 pointer-events-none'
-        : 'opacity-100'
-})
+// const pageTransitionClasses: ComputedRef<string> = computed(() => {
+//     return animationsDisabled.value
+//         ? 'opacity-0 pointer-events-none'
+//         : 'opacity-100'
+// })
 
 const pageName: ComputedRef<string> = computed(() => {
     return storyblokStore.currentStory.name
