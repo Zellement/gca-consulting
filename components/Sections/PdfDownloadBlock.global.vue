@@ -10,15 +10,18 @@
             class="group flex flex-col items-center gap-8 bg-white text-center"
         >
             <div
-                class="flex aspect-2/3 w-full items-center justify-center bg-blue-50 transition-colors group-hover:bg-blue-100"
+                class="flex w-full items-center justify-center bg-blue-50 transition-colors group-hover:bg-blue-100"
             >
-                <single-picture
+                <single-custom-picture
                     v-if="item.media?.filename"
-                    :img-data="{
-                        url: item.media.filename,
-                        alt: item.file.title ?? item.file.filename ?? ''
-                    }"
-                    class="aspect-2/3 h-full w-full object-cover"
+                    :url="item.media.filename"
+                    :alt="item.file.title ?? item.file.filename ?? ''"
+                    :sizes="[
+                        {
+                            dimensions: '500x700',
+                            from: '1px'
+                        }
+                    ]"
                 />
                 <Icon v-else class="size-16" name="proicons:pdf" />
             </div>
