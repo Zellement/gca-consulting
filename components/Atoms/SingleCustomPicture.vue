@@ -15,7 +15,7 @@
             <img
                 :src="`${url}/m/${sizes[0].dimensions}`"
                 :alt="alt"
-                :loading="loading"
+                :loading="loading ?? 'lazy'"
                 class="relative h-full w-full"
             />
         </picture>
