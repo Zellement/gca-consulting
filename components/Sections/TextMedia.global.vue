@@ -97,23 +97,23 @@
                                             {
                                                 dimensions:
                                                     bodyContent.isPortrait
-                                                        ? '500x0'
-                                                        : '0x500',
-                                                from: '1px'
+                                                        ? '800x0'
+                                                        : '0x1500',
+                                                from: '1200px'
                                             },
                                             {
                                                 dimensions:
                                                     bodyContent.isPortrait
-                                                        ? '1000x0'
+                                                        ? '1200x0'
                                                         : '0x1000',
                                                 from: '500px'
                                             },
                                             {
                                                 dimensions:
                                                     bodyContent.isPortrait
-                                                        ? '1500x0'
-                                                        : '0x1500',
-                                                from: '1200px'
+                                                        ? '500x0'
+                                                        : '0x500',
+                                                from: '1px'
                                             }
                                         ]"
                                         :url="slide.filename ?? ''"

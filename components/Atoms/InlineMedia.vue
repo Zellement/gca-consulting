@@ -26,16 +26,16 @@
                         :alt="slide.alt ?? ''"
                         :sizes="[
                             {
-                                dimensions: '500x500',
-                                from: '1px'
+                                dimensions: '1200x800',
+                                from: '800px'
                             },
                             {
                                 dimensions: '800x500',
                                 from: '500px'
                             },
                             {
-                                dimensions: '1200x800',
-                                from: '800px'
+                                dimensions: '500x500',
+                                from: '1px'
                             }
                         ]"
                     />

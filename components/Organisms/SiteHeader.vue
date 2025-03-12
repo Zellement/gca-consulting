@@ -26,7 +26,7 @@
                         >
                         <span
                             v-else-if="uiStore.showMobileNav"
-                            class="absolute left-0 top-0 border-b-2 border-green-500 transition-colors hover:text-green"
+                            class="absolute left-0 top-0 border-b-2 border-green-500 bg-blue-500 transition-colors hover:text-green"
                             >Close</span
                         >
                     </Transition>

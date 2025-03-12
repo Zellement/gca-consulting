@@ -14,12 +14,12 @@
                 class="transition-transform group-hover:scale-105"
                 :sizes="[
                     {
-                        dimensions: '500x300',
-                        from: '1px'
-                    },
-                    {
                         dimensions: '1000x800',
                         from: '500px'
+                    },
+                    {
+                        dimensions: '500x300',
+                        from: '1px'
                     }
                 ]"
             />
