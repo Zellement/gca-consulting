@@ -28,7 +28,7 @@
     "plugins": ["prettier", "vue", "@typescript-eslint"],
     "overrides": [
         {
-            "files": ["pages/**/*.vue", "layouts/**/*.vue"],
+            "files": ["pages/**/*.vue", "layouts/**/*.vue", "error.vue"],
             "rules": {
                 "vue/multi-word-component-names": 0
             }

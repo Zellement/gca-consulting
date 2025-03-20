@@ -7,19 +7,7 @@
 </template>
 
 <script setup lang="ts">
-const storyblokStore = useStoryblokStore()
-
-const id = useId()
-
-const currentStory = computed(() => {
-    return storyblokStore.currentStory
-})
-
-const showHero: ComputedRef<boolean> = computed(() => {
-    return currentStory.value?.content?.showHero
-})
-
 definePageMeta({
-    title: 'Consulting Civil, Structural and Highway Engineers'
+    title: 'Sorry! Page not found'
 })
 </script>
