@@ -1,7 +1,7 @@
 <template>
     <site-header />
-    <div class="page">
-        <h1>Sorry, this page does not exist</h1>
+    <div class="page p-8 text-center">
+        <h1 class="text-xl">Sorry, this page does not exist</h1>
         <nuxt-link to="/">Go back to the homepage</nuxt-link>
     </div>
     <site-footer />
