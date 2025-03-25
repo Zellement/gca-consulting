@@ -26,7 +26,6 @@ export default defineNuxtRouteMiddleware(
             return storyblokStore.currentStory
         })
 
-        console.log('entryData', entryData.value)
         if (!entryData.value) {
             throw createError({
                 statusCode: 404,
