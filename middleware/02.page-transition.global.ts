@@ -3,7 +3,7 @@ import { useStoryblokStore } from '@/stores/storyblok'
 import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router'
 
 //Stops the middleware from running more than once
-let runOnce = false
+let runOnce = true
 
 export default defineNuxtRouteMiddleware((): void => {
     const uiStore = useUiStore()
