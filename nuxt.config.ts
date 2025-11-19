@@ -22,8 +22,13 @@ export default defineNuxtConfig({
         'nuxt-viewport',
         '@nuxtjs/seo',
         '@nuxt/fonts',
-        '@nuxt/icon'
+        '@nuxt/icon',
+        'nuxt-gtag'
     ],
+
+    gtag: {
+        id: 'G-4HBH1BSPND'
+    },
 
     svgSprite: {
         input: '~/assets/icons/svg',
